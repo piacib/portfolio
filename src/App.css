@@ -1,5 +1,5 @@
 :root {
-  --size: 17rem;
+  --size: 13rem;
   --speed: 120s;
   --green-light: hsl(123, 47%, 74%);
   --blue-light: hsl(210, 47%, 74%);
@@ -19,41 +19,41 @@
   --purple-dark: purple;
   --orange-dark: orange;
   --radius: 15rem;
-  --arm-length: 10.6066rem ;
-
+  --arm-length: 10.6066rem;
 }
 @keyframes orbit {
   100% {
-    transform:rotate(1turn);
+    transform: rotate(1turn);
   }
 }
 @keyframes hold-position {
   100% {
-    transform:rotate(-1turn);
+    transform: rotate(-1turn);
+  }
+}
+@keyframes EnlargeAnimation {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 100%;
   }
 }
 .profile-image {
   position: absolute;
-  height: var(--size);
   width: var(--size);
+  aspect-ratio: 1;
   border-radius: 50%;
   background-color: var(--green-light);
   z-index: 10;
+  animation: EnlargeAnimation 2s linear;
 }
 .yellow {
-  background-color: var(--yellow-light));
+  background-color: var(--yellow-light);
 }
-/* // demo only */
-body {
-  font-family: system-ui;
-  display: grid;
-  min-height: 100vh;
-  place-content: center;
-  overflow: hidden;
-}
-
 .center-image {
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 .center-image img {
   position: absolute;
@@ -93,6 +93,8 @@ body {
   height: var(--size);
   position: relative;
   list-style: none;
+  margin: 0;
+  padding: 0;
   --icon-bg: var(--green-light);
   --text-bg: var(--green-dark);
   transform-origin: center;
@@ -163,7 +165,10 @@ body {
 .orbit li:nth-child(6) {
   --icon-bg: var(--yellow-light);
   --text-bg: var(--yellow-dark);
-  transform: translate(calc(-1 * var(--arm-length)), calc(-1 * var(--arm-length)));
+  transform: translate(
+    calc(-1 * var(--arm-length)),
+    calc(-1 * var(--arm-length))
+  );
 }
 .orbit li:nth-child(7) {
   --icon-bg: var(--purple-light);
@@ -175,4 +180,3 @@ body {
   --text-bg: var(--orange-dark);
   transform: translate(var(--arm-length), -10rem);
 }
-
