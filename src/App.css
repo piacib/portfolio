@@ -1,38 +1,178 @@
-.App {
-  text-align: center;
-}
+:root {
+  --size: 17rem;
+  --speed: 120s;
+  --green-light: hsl(123, 47%, 74%);
+  --blue-light: hsl(210, 47%, 74%);
+  --orange-light: hsl(34, 93%, 77%);
+  --purple-light: hsl(231, 44%, 76%);
+  --yellow-light: hsl(54, 76%, 79%);
+  --brown-light: hsl(20, 41%, 69%);
+  --red-light: hsl(0, 59%, 76%);
+  --pink-light: hsl(295, 42%, 72%);
+  --white-light: hsl(0, 0%, 100%);
+  --blue-dark: blue;
+  --green-dark: green;
+  --pink-dark: pink;
+  --red-dark: red;
+  --brown-dark: brown;
+  --yellow-dark: yellow;
+  --purple-dark: purple;
+  --orange-dark: orange;
+  --radius: 15rem;
+  --arm-length: 10.6066rem ;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes orbit {
+  100% {
+    transform:rotate(1turn);
   }
 }
-
-.App-header {
-  background-color: #282c34;
+@keyframes hold-position {
+  100% {
+    transform:rotate(-1turn);
+  }
+}
+.profile-image {
+  position: absolute;
+  height: var(--size);
+  width: var(--size);
+  border-radius: 50%;
+  background-color: var(--green-light);
+  z-index: 10;
+}
+.yellow {
+  background-color: var(--yellow-light));
+}
+/* // demo only */
+body {
+  font-family: system-ui;
+  display: grid;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  place-content: center;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.center-image {
+  margin-left: 20px;
+}
+.center-image img {
+  position: absolute;
+  transition: opacity 500ms;
+}
+.center-image img:not(:first-child):hover {
+  opacity: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  font-family: system-ui;
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+  overflow: hidden;
 }
+.orbit {
+  width: var(--size);
+  --speed: 120s;
+}
+.orbit .center-image {
+  width: var(--size);
+  position: relative;
+  z-index: 10;
+}
+.orbit .center-image img {
+  position: absolute;
+  transition: opacity 500ms;
+}
+.orbit .center-image img:not(:first-child):hover {
+  opacity: 0;
+}
+.orbit ul {
+  display: grid;
+  place-items: center;
+  width: var(--size);
+  height: var(--size);
+  position: relative;
+  list-style: none;
+  --icon-bg: var(--green-light);
+  --text-bg: var(--green-dark);
+  transform-origin: center;
+  animation: orbit var(--speed) linear infinite;
+}
+.orbit ul:hover {
+  animation-play-state: paused;
+  --orbit-play-state: paused;
+}
+.orbit li {
+  position: absolute;
+  width: 8rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  font-weight: 500;
+  color: var(--white-light);
+  text-align: center;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+}
+.orbit li > * {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: inherit;
+  position: absolute;
+  animation: orbit var(--speed) linear reverse infinite;
+  animation-play-state: var(--orbit-play-state, running);
+}
+.orbit li > div {
+  background-color: var(--icon-bg);
+}
+.orbit li > p {
+  background: var(--text-bg);
+  transition: opacity 500ms;
+  opacity: 0;
+}
+.orbit li:hover > p {
+  opacity: 1;
+}
+.orbit li:nth-child(1) {
+  --icon-bg: var(--blue-light);
+  --text-bg: var(--blue-dark);
+  transform: translate(15rem, 0rem);
+}
+.orbit li:nth-child(2) {
+  --icon-bg: var(--green-light);
+  --text-bg: var(--green-dark);
+  transform: translate(var(--arm-length), var(--arm-length));
+}
+.orbit li:nth-child(3) {
+  --icon-bg: var(--pink-light);
+  --text-bg: var(--pink-dark);
+  transform: translate(0, 15rem);
+}
+.orbit li:nth-child(4) {
+  --icon-bg: var(--red-light);
+  --text-bg: var(--red-dark);
+  transform: translate(calc(-1 * var(--arm-length)), var(--arm-length));
+}
+.orbit li:nth-child(5) {
+  --icon-bg: var(--brown-light);
+  --text-bg: var(--brown-dark);
+  transform: translate(-15rem, 0rem);
+}
+.orbit li:nth-child(6) {
+  --icon-bg: var(--yellow-light);
+  --text-bg: var(--yellow-dark);
+  transform: translate(calc(-1 * var(--arm-length)), calc(-1 * var(--arm-length)));
+}
+.orbit li:nth-child(7) {
+  --icon-bg: var(--purple-light);
+  --text-bg: var(--purple-dark);
+  transform: translate(0, -15rem);
+}
+.orbit li:nth-child(8) {
+  --icon-bg: var(--orange-light);
+  --text-bg: var(--orange-dark);
+  transform: translate(var(--arm-length), -10rem);
+}
+
