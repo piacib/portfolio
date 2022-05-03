@@ -1,0 +1,27 @@
+@media (max-width: 765px) {
+  :root {
+    --radius: 12rem;
+    --arm-length: 8.485rem;
+  }
+  .orbit li {
+    width: 6rem;
+  }
+}
+@media (max-width: 500px) {
+  :root {
+    --radius: 9rem;
+    --arm-length: 6.364rem;
+  }
+  .orbit li {
+    width: 4.5rem;
+  }
+}
+@media (max-width: 400px) {
+  :root {
+    --radius: 7rem;
+    --arm-length: 4.9497rem;
+  }
+  .orbit li {
+    width: 3.5rem;
+  }
+}
