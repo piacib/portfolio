@@ -13,14 +13,62 @@ import Toggle from "./components/Toggle/Toggle";
 import FerrisWheel from "./components/FerrisWheel/FerrisWheel";
 
 const dataArray = [
-  { imageSrc: QuestionMark, imageAlt: "question mark", text: "About Me" },
-  { imageSrc: Pokeball, imageAlt: "pokeball", text: "Pokemon Extension" },
-  { imageSrc: Weather, imageAlt: "storm cloud", text: "Weather" },
-  { imageSrc: Fish, imageAlt: "fish", text: "Fish" },
-  { imageSrc: Timer, imageAlt: "timer", text: "Reddit Post Timer" },
-  { imageSrc: Linkedin, imageAlt: "lnkedin", text: "Linkedin" },
-  { imageSrc: Resume, imageAlt: "resume", text: "text" },
-  { imageSrc: Pokeball, imageAlt: "", text: "this site!" },
+  {
+    repoHref: "",
+    demoHref: "",
+    imageSrc: QuestionMark,
+    imageAlt: "question mark",
+    text: "About Me",
+  },
+  {
+    repoHref: "https://github.com/piacib/pokemon-showdown-extension",
+    demoHref: "",
+    imageSrc: Pokeball,
+    imageAlt: "pokeball",
+    text: "Pokemon Extension",
+  },
+  {
+    repoHref: "https://github.com/piacib/weather_typescript_app",
+    demoHref: "",
+    imageSrc: Weather,
+    imageAlt: "storm cloud",
+    text: "Weather",
+  },
+  {
+    repoHref: "https://github.com/piacib/hawaiian-fish",
+    demoHref: "",
+    imageSrc: Fish,
+    imageAlt: "fish",
+    text: "Fish",
+  },
+  {
+    repoHref: "https://github.com/piacib/reddit-timer-piacib",
+    demoHref: "",
+    imageSrc: Timer,
+    imageAlt: "timer",
+    text: "Reddit Post Timer",
+  },
+  {
+    repoHref: "",
+    demoHref: "",
+    imageSrc: Linkedin,
+    imageAlt: "linkedin",
+    text: "Linkedin",
+  },
+  {
+    repoHref: "",
+    demoHref: "",
+    imageSrc: Resume,
+    imageAlt: "resume",
+    text: "Resume",
+  },
+  {
+    repoHref: "",
+    demoHref: "",
+    imageSrc: Pokeball,
+    imageAlt: "",
+    text: "this site!",
+  },
 ];
 function App() {
   useEffect(() => {
