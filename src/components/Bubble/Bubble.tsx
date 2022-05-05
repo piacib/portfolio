@@ -1,5 +1,6 @@
 import React from "react";
 import "./bubble.css";
+import "./bubble.mediaquery.css";
 
 interface BubbleProps {
   imageSrc: string;
@@ -14,7 +15,7 @@ const Bubble: React.FC<BubbleProps> = ({
   onClick,
 }) => {
   return (
-    <li className="bubble">
+    <li className="bubble" onClick={onClick}>
       <div>
         <img className="bubble-image" src={imageSrc} alt={imageAlt} />
       </div>
