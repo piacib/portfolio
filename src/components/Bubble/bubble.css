@@ -143,7 +143,7 @@ li {
   --text-bg: var(--brown-dark);
   animation: ExtendArm5Animation var(--ExtendArmAnimation-length)
     var(--ExtendArmAnimation-type);
-  transform: translate(-15rem, 0rem);
+  transform: translate(calc(var(--radius) * -1), 0rem);
 }
 @keyframes ExtendArm6Animation {
   0% {
