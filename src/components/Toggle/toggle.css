@@ -54,7 +54,9 @@
   display: grid;
   place-items: center;
   min-height: 60px;
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
   grid-area: toggle;
   margin: 20px;
 }
