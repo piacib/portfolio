@@ -1,41 +1,95 @@
 :root {
   --speed: 120s;
-  --green-light: hsl(123, 47%, 74%);
-  --blue-light: hsl(210, 47%, 74%);
-  --orange-light: hsl(34, 93%, 77%);
-  --purple-light: hsl(231, 44%, 76%);
-  --yellow-light: hsl(54, 76%, 79%);
-  --brown-light: hsl(20, 41%, 69%);
-  --red-light: hsl(0, 59%, 76%);
-  --pink-light: hsl(295, 42%, 72%);
-  --white-light: hsl(0, 0%, 100%);
-  --blue-dark: #0072b1;
-  --green-dark: green;
-  --pink-dark: pink;
-  --red-dark: red;
-  --brown-dark: brown;
-  --yellow-dark: yellow;
-  --purple-dark: purple;
-  --orange-dark: orange;
+
+  --pink-dark: rgb(209, 62, 148);
+  --pink-light: rgb(248, 155, 170);
+
   --linkedin-blue: rgb(0, 116, 179);
   --linkedin-blue-dark: rgb(0, 116, 200);
+
+  --teal-dark: rgb(0, 167, 167);
+  --teal-light: rgb(0, 197, 197);
+
+  --green-dark: green;
+  --green-light: rgb(116, 192, 120);
+
+  --orange-dark: orange;
+  --orange-light: hsl(34, 93%, 77%);
+
+  --red-dark: rgb(255, 45, 45);
+  --red-light: rgb(240 106 106);
+
+  --blue-dark: rgb(0, 114, 177);
+  --blue-light: rgb(162, 192, 223);
+
+  --yellow-dark: rgb(255, 255, 0);
+  --yellow-light: rgb(242, 234, 161);
+
+  --purple-dark: rgb(128, 0, 128);
+  --purple-light: rgb(197, 161, 211);
 }
 
 .theme-dark {
-  --dark-text: #292929;
-  --light-text: #f9f8f8;
-  --dark-background: #2f4550;
-  --light-background: #586f7c;
-  --accent: #b8dbd9;
-  --button-border: #b8dbd9;
+  --pink-dark: rgb(209, 62, 148);
+  --pink-light: rgb(248, 155, 170);
+
+  --linkedin-blue: rgb(0, 116, 179);
+  --linkedin-blue-dark: rgb(0, 116, 200);
+
+  --teal-dark: rgb(0, 167, 167);
+  --teal-light: rgb(0, 197, 197);
+
+  --green-dark: green;
+  --green-light: rgb(116, 192, 120);
+
+  --orange-dark: orange;
+  --orange-light: hsl(34, 93%, 77%);
+
+  --red-dark: rgb(255, 45, 45);
+  --red-light: rgb(240 106 106);
+
+  --blue-dark: rgb(0, 114, 177);
+  --blue-light: rgb(162, 192, 223);
+
+  --yellow-dark: rgb(255, 255, 0);
+  --yellow-light: rgb(242, 234, 161);
+
+  --purple-dark: rgb(128, 0, 128);
+  --purple-light: rgb(197, 161, 211);
+
+  --p-text: #f9f8f8;
+  --dark-background: rgb(30, 30, 30);
 }
 .theme-light {
-  --dark-text: #5e4b56;
-  --light-text: #5e4b56;
-  --dark-background: #dbe7e4;
-  --light-background: #eddcd2;
-  --accent: #dbe7e4;
-  --button-border: #5e4b56;
+  --pink-light: rgb(209, 62, 148);
+  --pink-dark: rgb(248, 155, 170);
+
+  --linkedin-blue-dark: rgb(0, 116, 179);
+  --linkedin-blue: rgb(0, 116, 200);
+
+  --teal-light: rgb(0, 167, 167);
+  --teal-dark: rgb(0, 197, 197);
+
+  --green-light: green;
+  --green-dark: rgb(116, 192, 120);
+
+  --orange-light: orange;
+  --orange-dark: hsl(34, 93%, 77%);
+
+  --red-light: rgb(255, 45, 45);
+  --red-dark: rgb(240 106 106);
+
+  --blue-light: rgb(0, 114, 177);
+  --blue-dark: rgb(162, 192, 223);
+
+  --yellow-light: rgb(255, 255, 0);
+  --yellow-dark: rgb(242, 234, 161);
+
+  --purple-light: rgb(128, 0, 128);
+  --purple-dark: rgb(197, 161, 211);
+
+  --dark-background: rgb(245, 245, 245);
+  --p-text: rgb(53, 53, 53);
 }
 
 @keyframes orbit {
@@ -57,7 +111,6 @@
     width: 100%;
   }
 }
-
 .orbit {
   width: var(--size);
   --speed: 120s;
