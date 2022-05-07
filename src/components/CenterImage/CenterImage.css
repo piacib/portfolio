@@ -1,31 +1,46 @@
-.profile-image {
+:root {
+  --size: 13rem;
+}
+.orbit .center-image {
+  width: var(--size);
+  position: relative;
+}
+.center-image-slides {
   position: absolute;
   width: var(--size);
   aspect-ratio: 1;
   border-radius: 50%;
   background-color: var(--green-light);
   z-index: 10;
-  /* animation: EnlargeAnimation 2s linear; */
+  transition: opacity 500ms;
+}
+.profile-image {
+  position: absolute;
+  width: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--green-light);
 }
 .yellow {
   background-color: var(--yellow-light);
 }
-.center-image img {
+.center-image .options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.options a {
+  cursor: pointer;
+}
+.orbit .center-image .center-image-slides {
   position: absolute;
   transition: opacity 500ms;
 }
-.center-image img:not(:first-child):hover {
-  opacity: 0;
+
+.opacity1 {
+  opacity: 1;
 }
-.orbit .center-image {
-  width: var(--size);
-  position: relative;
-  z-index: 10;
-}
-.orbit .center-image img {
-  position: absolute;
-  transition: opacity 500ms;
-}
-.orbit .center-image img:not(:first-child):hover {
+.opacity0 {
   opacity: 0;
 }
