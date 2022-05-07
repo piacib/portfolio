@@ -14,7 +14,6 @@ li {
 .bubble {
   position: absolute;
 }
-
 .orbit ul {
   display: grid;
   place-items: center;
@@ -64,6 +63,7 @@ li {
   background: var(--text-bg);
   transition: opacity 500ms;
   opacity: 0;
+  color: var(--p-text);
 }
 .orbit li:hover > p {
   opacity: 1;
@@ -123,8 +123,8 @@ li {
   }
 }
 .orbit li:nth-child(4) {
-  --icon-bg: var(--red-light);
-  --text-bg: var(--red-dark);
+  --icon-bg: var(--teal-light);
+  --text-bg: var(--teal-dark);
   animation: ExtendArm4Animation var(--ExtendArmAnimation-length)
     var(--ExtendArmAnimation-type);
   transform: translate(calc(-1 * var(--arm-length)), var(--arm-length));
@@ -134,13 +134,12 @@ li {
     transform: translate(0rem, 0rem);
   }
   100% {
-    /* transform: translate(var(--negative-radius), 0rem); */
     transform: translate(calc(var(--radius) * -1), 0rem);
   }
 }
 .orbit li:nth-child(5) {
-  --icon-bg: var(--brown-light);
-  --text-bg: var(--brown-dark);
+  --icon-bg: var(--red-light);
+  --text-bg: var(--red-dark);
   animation: ExtendArm5Animation var(--ExtendArmAnimation-length)
     var(--ExtendArmAnimation-type);
   transform: translate(calc(var(--radius) * -1), 0rem);
