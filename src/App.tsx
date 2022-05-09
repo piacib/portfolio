@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import "./normalize.css";
-import Pokeball from "./assets/3.svg";
+import Pokeball from "./assets/pokeball-svgrepo-com.svg";
 import Fish from "./assets/fish-svgrepo-com.svg";
 import QuestionMark from "./assets/question-mark-svgrepo-com.svg";
 import Weather from "./assets/weather-rain-svgrepo-com.svg";
