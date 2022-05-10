@@ -33,11 +33,10 @@ const CenterImage: React.FC<Props> = ({
         }`}
       >
         <a className="repository" href={href1}>
-          Repository
+          <span>Repository</span>
         </a>
-        <img src={imageSrc} alt={imageAlt} />
         <a className="demo" href={href2}>
-          Demo
+          <span>Demo</span>
         </a>
       </div>
       <img
