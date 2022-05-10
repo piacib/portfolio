@@ -47,7 +47,7 @@
 }
 .options a span {
   line-height: calc(var(--size) / 2);
-  font-size: 2rem;
+  font-size: calc(var(--size) / 6);
 }
 
 .repository {
