@@ -1,4 +1,4 @@
-@media (max-width: 765px) {
+@media (max-width: 47.8125rem) {
   :root {
     --radius: 12rem;
     --arm-length: 8.485rem;
@@ -10,7 +10,7 @@
     font-size: 1.2rem;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 31.25rem) {
   :root {
     --radius: 9rem;
     --arm-length: 6.364rem;
@@ -22,7 +22,7 @@
     font-size: 1rem;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 25rem) {
   :root {
     --radius: 7rem;
     --arm-length: 4.9497rem;
