@@ -28,16 +28,20 @@ const CenterImage: React.FC<Props> = ({
       }}
     >
       <div
-        className={`center-image-slides yellow options ${
+        className={`center-image-slides options ${
           href1 ? "opacity1" : "opacity0"
         }`}
       >
-        <a className="repository" href={href1}>
-          <span>Repository</span>
-        </a>
-        <a className="demo" href={href2}>
-          <span>Demo</span>
-        </a>
+        {href1 ? (
+          <a className="repository" href={href1}>
+            <span>Repository</span>
+          </a>
+        ) : null}
+        {href2 ? (
+          <a className="demo" href={href2}>
+            <span>Demo</span>
+          </a>
+        ) : null}
       </div>
       <img
         src={src1}
