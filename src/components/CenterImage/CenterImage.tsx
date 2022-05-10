@@ -7,6 +7,7 @@ interface Props {
   href2: string;
   imageSrc: string;
   imageAlt: string;
+  mouseOnCenterImage: (arg1: boolean) => void;
 }
 const CenterImage: React.FC<Props> = ({
   src1,
@@ -14,19 +15,35 @@ const CenterImage: React.FC<Props> = ({
   imageAlt,
   href1,
   href2,
+  mouseOnCenterImage,
 }) => {
-  const imgZindex = !href1 ? "" : "background";
   return (
-    <div className="center-image">
-      <div className="children profile-image yellow options">
-        {href1 ? <a href={href1}>Repository</a> : null}
+    <div
+      className="center-image"
+      onMouseEnter={() => {
+        mouseOnCenterImage(true);
+      }}
+      onMouseLeave={() => {
+        mouseOnCenterImage(false);
+      }}
+    >
+      <div
+        className={`center-image-slides yellow options ${
+          href1 ? "opacity1" : "opacity0"
+        }`}
+      >
+        <a className="repository" href={href1}>
+          Repository
+        </a>
         <img src={imageSrc} alt={imageAlt} />
-        {href2 ? <a href={href2}>Demo</a> : null}
+        <a className="demo" href={href2}>
+          Demo
+        </a>
       </div>
       <img
         src={src1}
         alt="profile"
-        className={`${imgZindex} children profile-image`}
+        className={`${!href1 ? "opacity1" : "opacity0"} center-image-slides`}
       />
     </div>
   );
