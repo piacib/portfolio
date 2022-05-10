@@ -10,7 +10,7 @@
     font-size: 1.2rem;
   }
 }
-@media (max-width: 31.25rem) {
+@media (max-width: 37.5rem) {
   :root {
     --radius: 9rem;
     --arm-length: 6.364rem;
