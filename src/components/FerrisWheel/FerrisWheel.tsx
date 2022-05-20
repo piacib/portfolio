@@ -4,13 +4,13 @@ import CenterImage from "../CenterImage/CenterImage";
 import Me from "../../assets/me.jpg";
 
 type Hrefs = {
-  repoHref: string;
+  repoHref: `https://${string}` | "";
   demoHref: string;
   imageSrc: string;
   imageAlt: string;
 };
 
-interface Passengers extends Hrefs {
+export interface Passengers extends Hrefs {
   text: string;
 }
 interface Props {
