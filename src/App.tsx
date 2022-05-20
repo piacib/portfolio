@@ -10,9 +10,9 @@ import Linkedin from "./assets/linkedin-svgrepo-com.svg";
 import Resume from "./assets/resume-svgrepo-com.svg";
 import { keepTheme } from "./utils/theme";
 import Toggle from "./components/Toggle/Toggle";
-import FerrisWheel from "./components/FerrisWheel/FerrisWheel";
+import FerrisWheel, { Passengers } from "./components/FerrisWheel/FerrisWheel";
 
-const dataArray = [
+const dataArray: Passengers[] = [
   {
     repoHref: "",
     demoHref: "",
