@@ -3,24 +3,19 @@ import Bubble from "../Bubble/Bubble";
 import CenterImage from "../CenterImage/CenterImage";
 import Me from "../../assets/me.jpg";
 
-type Passengers = {
-  imageSrc: string;
-  imageAlt: string;
-  text: string;
-  repoHref: string;
-  demoHref: string;
-};
-
-interface Props {
-  dataArray: Passengers[];
-}
-
 type Hrefs = {
   repoHref: string;
   demoHref: string;
   imageSrc: string;
   imageAlt: string;
 };
+
+interface Passengers extends Hrefs {
+  text: string;
+}
+interface Props {
+  dataArray: Passengers[];
+}
 
 const FerrisWheel: React.FC<Props> = ({ dataArray }) => {
   const [centerImageData, setCenterImageData] = useState<Hrefs>({
