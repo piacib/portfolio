@@ -54,7 +54,7 @@
   display: grid;
   font-size: 16px;
   place-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   grid-area: toggle;
