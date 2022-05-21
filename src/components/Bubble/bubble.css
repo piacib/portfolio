@@ -10,6 +10,7 @@
 }
 li {
   list-style: none;
+  z-index: 2;
 }
 .bubble {
   position: absolute;
@@ -68,6 +69,7 @@ li {
 .orbit li:hover > p {
   opacity: 1;
 }
+/* text: "About Me",*/
 @keyframes ExtendArmAnimation {
   0% {
     transform: translate(0rem, 0rem);
@@ -81,9 +83,10 @@ li {
   --text-bg: var(--blue-dark);
   animation: ExtendArmAnimation var(--ExtendArmAnimation-length)
     var(--ExtendArmAnimation-type);
-
   transform: translate(var(--radius), 0rem);
 }
+/* text: "Pokemon Extension", */
+
 @keyframes ExtendArm2Animation {
   0% {
     transform: translate(0rem, 0rem);
@@ -99,6 +102,7 @@ li {
   animation: ExtendArm2Animation var(--ExtendArmAnimation-length)
     var(--ExtendArmAnimation-type);
 }
+/* text: "Weather", */
 @keyframes ExtendArm3Animation {
   0% {
     transform: translate(0rem, 0rem);
@@ -114,6 +118,8 @@ li {
     var(--ExtendArmAnimation-type);
   transform: translate(0, var(--radius));
 }
+/* text: "Fish", */
+
 @keyframes ExtendArm4Animation {
   0% {
     transform: translate(0rem, 0rem);
@@ -129,6 +135,8 @@ li {
     var(--ExtendArmAnimation-type);
   transform: translate(calc(-1 * var(--arm-length)), var(--arm-length));
 }
+/* text: "Reddit Post Timer", */
+
 @keyframes ExtendArm5Animation {
   0% {
     transform: translate(0rem, 0rem);
@@ -144,6 +152,8 @@ li {
     var(--ExtendArmAnimation-type);
   transform: translate(calc(var(--radius) * -1), 0rem);
 }
+/* text: "Linkedin", */
+
 @keyframes ExtendArm6Animation {
   0% {
     transform: translate(0rem, 0rem);
@@ -165,6 +175,7 @@ li {
     calc(-1 * var(--arm-length))
   );
 }
+/* text: "Resume", */
 @keyframes ExtendArm7Animation {
   0% {
     transform: translate(0rem, 0rem);
@@ -180,6 +191,7 @@ li {
     var(--ExtendArmAnimation-type);
   transform: translate(0, calc(var(--radius) * -1));
 }
+/* text: "this site!", */
 @keyframes ExtendArm8Animation {
   0% {
     transform: translate(0rem, 0rem);
