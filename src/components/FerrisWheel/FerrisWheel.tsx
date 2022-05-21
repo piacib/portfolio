@@ -181,12 +181,28 @@ const FerrisWheel: React.FC<Props> = () => {
           text={dataArray[1].text}
         />
         <div className="arms">
-          <div className="line"></div>
-          <div className="line"></div>
-          <div className="line"></div>
-          <div className="line"></div>
+          {[1, 2, 3, 4].map((x) => (
+            <div className="line">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((x) => (
+                <div className="bolt"></div>
+              ))}
+            </div>
+          ))}
         </div>
       </ul>
+      <div className="support">
+        <div className="support-beam support-left">
+          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((x) => (
+            <div className="bolt"></div>
+          ))}
+        </div>
+        <div className="support-beam support-right">
+          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((x) => (
+            <div className="bolt"></div>
+          ))}
+        </div>
+        <div className="base"></div>
+      </div>
       <ExpandingPage
         expand={expandAboutMe}
         setExpand={(e) => setExpandAboutMe(e)}
