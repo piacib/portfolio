@@ -1,7 +1,75 @@
 import React, { useEffect, useRef, useState } from "react";
 import Bubble from "../Bubble/Bubble";
+import "./FerrisWheel.css";
 import CenterImage from "../CenterImage/CenterImage";
 import Me from "../../assets/me.jpg";
+import ExpandingPage from "../ExpandingPage/ExpandingPage";
+import QuestionMark from "../../assets/question-mark-svgrepo-com.svg";
+import Resume from "../../assets/resume-svgrepo-com.svg";
+import Pokeball from "../../assets/pokeball-svgrepo-com.svg";
+import Fish from "../../assets/fish-svgrepo-com.svg";
+import Weather from "../../assets/weather-rain-svgrepo-com.svg";
+import Timer from "../../assets/timer-svgrepo-com.svg";
+import Linkedin from "../../assets/linkedin-svgrepo-com.svg";
+
+const dataArray: Passengers[] = [
+  {
+    repoHref: "",
+    demoHref: "",
+    imageSrc: QuestionMark,
+    imageAlt: "question mark",
+    text: "About Me",
+  },
+  {
+    repoHref: "",
+    demoHref: "",
+    imageSrc: Resume,
+    imageAlt: "resume",
+    text: "Resume",
+  },
+  {
+    repoHref: "https://github.com/piacib/pokemon-showdown-extension",
+    demoHref: "",
+    imageSrc: Pokeball,
+    imageAlt: "pokeball",
+    text: "Pokemon Extension",
+  },
+  {
+    repoHref: "https://github.com/piacib/weather_typescript_app",
+    demoHref: "",
+    imageSrc: Weather,
+    imageAlt: "storm cloud",
+    text: "Weather",
+  },
+  {
+    repoHref: "https://github.com/piacib/hawaiian-fish",
+    demoHref: "",
+    imageSrc: Fish,
+    imageAlt: "fish",
+    text: "Fish",
+  },
+  {
+    repoHref: "https://github.com/piacib/reddit-timer-piacib",
+    demoHref: "",
+    imageSrc: Timer,
+    imageAlt: "timer",
+    text: "Reddit Post Timer",
+  },
+  {
+    repoHref: "",
+    demoHref: "",
+    imageSrc: Linkedin,
+    imageAlt: "linkedin",
+    text: "Linkedin",
+  },
+  {
+    repoHref: "",
+    demoHref: "",
+    imageSrc: Pokeball,
+    imageAlt: "",
+    text: "this site!",
+  },
+];
 
 type Hrefs = {
   repoHref: `https://${string}` | "";
@@ -12,12 +80,16 @@ type Hrefs = {
 
 export interface Passengers extends Hrefs {
   text: string;
+  onClick?: () => void;
 }
 interface Props {
-  dataArray: Passengers[];
+  mousePosition: {
+    x: number | null;
+    y: number | null;
+  };
 }
 
-const FerrisWheel: React.FC<Props> = ({ dataArray }) => {
+const FerrisWheel: React.FC<Props> = () => {
   const [centerImageData, setCenterImageData] = useState<Hrefs>({
     repoHref: "",
     demoHref: "",
@@ -25,6 +97,9 @@ const FerrisWheel: React.FC<Props> = ({ dataArray }) => {
     imageAlt: "",
   });
   const [mouseOnCenterImage] = useState<boolean>(false);
+  const [expandAboutMe, setExpandAboutMe] = useState<boolean>(false);
+  const [expandResume, setExpandResume] = useState<boolean>(false);
+
   const mouseOnCenterImageRef = useRef(mouseOnCenterImage);
   mouseOnCenterImageRef.current = mouseOnCenterImage;
 
@@ -48,6 +123,7 @@ const FerrisWheel: React.FC<Props> = ({ dataArray }) => {
       clearTimeout(clearImage());
     };
   }, [centerImageData.repoHref, mouseOnCenterImageRef]);
+
   return (
     <div className="orbit">
       <CenterImage
@@ -61,7 +137,7 @@ const FerrisWheel: React.FC<Props> = ({ dataArray }) => {
         href2={centerImageData.demoHref}
       />
       <ul>
-        {dataArray.map((data) => (
+        {dataArray.slice(2).map((data) => (
           <Bubble
             onClick={() => {
               setCenterImageData({
@@ -76,7 +152,53 @@ const FerrisWheel: React.FC<Props> = ({ dataArray }) => {
             text={data.text}
           />
         ))}
+        <Bubble
+          onClick={() => {
+            setCenterImageData({
+              repoHref: dataArray[0].repoHref,
+              imageSrc: dataArray[0].imageSrc,
+              imageAlt: dataArray[0].imageAlt,
+              demoHref: dataArray[0].demoHref,
+            });
+            setExpandAboutMe(!expandAboutMe);
+          }}
+          imageSrc={dataArray[0].imageSrc}
+          imageAlt={dataArray[0].imageAlt}
+          text={dataArray[0].text}
+        />
+        <Bubble
+          onClick={() => {
+            setCenterImageData({
+              repoHref: dataArray[1].repoHref,
+              imageSrc: dataArray[1].imageSrc,
+              imageAlt: dataArray[1].imageAlt,
+              demoHref: dataArray[1].demoHref,
+            });
+            setExpandResume(!expandResume);
+          }}
+          imageSrc={dataArray[1].imageSrc}
+          imageAlt={dataArray[1].imageAlt}
+          text={dataArray[1].text}
+        />
+        <div className="arms">
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
       </ul>
+      <ExpandingPage
+        expand={expandAboutMe}
+        setExpand={(e) => setExpandAboutMe(e)}
+      >
+        <div>About Me</div>
+      </ExpandingPage>
+      <ExpandingPage
+        expand={expandResume}
+        setExpand={(e) => setExpandResume(e)}
+      >
+        <div>Resume</div>
+      </ExpandingPage>
     </div>
   );
 };
