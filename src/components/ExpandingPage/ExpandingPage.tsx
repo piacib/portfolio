@@ -8,7 +8,9 @@ interface Props {
 const ExpandingPage: React.FC<Props> = ({ expand, setExpand, children }) => {
   return (
     <div className={expand ? "expand" : "display-none"}>
-      <button onClick={() => setExpand(false)}>X</button>
+      <button className="exit-button" onClick={() => setExpand(false)}>
+        x
+      </button>
       {children}
     </div>
   );
