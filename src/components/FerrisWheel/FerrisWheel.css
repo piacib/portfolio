@@ -1,0 +1,31 @@
+.arms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  height: var(--size);
+  width: var(--size);
+  z-index: 1;
+  border-radius: 50%;
+}
+.line {
+  position: absolute;
+  width: 8px;
+  z-index: 100;
+  transform-origin: center;
+  height: calc(var(--radius) * 2);
+  background-color: var(--p-text);
+}
+.arms div:nth-child(1) {
+  transform: rotate(45deg);
+}
+.arms div:nth-child(2) {
+  transform: rotate(90deg);
+}
+.arms div:nth-child(3) {
+  transform: rotate(135deg);
+}
+.arms div:nth-child(4) {
+  transform: rotate(180deg);
+}
