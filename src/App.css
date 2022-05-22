@@ -114,7 +114,9 @@
   }
 }
 .orbit {
-  width: var(--size);
   --speed: 120s;
-}
 
+  width: var(--size);
+  display: grid;
+  place-items: center;
+}
