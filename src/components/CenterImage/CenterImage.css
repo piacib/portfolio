@@ -53,7 +53,6 @@
 .repository {
   border-radius: var(--size) var(--size) 0 0;
   height: calc(var(--size) / 2);
-  top: 0;
   color: var(--dark-background);
   background-color: var(--p-text);
 }
