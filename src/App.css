@@ -57,8 +57,8 @@
   --purple-dark: rgb(128, 0, 128);
   --purple-light: rgb(197, 161, 211);
 
-  --p-text: #f9f8f8;
-  --dark-background: rgb(30, 30, 30);
+  --background: rgb(30, 30, 30);
+  --anti-background: #f9f8f8;
 }
 .theme-light {
   --pink-light: rgb(209, 62, 148);
@@ -88,8 +88,8 @@
   --purple-light: rgb(128, 0, 128);
   --purple-dark: rgb(197, 161, 211);
 
-  --dark-background: rgb(219 219 219);
-  --p-text: rgb(53, 53, 53);
+  --anti-background: rgb(30, 30, 30);
+  --background: #f9f8f8;
 }
 .App {
   position: relative;
