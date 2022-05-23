@@ -1,6 +1,6 @@
 html,
 #root {
-  background-color: var(--dark-background);
+  background-color: var(--background);
 }
 body {
   font-family: system-ui;
