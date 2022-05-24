@@ -1,72 +1,67 @@
 :root {
   --arm-width: 10px;
 }
-.arms {
+@keyframes ExtendCircleAnimation {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: var(--circle-size);
+    height: var(--circle-size);
+  }
+}
+@keyframes ExtendArmsAnimation {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: calc(var(--radius) * 2);
+  }
+}
+.flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 0;
-  height: var(--size);
-  width: var(--size);
-  z-index: 1;
-  border-radius: 50%;
-}
-.line {
-  position: absolute;
-  width: var(--arm-width);
-  z-index: 100;
-  transform-origin: center;
-  height: calc(var(--radius) * 2);
-  background-color: var(--p-text);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-.arms div:nth-child(1) {
-  transform: rotate(45deg);
-}
-.arms div:nth-child(2) {
-  transform: rotate(90deg);
-}
-.arms div:nth-child(3) {
-  transform: rotate(135deg);
-}
-.arms div:nth-child(4) {
-  transform: rotate(180deg);
 }
 .support {
   position: absolute;
-  top: 0;
-  margin-top: calc(var(--size) / 2);
   width: var(--size);
+  height: var(--size);
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
 }
 .support .support-beam {
-  position: absolute;
   transform-origin: top;
   width: var(--arm-width);
   height: calc(2 * var(--radius));
-  background-color: var(--p-text);
-
-  display: flex;
   flex-direction: column;
+}
+.support-beam,
+.base {
+  position: absolute;
+  background-color: var(--beam-color);
+  display: flex;
   align-items: center;
   justify-content: space-around;
 }
 .support-left {
-  transform: rotate(20deg);
+  transform: translateY(50%) rotate(20deg);
 }
 .support-right {
-  transform: rotate(-20deg);
+  transform: translateY(50%) rotate(-20deg);
 }
 .bolt {
   width: 5px;
   height: 5px;
-  background-color: var(--dark-background);
+  background-color: var(--background);
   border-radius: 50%;
+}
+
+.base {
+  height: calc(2 * var(--arm-width));
+  width: calc(2 * var(--radius));
+  top: calc(2.3 * var(--radius));
+}
+.background {
+  z-index: -1;
 }
