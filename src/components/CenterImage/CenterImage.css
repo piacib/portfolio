@@ -53,12 +53,12 @@
 .repository {
   border-radius: var(--size) var(--size) 0 0;
   height: calc(var(--size) / 2);
-  color: var(--dark-background);
-  background-color: var(--p-text);
+  color: var(--background);
+  background-color: var(--anti-background);
 }
 .demo {
-  background-color: var(--dark-background);
-  color: var(--p-text);
+  background-color: var(--background);
+  color: var(--anti-background);
   border-radius: 0 0 var(--size) var(--size);
   height: calc(var(--size) / 2);
   bottom: 0;
