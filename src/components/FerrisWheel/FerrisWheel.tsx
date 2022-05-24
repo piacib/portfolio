@@ -137,7 +137,7 @@ const FerrisWheel: React.FC<Props> = () => {
         href2={centerImageData.demoHref}
       />
       <ul>
-        {dataArray.slice(2).map((data) => (
+        {dataArray.slice(2).map((data, idx) => (
           <Bubble
             onClick={() => {
               setCenterImageData({
@@ -150,6 +150,7 @@ const FerrisWheel: React.FC<Props> = () => {
             imageSrc={data.imageSrc}
             imageAlt={data.imageAlt}
             text={data.text}
+            firstBubble={idx === 0 ? true : false}
           />
         ))}
         <Bubble
@@ -180,17 +181,8 @@ const FerrisWheel: React.FC<Props> = () => {
           imageAlt={dataArray[1].imageAlt}
           text={dataArray[1].text}
         />
-        <div className="arms">
-          {[1, 2, 3, 4].map((x) => (
-            <div className="line">
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((x) => (
-                <div className="bolt"></div>
-              ))}
-            </div>
-          ))}
-        </div>
       </ul>
-      <div className="support">
+      <div className="support flex-center">
         <div className="support-beam support-left">
           {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((x) => (
             <div className="bolt"></div>
@@ -201,8 +193,13 @@ const FerrisWheel: React.FC<Props> = () => {
             <div className="bolt"></div>
           ))}
         </div>
-        <div className="base"></div>
+        <div className="base">
+          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((x) => (
+            <div className="bolt"></div>
+          ))}
+        </div>
       </div>
+
       <ExpandingPage
         expand={expandAboutMe}
         setExpand={(e) => setExpandAboutMe(e)}
