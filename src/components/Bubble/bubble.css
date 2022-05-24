@@ -4,6 +4,12 @@
   --ExtendArmAnimation-length: 1.5s;
   --ExtendArmAnimation-type: ease-out;
 }
+.orbiting {
+  animation: orbit var(--speed) linear infinite;
+}
+.anti-orbiting {
+  animation: orbit var(--speed) linear reverse infinite;
+}
 .bubble-image {
   height: 60%;
   width: 60%;
@@ -29,13 +35,14 @@ li {
   transform-origin: center;
   animation: orbit var(--speed) linear infinite;
 }
+
 .orbit ul:hover {
   animation-play-state: paused;
   --orbit-play-state: paused;
 }
 .orbit li {
   position: absolute;
-  width: 8rem;
+  width: var(--li-width);
   aspect-ratio: 1;
   border-radius: 50%;
   font-weight: 500;
@@ -45,7 +52,8 @@ li {
   display: grid;
   place-items: center;
 }
-.orbit li > * {
+.orbit li .image-container,
+.orbit li p {
   width: 100%;
   height: 100%;
   display: grid;
@@ -55,7 +63,7 @@ li {
   animation: orbit var(--speed) linear reverse infinite;
   animation-play-state: var(--orbit-play-state, running);
 }
-.orbit li > div {
+.orbit .image-container {
   border: none;
   background-color: var(--icon-bg);
 }
@@ -64,7 +72,7 @@ li {
   background: var(--text-bg);
   transition: opacity 500ms;
   opacity: 0;
-  color: var(--p-text);
+  color: var(--anti-background);
 }
 .orbit li:hover > p {
   opacity: 1;
@@ -206,4 +214,69 @@ li {
   animation: ExtendArm8Animation var(--ExtendArmAnimation-length)
     var(--ExtendArmAnimation-type);
   transform: translate(var(--arm-length), calc(-1 * var(--arm-length)));
+}
+.arm {
+  position: absolute;
+  top: calc(var(--li-width) / 2);
+
+  transform-origin: top;
+  background-color: var(--anti-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.support-arm {
+  width: var(--arm-width);
+  height: var(--radius);
+}
+.connector-arm {
+  width: var(--arm-width);
+  height: var(--radius);
+}
+.orbit li:nth-child(1) .support-arm {
+  transform: rotate(90deg);
+}
+.orbit li:nth-child(2) .support-arm {
+  transform: rotate(135deg);
+}
+.orbit li:nth-child(3) .support-arm {
+  transform: rotate(180deg);
+}
+.orbit li:nth-child(4) .support-arm {
+  transform: rotate(225deg);
+}
+.orbit li:nth-child(5) .support-arm {
+  transform: rotate(270deg);
+}
+.orbit li:nth-child(6) .support-arm {
+  transform: rotate(315deg);
+}
+
+.orbit li:nth-child(8) .support-arm {
+  transform: rotate(45deg);
+}
+.orbit li:nth-child(1) .connector-arm {
+  transform: rotate(22.5deg);
+}
+.orbit li:nth-child(2) .connector-arm {
+  transform: rotate(67.5deg);
+}
+.orbit li:nth-child(3) .connector-arm {
+  transform: rotate(112.5deg);
+}
+.orbit li:nth-child(4) .connector-arm {
+  transform: rotate(157.5deg);
+}
+.orbit li:nth-child(5) .connector-arm {
+  transform: rotate(202.5deg);
+}
+.orbit li:nth-child(6) .connector-arm {
+  transform: rotate(247.5deg);
+}
+.orbit li:nth-child(7) .connector-arm {
+  transform: rotate(292.5deg);
+}
+.orbit li:nth-child(8) .connector-arm {
+  transform: rotate(337.5deg);
 }

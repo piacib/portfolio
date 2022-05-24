@@ -2,9 +2,7 @@
   :root {
     --radius: 12rem;
     --arm-length: 8.485rem;
-  }
-  .orbit li {
-    width: 6rem;
+    --li-width: 6rem;
   }
   .orbit li > p {
     font-size: 1.2rem;
@@ -14,9 +12,7 @@
   :root {
     --radius: 9rem;
     --arm-length: 6.364rem;
-  }
-  .orbit li {
-    width: 4.5rem;
+    --li-width: 4.5rem;
   }
   .orbit li > p {
     font-size: 1rem;
@@ -26,10 +22,9 @@
   :root {
     --radius: 7rem;
     --arm-length: 4.9497rem;
+    --li-width: 3.5rem;
   }
-  .orbit li {
-    width: 3.5rem;
-  }
+
   .orbit li > p {
     font-size: 0.85rem;
   }
