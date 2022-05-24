@@ -6,12 +6,14 @@ interface BubbleProps {
   imageSrc: string;
   imageAlt: string;
   text: string;
+  firstBubble?: boolean;
   onClick?: () => void;
 }
 const Bubble: React.FC<BubbleProps> = ({
   imageSrc,
   imageAlt,
   text,
+  firstBubble = false,
   onClick,
 }) => {
   return (
@@ -21,6 +23,13 @@ const Bubble: React.FC<BubbleProps> = ({
           <div className="bolt"></div>
         ))}
       </div>
+      {firstBubble && (
+        <div className="arm connector-arm">
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((x) => (
+            <div className="bolt"></div>
+          ))}
+        </div>
+      )}
       <div className="arm connector-arm">
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((x) => (
           <div className="bolt"></div>
