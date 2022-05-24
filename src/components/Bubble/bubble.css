@@ -4,19 +4,9 @@
   --ExtendArmAnimation-length: 1.5s;
   --ExtendArmAnimation-type: ease-out;
 }
-.orbiting {
-  animation: orbit var(--speed) linear infinite;
-}
-.anti-orbiting {
-  animation: orbit var(--speed) linear reverse infinite;
-}
 .bubble-image {
   height: 60%;
   width: 60%;
-}
-li {
-  list-style: none;
-  z-index: 2;
 }
 .bubble {
   position: absolute;
@@ -35,7 +25,6 @@ li {
   transform-origin: center;
   animation: orbit var(--speed) linear infinite;
 }
-
 .orbit ul:hover {
   animation-play-state: paused;
   --orbit-play-state: paused;
@@ -51,6 +40,8 @@ li {
   line-height: 1;
   display: grid;
   place-items: center;
+  list-style: none;
+  z-index: 2;
 }
 .orbit li .image-container,
 .orbit li p {
@@ -94,7 +85,6 @@ li {
   transform: translate(var(--radius), 0rem);
 }
 /* text: "Pokemon Extension", */
-
 @keyframes ExtendArm2Animation {
   0% {
     transform: translate(0rem, 0rem);
@@ -127,7 +117,6 @@ li {
   transform: translate(0, var(--radius));
 }
 /* text: "Fish", */
-
 @keyframes ExtendArm4Animation {
   0% {
     transform: translate(0rem, 0rem);
@@ -144,7 +133,6 @@ li {
   transform: translate(calc(-1 * var(--arm-length)), var(--arm-length));
 }
 /* text: "Reddit Post Timer", */
-
 @keyframes ExtendArm5Animation {
   0% {
     transform: translate(0rem, 0rem);
@@ -161,7 +149,6 @@ li {
   transform: translate(calc(var(--radius) * -1), 0rem);
 }
 /* text: "Linkedin", */
-
 @keyframes ExtendArm6Animation {
   0% {
     transform: translate(0rem, 0rem);
@@ -215,22 +202,21 @@ li {
     var(--ExtendArmAnimation-type);
   transform: translate(var(--arm-length), calc(-1 * var(--arm-length)));
 }
+
 .arm {
   position: absolute;
   top: calc(var(--li-width) / 2);
-
+  z-index: 0;
   transform-origin: top;
-  background-color: var(--anti-background);
+  background-color: var(--beam-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  animation: Extend1Support var(--ExtendArmAnimation-length)
+    var(--ExtendArmAnimation-type);
 }
 .support-arm {
-  width: var(--arm-width);
-  height: var(--radius);
-}
-.connector-arm {
   width: var(--arm-width);
   height: var(--radius);
 }
@@ -252,12 +238,26 @@ li {
 .orbit li:nth-child(6) .support-arm {
   transform: rotate(315deg);
 }
-
 .orbit li:nth-child(8) .support-arm {
   transform: rotate(45deg);
 }
+@keyframes Extend1Support {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: var(--radius);
+  }
+}
+.connector-arm {
+  width: var(--arm-width);
+  height: var(--radius);
+}
 .orbit li:nth-child(1) .connector-arm {
   transform: rotate(22.5deg);
+}
+.orbit li:nth-child(1) .connector-arm:nth-child(2) {
+  transform: rotate(157.5deg);
 }
 .orbit li:nth-child(2) .connector-arm {
   transform: rotate(67.5deg);
@@ -277,6 +277,6 @@ li {
 .orbit li:nth-child(7) .connector-arm {
   transform: rotate(292.5deg);
 }
-.orbit li:nth-child(8) .connector-arm {
-  transform: rotate(337.5deg);
+.orbit li:last-child .connector-arm {
+  display: none;
 }
