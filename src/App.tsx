@@ -4,6 +4,7 @@ import "./normalize.css";
 import { keepTheme } from "./utils/theme";
 import FerrisWheel from "./components/FerrisWheel/FerrisWheel";
 import Toggle from "./components/Toggle/Toggle";
+import Grass from "./components/Grass/Grass";
 
 function App() {
   const [x, setX] = useState<number | null>(null);
@@ -26,6 +27,7 @@ function App() {
     <div className="App">
       <Toggle />
       <FerrisWheel mousePosition={{ x, y }} />
+      <Grass />
     </div>
   );
 }
