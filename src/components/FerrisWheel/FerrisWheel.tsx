@@ -82,14 +82,8 @@ export interface Passengers extends Hrefs {
   text: string;
   onClick?: () => void;
 }
-interface Props {
-  mousePosition: {
-    x: number | null;
-    y: number | null;
-  };
-}
 
-const FerrisWheel: React.FC<Props> = () => {
+const FerrisWheel: React.FC = () => {
   const [centerImageData, setCenterImageData] = useState<Hrefs>({
     repoHref: "",
     demoHref: "",
@@ -151,6 +145,7 @@ const FerrisWheel: React.FC<Props> = () => {
             imageAlt={data.imageAlt}
             text={data.text}
             firstBubble={idx === 0 ? true : false}
+            key={data.text}
           />
         ))}
         <Bubble
@@ -166,6 +161,7 @@ const FerrisWheel: React.FC<Props> = () => {
           imageSrc={dataArray[0].imageSrc}
           imageAlt={dataArray[0].imageAlt}
           text={dataArray[0].text}
+          key={dataArray[0].text}
         />
         <Bubble
           onClick={() => {
@@ -180,6 +176,7 @@ const FerrisWheel: React.FC<Props> = () => {
           imageSrc={dataArray[1].imageSrc}
           imageAlt={dataArray[1].imageAlt}
           text={dataArray[1].text}
+          key={dataArray[1].text}
         />
       </ul>
       <div className="support flex-center">
