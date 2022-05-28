@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./toggle.css";
 import { setTheme } from "../../utils/theme";
 // to adjust toggle size set font-size
-function Toggle() {
+const Toggle = () => {
   const [togClass, setTogClass] = useState("dark");
   let theme = localStorage.getItem("theme");
-  // check for preferred theme
+  // check local storage for preferred theme
   useEffect(() => {
     if (localStorage.getItem("theme") === "theme-dark") {
       setTogClass("dark");
@@ -37,6 +37,6 @@ function Toggle() {
       </label>
     </div>
   );
-}
+};
 
 export default Toggle;
