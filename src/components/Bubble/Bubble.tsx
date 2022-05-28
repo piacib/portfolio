@@ -19,20 +19,20 @@ const Bubble: React.FC<BubbleProps> = ({
   return (
     <li className="bubble" onClick={onClick}>
       <div className="arm support-arm">
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((x) => (
-          <div className="bolt"></div>
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((x, idx) => (
+          <div key={"support" + idx} className="bolt"></div>
         ))}
       </div>
       {firstBubble && (
         <div className="arm connector-arm">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((x) => (
-            <div className="bolt"></div>
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((x, idx) => (
+            <div key={"support" + idx} className="bolt"></div>
           ))}
         </div>
       )}
       <div className="arm connector-arm">
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((x) => (
-          <div className="bolt"></div>
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((x, idx) => (
+          <div key={"connector" + idx} className="bolt"></div>
         ))}
       </div>
       <div className="image-container">
