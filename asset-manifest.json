@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.02e444c6.css",
+    "main.js": "/portfolio/static/js/main.8891b54f.js",
+    "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
+    "static/media/me.jpg": "/portfolio/static/media/me.4ccac283ebd179596650.jpg",
+    "static/media/fish-svgrepo-com.svg": "/portfolio/static/media/fish-svgrepo-com.7badd6b1a565904f58062e9397e64fcc.svg",
+    "static/media/weather-rain-svgrepo-com.svg": "/portfolio/static/media/weather-rain-svgrepo-com.6d9f4b4385ef85c2cfced04ee0f899ee.svg",
+    "static/media/resume-svgrepo-com.svg": "/portfolio/static/media/resume-svgrepo-com.85e1494c6b1f8ebf4435afdd7254e1fe.svg",
+    "static/media/timer-svgrepo-com.svg": "/portfolio/static/media/timer-svgrepo-com.22f00d0d765820ab9a981156a8b3c543.svg",
+    "static/media/pokeball-svgrepo-com.svg": "/portfolio/static/media/pokeball-svgrepo-com.a9b09b4ebb85183ef29f5c3448be1d50.svg",
+    "static/media/question-mark-svgrepo-com.svg": "/portfolio/static/media/question-mark-svgrepo-com.57a6ffb7187872bb332ed2a185f3018a.svg",
+    "static/media/linkedin-svgrepo-com.svg": "/portfolio/static/media/linkedin-svgrepo-com.d09d64fe30b941c2d5dba4695179f496.svg",
+    "index.html": "/portfolio/index.html",
+    "main.02e444c6.css.map": "/portfolio/static/css/main.02e444c6.css.map",
+    "main.8891b54f.js.map": "/portfolio/static/js/main.8891b54f.js.map",
+    "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.02e444c6.css",
+    "static/js/main.8891b54f.js"
+  ]
+}
