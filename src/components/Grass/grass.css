@@ -3,17 +3,19 @@
   /*   display: inline-block; */
   bottom: -0.5rem;
   left: 0;
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
   /*     opacity:0; */
   display: flex;
   justify-content: space-between;
   --blade-height: 6rem;
+  --max-blade-height: 20vh;
   height: var(--blade-height);
 }
 
 .blade {
   height: var(--blade-height);
+  max-height: var(--max-blade-height);
   width: 1rem;
   /*   background-image: url("https://www.transparenttextures.com/patterns/cardboard.png"); */
   background-size: 300px 300px;
