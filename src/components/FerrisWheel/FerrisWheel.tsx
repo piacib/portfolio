@@ -83,6 +83,28 @@ export interface Passengers extends Hrefs {
   onClick?: () => void;
 }
 
+export const Beams = () => {
+  return (
+    <div className="support flex-center">
+      <div className="support-beam support-left">
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((x, idx) => (
+          <div key={"support" + idx} className="bolt"></div>
+        ))}
+      </div>
+      <div className="support-beam support-right">
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((x, idx) => (
+          <div key={"support" + idx} className="bolt"></div>
+        ))}
+      </div>
+      <div className="base">
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((x, idx) => (
+          <div key={"base" + idx} className="bolt"></div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const FerrisWheel: React.FC = () => {
   const [centerImageData, setCenterImageData] = useState<Hrefs>({
     repoHref: "",
@@ -179,29 +201,22 @@ const FerrisWheel: React.FC = () => {
           key={dataArray[1].text}
         />
       </ul>
-      <div className="support flex-center">
-        <div className="support-beam support-left">
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((x, idx) => (
-            <div key={"support" + idx} className="bolt"></div>
-          ))}
-        </div>
-        <div className="support-beam support-right">
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((x, idx) => (
-            <div key={"support" + idx} className="bolt"></div>
-          ))}
-        </div>
-        <div className="base">
-          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((x, idx) => (
-            <div key={"base" + idx} className="bolt"></div>
-          ))}
-        </div>
-      </div>
+      <Beams />
 
       <ExpandingPage
         expand={expandAboutMe}
         setExpand={(e) => setExpandAboutMe(e)}
       >
-        <div>About Me</div>
+        <>
+          <h1>About Me</h1>
+          <p>
+            I am an aspiring front end web developer currently searching for a
+            job. I graduated for the University of Washington in 2019 with a
+            degree in Physics and Astronomy. Since then I have been teaching
+            myself Html css Javascript and react. Currently I am living in
+            Hawaii working on Tour boats as a deckhand and swim guide.
+          </p>
+        </>
       </ExpandingPage>
       <ExpandingPage
         expand={expandResume}
