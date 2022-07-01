@@ -11,6 +11,7 @@ import Fish from "../../assets/fish-svgrepo-com.svg";
 import Weather from "../../assets/weather-rain-svgrepo-com.svg";
 import Timer from "../../assets/timer-svgrepo-com.svg";
 import Linkedin from "../../assets/linkedin-svgrepo-com.svg";
+import AboutMe from "../AboutMe/AboutMe";
 
 const dataArray: Passengers[] = [
   {
@@ -83,7 +84,7 @@ export interface Passengers extends Hrefs {
   onClick?: () => void;
 }
 
-export const Beams = () => {
+const Beams = () => {
   return (
     <div className="support flex-center">
       <div className="support-beam support-left">
@@ -202,22 +203,7 @@ const FerrisWheel: React.FC = () => {
         />
       </ul>
       <Beams />
-
-      <ExpandingPage
-        expand={expandAboutMe}
-        setExpand={(e) => setExpandAboutMe(e)}
-      >
-        <>
-          <h1>About Me</h1>
-          <p>
-            I am an aspiring front end web developer currently searching for a
-            job. I graduated for the University of Washington in 2019 with a
-            degree in Physics and Astronomy. Since then I have been teaching
-            myself Html css Javascript and react. Currently I am living in
-            Hawaii working on Tour boats as a deckhand and swim guide.
-          </p>
-        </>
-      </ExpandingPage>
+      <AboutMe expand={expandAboutMe} setExpand={(e) => setExpandAboutMe(e)} />
       <ExpandingPage
         expand={expandResume}
         setExpand={(e) => setExpandResume(e)}
