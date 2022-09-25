@@ -93,6 +93,44 @@
   --background: #f9f8f8;
   --beam-color: rgb(63, 62, 62);
 }
+.blue {
+  --icon-bg: var(--blue-light);
+  --text-bg: var(--blue-dark);
+}
+.green {
+  --icon-bg: var(--green-light);
+  --text-bg: var(--green-dark);
+}
+.pink {
+  --icon-bg: var(--pink-light);
+  --text-bg: var(--pink-dark);
+}
+.teal {
+  --icon-bg: var(--teal-light);
+  --text-bg: var(--teal-dark);
+}
+.red {
+  --icon-bg: var(--red-light);
+  --text-bg: var(--red-dark);
+}
+.linkedin {
+  --icon-bg: var(--linkedin-blue);
+  --text-bg: var(--linkedin-blue-dark);
+}
+.purple {
+  --icon-bg: var(--purple-light);
+  --text-bg: var(--purple-dark);
+}
+.orange {
+  --icon-bg: var(--orange-light);
+  --text-bg: var(--orange-dark);
+}
+.opacity1 {
+  opacity: 1;
+}
+.opacity0 {
+  opacity: 0;
+}
 .App {
   position: relative;
 }
