@@ -8,6 +8,7 @@ interface Props {
   imageSrc: string;
   imageAlt: string;
   mouseOnCenterImage: (arg1: boolean) => void;
+  backgroundColor?: string;
 }
 const CenterImage: React.FC<Props> = ({
   src1,
@@ -16,6 +17,7 @@ const CenterImage: React.FC<Props> = ({
   href1,
   href2,
   mouseOnCenterImage,
+  backgroundColor = "",
 }) => {
   return (
     <div
@@ -33,12 +35,12 @@ const CenterImage: React.FC<Props> = ({
         }`}
       >
         {href1 ? (
-          <a className="repository" href={href1}>
+          <a className={`repository ${backgroundColor}`} href={href1}>
             <span>Repository</span>
           </a>
         ) : null}
         {href2 ? (
-          <a className="demo" href={href2}>
+          <a className={`demo ${backgroundColor}`} href={href2}>
             <span>Demo</span>
           </a>
         ) : null}

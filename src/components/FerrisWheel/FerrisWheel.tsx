@@ -20,6 +20,7 @@ const dataArray: Passengers[] = [
     imageSrc: QuestionMark,
     imageAlt: "question mark",
     text: "About Me",
+    backgroundColor: "blue",
   },
   {
     repoHref: "",
@@ -30,31 +31,35 @@ const dataArray: Passengers[] = [
   },
   {
     repoHref: "https://github.com/piacib/pokemon-showdown-extension",
-    demoHref: "",
+    demoHref: "https://github.com/piacib/pokemon-showdown-extension",
     imageSrc: Pokeball,
     imageAlt: "pokeball",
     text: "Pokemon Extension",
+    backgroundColor: "blue",
   },
   {
     repoHref: "https://github.com/piacib/weather_typescript_app",
-    demoHref: "",
+    demoHref: "https://github.com/piacib/weather_typescript_app",
     imageSrc: Weather,
     imageAlt: "storm cloud",
     text: "Weather",
+    backgroundColor: "green",
   },
   {
     repoHref: "https://github.com/piacib/hawaiian-fish",
-    demoHref: "",
+    demoHref: "https://github.com/piacib/hawaiian-fish",
     imageSrc: Fish,
     imageAlt: "fish",
     text: "Fish",
+    backgroundColor: "pink",
   },
   {
     repoHref: "https://github.com/piacib/reddit-timer-piacib",
-    demoHref: "",
+    demoHref: "https://github.com/piacib/reddit-timer-piacib",
     imageSrc: Timer,
     imageAlt: "timer",
     text: "Reddit Post Timer",
+    backgroundColor: "teal",
   },
   {
     repoHref: "",
@@ -64,19 +69,21 @@ const dataArray: Passengers[] = [
     text: "Linkedin",
   },
   {
-    repoHref: "",
-    demoHref: "",
+    repoHref: "https://github.com/piacib/",
+    demoHref: "https://github.com/piacib/",
     imageSrc: Pokeball,
     imageAlt: "",
     text: "this site!",
+    backgroundColor: "orange",
   },
 ];
 
 type Hrefs = {
   repoHref: `https://${string}` | "";
-  demoHref: string;
+  demoHref: `https://${string}` | "";
   imageSrc: string;
   imageAlt: string;
+  backgroundColor?: string;
 };
 
 export interface Passengers extends Hrefs {
@@ -112,6 +119,7 @@ const FerrisWheel: React.FC = () => {
     demoHref: "",
     imageSrc: "",
     imageAlt: "",
+    backgroundColor: "",
   });
   const [mouseOnCenterImage] = useState<boolean>(false);
   const [expandAboutMe, setExpandAboutMe] = useState<boolean>(false);
@@ -127,6 +135,7 @@ const FerrisWheel: React.FC = () => {
         demoHref: "",
         imageSrc: "",
         imageAlt: "",
+        backgroundColor: "",
       });
     }
   };
@@ -152,6 +161,7 @@ const FerrisWheel: React.FC = () => {
         imageAlt={centerImageData.imageAlt}
         href1={centerImageData.repoHref}
         href2={centerImageData.demoHref}
+        backgroundColor={centerImageData.backgroundColor}
       />
       <ul>
         {dataArray.slice(2).map((data, idx) => (
@@ -162,6 +172,7 @@ const FerrisWheel: React.FC = () => {
                 imageSrc: data.imageSrc,
                 imageAlt: data.imageAlt,
                 demoHref: data.demoHref,
+                backgroundColor: data.backgroundColor,
               });
             }}
             imageSrc={data.imageSrc}
