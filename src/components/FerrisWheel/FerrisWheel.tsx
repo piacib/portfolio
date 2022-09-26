@@ -12,7 +12,8 @@ import Weather from "../../assets/weather-rain-svgrepo-com.svg";
 import Timer from "../../assets/timer-svgrepo-com.svg";
 import Linkedin from "../../assets/linkedin-svgrepo-com.svg";
 import AboutMe from "../AboutMe/AboutMe";
-
+import { Beams } from "./Beams";
+import { Passengers, Hrefs } from "./types";
 const dataArray: Passengers[] = [
   {
     repoHref: "",
@@ -77,41 +78,6 @@ const dataArray: Passengers[] = [
     backgroundColor: "orange",
   },
 ];
-
-type Hrefs = {
-  repoHref: `https://${string}` | "";
-  demoHref: `https://${string}` | "";
-  imageSrc: string;
-  imageAlt: string;
-  backgroundColor?: string;
-};
-
-export interface Passengers extends Hrefs {
-  text: string;
-  onClick?: () => void;
-}
-
-const Beams = () => {
-  return (
-    <div className="support flex-center">
-      <div className="support-beam support-left">
-        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((x, idx) => (
-          <div key={"support" + idx} className="bolt"></div>
-        ))}
-      </div>
-      <div className="support-beam support-right">
-        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((x, idx) => (
-          <div key={"support" + idx} className="bolt"></div>
-        ))}
-      </div>
-      <div className="base">
-        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((x, idx) => (
-          <div key={"base" + idx} className="bolt"></div>
-        ))}
-      </div>
-    </div>
-  );
-};
 
 const FerrisWheel: React.FC = () => {
   const [centerImageData, setCenterImageData] = useState<Hrefs>({
@@ -184,12 +150,13 @@ const FerrisWheel: React.FC = () => {
         ))}
         <Bubble
           onClick={() => {
-            setCenterImageData({
-              repoHref: dataArray[0].repoHref,
-              imageSrc: dataArray[0].imageSrc,
-              imageAlt: dataArray[0].imageAlt,
-              demoHref: dataArray[0].demoHref,
-            });
+            setCenterImageData(dataArray[0]);
+            //   {
+            //   repoHref: dataArray[0].repoHref,
+            //   imageSrc: dataArray[0].imageSrc,
+            //   imageAlt: dataArray[0].imageAlt,
+            //   demoHref: dataArray[0].demoHref,
+            // });
             setExpandAboutMe(!expandAboutMe);
           }}
           imageSrc={dataArray[0].imageSrc}
