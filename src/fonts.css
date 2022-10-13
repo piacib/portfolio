@@ -1,14 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Old+Standard+TT&display=swap");
 
-/* 
-font-family: 'Bebas Neue', cursive; 
-*/
 h1 {
   font-family: "Bebas Neue", cursive;
 }
-/* 
-font-family: 'Old Standard TT', serif;
- */
 p,
 span,
 a {
