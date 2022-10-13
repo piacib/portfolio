@@ -1,4 +1,6 @@
 .grass {
+  --blade-height: 6rem;
+  --max-blade-height: 20vh;
   position: fixed;
   bottom: -0.5rem;
   left: 0;
@@ -6,8 +8,6 @@
   overflow: hidden;
   display: flex;
   justify-content: space-between;
-  --blade-height: 6rem;
-  --max-blade-height: 20vh;
   height: var(--blade-height);
 }
 
@@ -22,7 +22,7 @@
   transform-origin: 50% 100%;
   margin-top: 2rem;
   margin-left: -0.5rem;
-    box-shadow: rgba(0,0,0, 0.25) 0.25rem 1rem 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0.25rem 1rem 0.25rem;
 }
 .blade:nth-of-type(2n) {
   width: 0.75rem;
@@ -69,7 +69,6 @@
   width: 0.5rem;
   transform: rotate(-5deg);
   height: calc(var(--blade-height * 1.7));
-
   margin-top: 0;
   animation: wind-five 7s ease alternate infinite;
 }
@@ -77,78 +76,5 @@
 .blade:nth-of-type(24n) {
   transform: rotate(12deg);
   height: calc(var(--blade-height * 1.8));
-
   margin-top: 0.5;
 }
-
-/* @keyframes wind-three {
-  100% {
-    transform: rotate(5deg);
-  }
-}
-
-@keyframes wind-five {
-  100% {
-    transform: rotate(5deg);
-  }
-}
-
-@keyframes wind-seven {
-  100% {
-    transform: rotate(7deg);
-  }
-}
-
-@keyframes wave {
-  0% {
-    transform: rotate(-30deg);
-  }
-  10% {
-    transform: rotate(55deg);
-  }
-  15% {
-    transform: rotate(35deg);
-  }
-  20% {
-    transform: rotate(55deg);
-  }
-  25% {
-    transform: rotate(45deg);
-  }
-  30% {
-    transform: rotate(60deg);
-  }
-  35% {
-    transform: rotate(45deg);
-  }
-  40% {
-    transform: rotate(55deg);
-  }
-  46% {
-    transform: rotate(40deg);
-  }
-  50% {
-    transform: rotate(55deg);
-  }
-  55% {
-    transform: rotate(45deg);
-  }
-  60% {
-    transform: rotate(58deg);
-  }
-  65% {
-    transform: rotate(42deg);
-  }
-  70% {
-    transform: rotate(55deg);
-  }
-  75% {
-    transform: rotate(40deg);
-  }
-  80% {
-    transform: rotate(-30deg);
-  }
-  100% {
-    transform: rotate(-30deg);
-  }
-} */
