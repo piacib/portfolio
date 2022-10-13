@@ -151,12 +151,6 @@ const FerrisWheel: React.FC = () => {
         <Bubble
           onClick={() => {
             setCenterImageData(dataArray[0]);
-            //   {
-            //   repoHref: dataArray[0].repoHref,
-            //   imageSrc: dataArray[0].imageSrc,
-            //   imageAlt: dataArray[0].imageAlt,
-            //   demoHref: dataArray[0].demoHref,
-            // });
             setExpandAboutMe(!expandAboutMe);
           }}
           imageSrc={dataArray[0].imageSrc}
