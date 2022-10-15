@@ -3,7 +3,6 @@ import Bubble from "../Bubble/Bubble";
 import "./FerrisWheel.css";
 import CenterImage from "../CenterImage/CenterImage";
 import Me from "../../assets/me.jpg";
-import ExpandingPage from "../ExpandingPage/ExpandingPage";
 import QuestionMark from "../../assets/question-mark-svgrepo-com.svg";
 import Resume from "../../assets/resume-svgrepo-com.svg";
 import Pokeball from "../../assets/pokeball-svgrepo-com.svg";
@@ -11,8 +10,6 @@ import Fish from "../../assets/fish-svgrepo-com.svg";
 import Weather from "../../assets/weather-rain-svgrepo-com.svg";
 import Timer from "../../assets/timer-svgrepo-com.svg";
 import Linkedin from "../../assets/linkedin-svgrepo-com.svg";
-import AboutMe from "../AboutMe/AboutMe";
-import { Beams } from "./Beams";
 import { Passengers, Hrefs } from "./types";
 const dataArray: Passengers[] = [
   {
@@ -158,6 +155,7 @@ const FerrisWheel: React.FC = () => {
           text={dataArray[0].text}
           key={dataArray[0].text}
         />
+
         <Bubble
           onClick={() => {
             setCenterImageData({
@@ -174,14 +172,6 @@ const FerrisWheel: React.FC = () => {
           key={dataArray[1].text}
         />
       </ul>
-      <Beams />
-      <AboutMe expand={expandAboutMe} setExpand={(e) => setExpandAboutMe(e)} />
-      <ExpandingPage
-        expand={expandResume}
-        setExpand={(e) => setExpandResume(e)}
-      >
-        <div>Resume</div>
-      </ExpandingPage>
     </div>
   );
 };
