@@ -1,0 +1,26 @@
+#projects {
+  display: grid;
+}
+.project_list {
+  list-style: none;
+}
+.temp_img {
+  height: var(--card-size);
+  width: var(--card-size);
+  background-color: green;
+  margin: 1px;
+}
+#projects li {
+  --card-size: 15rem;
+  background: grey;
+  margin: 5px;
+  width: var(--card-size);
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+#projects li > h2 {
+  text-align: center;
+}
