@@ -52,12 +52,11 @@
 
 .container-toggle {
   display: grid;
+  position: absolute;
   font-size: 16px;
   place-items: center;
-  position: fixed;
   top: 0;
   right: 0;
-  grid-area: toggle;
   margin: 1.25em;
 }
 
