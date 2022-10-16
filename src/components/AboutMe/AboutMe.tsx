@@ -1,12 +1,16 @@
 import React from "react";
 import "./AboutMe.css";
 import Me from "../../assets/me.jpg";
-
+import CssHtmlSvg from "../../assets/CSS";
 const AboutMe: React.FC = () => {
   return (
     <section id="about_me">
       <h1 className="section_header">About Me</h1>
       <ul className="about_me_skills">
+        <li>
+          <CssHtmlSvg img={"css"} />
+        </li>
+        <li>{/* <CssHtmlSvg img={"html"} /> */}</li>
         <li>Html</li>
         <li>CSS</li>
         <li>React</li>
