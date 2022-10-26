@@ -25,9 +25,9 @@ const StarBackground = () => {
   }
   return (
     <div className="star_container">
-      <div className='star_sheet' id="stars1"></div>
-      <div className='star_sheet' id="stars2"></div>
-      <div className='star_sheet' id="stars3"></div>
+      <div className="star_sheet" id="stars1"></div>
+      <div className="star_sheet" id="stars2"></div>
+      <div className="star_sheet" id="stars3"></div>
     </div>
   );
 };
