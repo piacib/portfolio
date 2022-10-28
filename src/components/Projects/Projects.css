@@ -11,7 +11,7 @@
   background-color: green;
   margin: 1px;
 }
-#projects li {
+.project_list > li {
   --card-size: 15rem;
   --card-height: 25rem;
   background: grey;
@@ -33,32 +33,53 @@
   height: var(--card-size);
 }
 .project_links {
-  position: absolute;
   width: 100%;
-  height: 100%;
-  display: none;
-}
-#projects .project_container:hover + .project_links,
-.project_links:hover {
-  background-color: var(--color-2);
+  height: 4rem;
   display: flex;
-  /* align-items: center; */
-  /* justify-content: space-around; */
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
 }
+
+/* #projects .project_container:hover + .project_hover .project_links,
+.project_hover .project_links:hover {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+} */
 .project_links a {
-  width: 100%;
   text-align: center;
   justify-content: center;
-  height: calc(var(--card-height) / 2);
-  line-height: calc(var(--card-height) / 2);
   text-decoration: none;
   font-size: 2rem;
+  border-radius: 10px;
+  padding: 10px 5px;
 }
 .project_links a:first-child {
   background-color: var(--color-3);
+  color: var(--color-2);
+}
+.project_links a:nth-child(2) {
+  background-color: var(--color-2);
+  color: var(--color-3);
 }
 .project_container h2 {
   text-align: center;
   font-size: 1.7rem;
+}
+.project_hover {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-4);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+}
+.project_hover:hover {
+  opacity: 1;
+}
+.project_skills {
+  background-color: none;
 }
