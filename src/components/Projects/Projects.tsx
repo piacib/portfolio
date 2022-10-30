@@ -7,19 +7,21 @@ import resume from "../../assets/resume-svgrepo-com.svg";
 import weather from "../../assets/weather-rain-svgrepo-com.svg";
 import timer from "../../assets/timer-svgrepo-com.svg";
 
-interface LiProps {
+interface Props {
   title: string;
   src: string;
   alt: string;
   demoHref: string;
   repoHref: string;
+  children?: React.ReactNode;
 }
-const ProjectLi: React.FC<LiProps> = ({
+const ProjectLi: React.FC<Props> = ({
   title,
   src,
   alt,
   demoHref,
   repoHref,
+  children,
 }) => {
   return (
     <li>
@@ -27,9 +29,13 @@ const ProjectLi: React.FC<LiProps> = ({
         <h2>{title}</h2>
         <img className="project_image" src={src} alt={alt} />
       </div>
-      <div className="project_links">
-        <a href={demoHref}>Demo</a>
-        <a href={repoHref}>Repository</a>
+      <div className="project_hover">
+        <div className="project_links">
+          <a href={demoHref}>Demo</a>
+          <a href={repoHref}>Repo</a>
+        </div>
+        <h3>Skills</h3>
+        <ul className="project_skills">{children}</ul>
       </div>
     </li>
   );
@@ -45,35 +51,58 @@ const Projects = () => {
           alt={"world"}
           demoHref={""}
           repoHref={""}
-        />
+        >
+          <li>SVG</li>
+          <li>local storage</li>
+          <li>display</li>
+          <li>css</li>
+        </ProjectLi>
+
         <ProjectLi
           title={"Pokemon Showdown Extension"}
           src={pokeball}
           alt={"pokeball"}
           demoHref={""}
           repoHref={"https://github.com/piacib/pokemon-showdown-extension"}
-        />
+        >
+          <li>Chrome Extension</li>
+          <li>Responsive design</li>
+          <li>Api requests</li>
+          <li>code splitting</li>
+        </ProjectLi>
         <ProjectLi
           title={"Weather"}
           src={weather}
           alt={"storm cloud"}
           repoHref={"https://github.com/piacib/weather_typescript_app"}
           demoHref={""}
-        />
+        >
+          <li>Typescript</li>
+          <li>Api requests</li>
+          <li>Error Handling</li>
+        </ProjectLi>
         <ProjectLi
           title={"Reddit Timer App"}
           src={timer}
           alt={"timer"}
           repoHref={"https://github.com/piacib/reddit-timer-piacib"}
           demoHref={""}
-        />
+        >
+          <li>React Testing</li>
+          <li>Following an established Design</li>
+          <li>Api Requests</li>
+        </ProjectLi>
         <ProjectLi
           title={"This Site"}
           src={resume}
           alt={"paper and pen"}
           demoHref={""}
           repoHref={"https://github.com/piacib/portfolio"}
-        />
+        >
+          <li>CSS Variables</li>
+          <li>Responsive Design </li>
+          <li>Mobile Design</li>
+        </ProjectLi>
       </ul>
     </section>
   );
