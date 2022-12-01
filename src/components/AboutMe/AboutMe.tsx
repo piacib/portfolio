@@ -1,23 +1,44 @@
 import React from "react";
 import "./AboutMe.css";
 import Me from "../../assets/me.jpg";
-import CssHtmlSvg from "../../assets/CSS";
+import CssSvg from "../../assets/CssSvg";
+import PythonSvg from "../../assets/PythonSvg";
+import JsSvg from "../../assets/JsSvg";
+import ReactSvg from "../../assets/ReactSvg";
+import HtmlSvg from "../../assets/HtmlSvg";
+const svgScaleValue = 0.2;
 const AboutMe: React.FC = () => {
+  let scale = (scaleVal = svgScaleValue) => ({
+    style: { transform: `scale(${scaleVal})` },
+  });
   return (
     <section id="about_me">
       <h1 className="section_header">About Me</h1>
-      <ul className="about_me_skills">
-        <li>
-          <CssHtmlSvg img={"css"} />
-        </li>
-        <li>{/* <CssHtmlSvg img={"html"} /> */}</li>
-        <li>Html</li>
-        <li>CSS</li>
-        <li>React</li>
-        <li>JS</li>
-        <li>Python</li>
-      </ul>
       <img className="self_portrait" src={Me} alt="self portrait" />
+      <ul className="about_me_skills">
+        <li>React</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>HTML</li>
+        <li>Python</li>
+        <li>Linux</li>
+        <li></li>
+        {/* <li>
+          <CssSvg props={scale()} />
+        </li>
+        <li>
+          <HtmlSvg props={scale()} />
+        </li>
+        <li>
+          <PythonSvg props={scale()} />
+        </li>
+        <li>
+          <JsSvg props={scale()} />
+        </li>
+        <li>
+          <ReactSvg props={scale()} />
+        </li> */}
+      </ul>
       <p className="about_me_text">
         I am an aspiring front end web developer currently searching for a job.
         I graduated for the University of Washington in 2019 with a degree in

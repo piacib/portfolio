@@ -1,7 +1,9 @@
 import * as React from "react";
 import { SVGProps } from "react";
-
-const PythonSvg = (props: SVGProps<SVGSVGElement>) => (
+interface IProps {
+  props?: SVGProps<SVGSVGElement>;
+}
+const PythonSvg: React.FC<IProps> = (props) => (
   <svg
     width={122.76}
     height={134.668}

@@ -1,7 +1,9 @@
 import * as React from "react";
 import { SVGProps } from "react";
-
-const JsSvg = (props: SVGProps<SVGSVGElement>) => (
+interface IProps {
+  props?: SVGProps<SVGSVGElement>;
+}
+const JsSvg: React.FC<IProps> = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={145.75}
