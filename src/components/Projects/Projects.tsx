@@ -27,13 +27,13 @@ const ProjectLi: React.FC<Props> = ({
     <li>
       <div className="project_container">
         <h2>{title}</h2>
-        <img className="project_image" src={src} alt={alt} />
-      </div>
-      <div className="project_hover">
         <div className="project_links">
           <a href={demoHref}>Demo</a>
           <a href={repoHref}>Repo</a>
         </div>
+        <img className="project_image" src={src} alt={alt} />
+      </div>
+      <div className="project_hover">
         <h3>Skills</h3>
         <ul className="project_skills">{children}</ul>
       </div>
@@ -59,7 +59,7 @@ const Projects = () => {
         </ProjectLi>
 
         <ProjectLi
-          title={"Pokemon Showdown Extension"}
+          title={"Pokemon Extension"}
           src={pokeball}
           alt={"pokeball"}
           demoHref={""}
