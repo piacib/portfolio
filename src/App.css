@@ -1,4 +1,12 @@
 :root {
+  /* --color-1: #000000;
+  --color-2: #3fe0d4;
+  --color-3: #ea6265; */
+
+  --color-1: #19293e;
+  --color-2: #ed6444;
+  --color-3: #92dec9;
+  --color-4: #009687;
   --speed: 120s;
   --li-width: 8rem;
   --pink-dark: rgb(209, 62, 148);
@@ -159,4 +167,39 @@
   width: var(--size);
   display: grid;
   place-items: center;
+}
+#home {
+  overflow: hidden;
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+section {
+  min-height: 200px;
+  background-color: var(--color-4);
+  color: black;
+}
+section > h1 {
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: var(--color-2);
+  width: 100%;
+  margin: 0;
+  padding: 0.67em 0;
+}
+
+section > ul {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+#about_me {
+  background-color: white;
+}
+#projects {
+  background-color: whitesmoke;
 }

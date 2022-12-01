@@ -1,11 +1,9 @@
 html,
 #root {
   background-color: var(--background);
+  scroll-behavior: smooth;
 }
 body {
   font-family: system-ui;
-  display: grid;
   min-height: 100vh;
-  place-content: center;
-  overflow: hidden;
 }

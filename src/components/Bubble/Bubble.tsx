@@ -44,11 +44,13 @@ const Bubble: React.FC<BubbleProps> = ({
 }) => {
   return (
     <li className="bubble" onClick={onClick}>
-      <SupportBeams firstBubble={firstBubble} />
-      <div className="image-container">
-        <img className="bubble-image" src={imageSrc} alt={imageAlt} />
-      </div>
-      <p>{text}</p>
+      <a href="#about_me">
+        {/* <SupportBeams firstBubble={firstBubble} /> */}
+        <div className="image-container">
+          <img className="bubble-image" src={imageSrc} alt={imageAlt} />
+        </div>
+        <p>{text}</p>
+      </a>
     </li>
   );
 };
