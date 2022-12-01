@@ -11,22 +11,7 @@ import Weather from "../../assets/weather-rain-svgrepo-com.svg";
 import Timer from "../../assets/timer-svgrepo-com.svg";
 import Linkedin from "../../assets/linkedin-svgrepo-com.svg";
 import { Passengers, Hrefs } from "./types";
-const dataArray: Passengers[] = [
-  {
-    repoHref: "",
-    demoHref: "",
-    imageSrc: QuestionMark,
-    imageAlt: "question mark",
-    text: "About Me",
-    backgroundColor: "blue",
-  },
-  {
-    repoHref: "",
-    demoHref: "",
-    imageSrc: Resume,
-    imageAlt: "resume",
-    text: "Resume",
-  },
+export const projects: Passengers[] = [
   {
     repoHref: "https://github.com/piacib/pokemon-showdown-extension",
     demoHref: "https://github.com/piacib/pokemon-showdown-extension",
@@ -47,8 +32,8 @@ const dataArray: Passengers[] = [
     repoHref: "https://github.com/piacib/hawaiian-fish",
     demoHref: "https://github.com/piacib/hawaiian-fish",
     imageSrc: Fish,
-    imageAlt: "fish",
-    text: "Fish",
+    imageAlt: "World Map",
+    text: "World Map",
     backgroundColor: "pink",
   },
   {
@@ -60,13 +45,6 @@ const dataArray: Passengers[] = [
     backgroundColor: "teal",
   },
   {
-    repoHref: "",
-    demoHref: "",
-    imageSrc: Linkedin,
-    imageAlt: "linkedin",
-    text: "Linkedin",
-  },
-  {
     repoHref: "https://github.com/piacib/",
     demoHref: "https://github.com/piacib/",
     imageSrc: Pokeball,
@@ -74,6 +52,32 @@ const dataArray: Passengers[] = [
     text: "this site!",
     backgroundColor: "orange",
   },
+];
+
+const dataArray: Passengers[] = [
+  {
+    repoHref: "",
+    demoHref: "",
+    imageSrc: QuestionMark,
+    imageAlt: "question mark",
+    text: "About Me",
+    backgroundColor: "blue",
+  },
+  {
+    repoHref: "",
+    demoHref: "",
+    imageSrc: Resume,
+    imageAlt: "resume",
+    text: "Resume",
+  },
+  {
+    repoHref: "",
+    demoHref: "",
+    imageSrc: Linkedin,
+    imageAlt: "linkedin",
+    text: "Linkedin",
+  },
+  ...projects,
 ];
 
 const FerrisWheel: React.FC = () => {
