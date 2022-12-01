@@ -7,10 +7,6 @@ const AboutMe: React.FC = () => {
     <section id="about_me">
       <h1 className="section_header">About Me</h1>
       <ul className="about_me_skills">
-        <li>
-          <CssHtmlSvg img={"css"} />
-        </li>
-        <li>{/* <CssHtmlSvg img={"html"} /> */}</li>
         <li>Html</li>
         <li>CSS</li>
         <li>React</li>
