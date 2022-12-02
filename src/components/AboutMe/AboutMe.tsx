@@ -16,6 +16,8 @@ const AboutMe: React.FC = () => {
       <h1 className="section_header">About Me</h1>
       <img className="self_portrait" src={Me} alt="self portrait" />
       <ul className="about_me_skills">
+        <li>Html</li>
+        <li>CSS</li>
         <li>React</li>
         <li>CSS</li>
         <li>Javascript</li>
