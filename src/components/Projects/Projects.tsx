@@ -23,8 +23,8 @@ const ProjectLi: React.FC<Props> = ({ project, children }) => {
         <div className="project_hover">
           <h3>Skills</h3>
           <ul className="project_skills">
-            {project.skills.map((skill) => (
-              <li>{skill}</li>
+            {project.skills.map((skill, idx) => (
+              <li key={skill + idx}>{skill}</li>
             ))}
           </ul>
         </div>
@@ -36,9 +36,9 @@ const Projects = () => {
   return (
     <section id="projects">
       <h1>Projects</h1>
-      <ul className="project_list">
+      <ul className="project_list" data-testid="project_list">
         {projects.map((project) => (
-          <ProjectLi project={project} />
+          <ProjectLi project={project} key={project.text} />
         ))}
       </ul>
     </section>
