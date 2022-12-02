@@ -32,6 +32,7 @@ interface BubbleProps {
   imageSrc: string;
   imageAlt: string;
   text: string;
+  href: string;
   firstBubble?: boolean;
   onClick?: () => void;
 }
@@ -39,12 +40,13 @@ const Bubble: React.FC<BubbleProps> = ({
   imageSrc,
   imageAlt,
   text,
+  href,
   firstBubble = false,
   onClick,
 }) => {
   return (
     <li className="bubble" onClick={onClick}>
-      <a href="#about_me">
+      <a href={href}>
         {/* <SupportBeams firstBubble={firstBubble} /> */}
         <div className="image-container">
           <img className="bubble-image" src={imageSrc} alt={imageAlt} />

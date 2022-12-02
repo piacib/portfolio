@@ -5,15 +5,10 @@
   list-style: none;
   flex-wrap: wrap;
 }
-.temp_img {
-  height: var(--card-size);
-  width: var(--card-size);
-  background-color: green;
-  margin: 1px;
-}
-.project_list > li {
+.project_container {
   --card-size: 15rem;
   --card-height: 25rem;
+  --border-radius: 10px;
   background: grey;
   margin: 5px;
   width: var(--card-size);
@@ -21,16 +16,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   position: relative;
-}
-
-#projects li > h2 {
-  text-align: center;
-}
-.project_image {
-  width: var(--card-size);
-  height: var(--card-size);
+  border-radius: var(--border-radius);
 }
 .project_links {
   width: 100%;
@@ -40,14 +27,11 @@
   justify-content: space-around;
   flex-direction: row;
 }
+.project_container h2 {
+  text-align: center;
+  font-size: 1.5rem;
+}
 
-/* #projects .project_container:hover + .project_hover .project_links,
-.project_hover .project_links:hover {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: row;
-} */
 .project_links a {
   text-align: center;
   justify-content: center;
@@ -64,13 +48,17 @@
   background-color: var(--color-2);
   color: var(--color-3);
 }
-.project_container h2 {
-  text-align: center;
-  font-size: 1.7rem;
+
+.bottom_container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.project_image {
+  width: var(--card-size);
+  height: var(--card-size);
 }
 .project_hover {
-  --font-size: 2rem;
-
   position: absolute;
   height: 100%;
   width: 100%;
@@ -80,19 +68,18 @@
   flex-direction: column;
   color: var(--color-3);
   top: 0;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 .project_hover h3 {
-  font-size: var(--font-size);
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 .project_hover li {
-  font-size: 1.6rem;
+  font-size: 1rem;
 }
 .project_hover:hover {
   opacity: 1;
 }
 .project_skills {
   background-color: none;
-}
-.bottom_container {
-  position: relative;
 }

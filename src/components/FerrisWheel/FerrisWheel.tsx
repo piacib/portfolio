@@ -3,37 +3,8 @@ import Bubble from "../Bubble/Bubble";
 import "./FerrisWheel.css";
 import CenterImage from "../CenterImage/CenterImage";
 import Me from "../../assets/me.jpg";
-import QuestionMark from "../../assets/question-mark-svgrepo-com.svg";
-import Resume from "../../assets/resume-svgrepo-com.svg";
-import Linkedin from "../../assets/linkedin-svgrepo-com.svg";
-import { WheelData, Hrefs } from "../../types";
-import { projects } from "../../Projects";
-
-const dataArray: WheelData[] = [
-  {
-    repoHref: "",
-    demoHref: "",
-    imageSrc: QuestionMark,
-    imageAlt: "question mark",
-    text: "About Me",
-    backgroundColor: "blue",
-  },
-  {
-    repoHref: "",
-    demoHref: "",
-    imageSrc: Resume,
-    imageAlt: "resume",
-    text: "Resume",
-  },
-  {
-    repoHref: "",
-    demoHref: "",
-    imageSrc: Linkedin,
-    imageAlt: "linkedin",
-    text: "Linkedin",
-  },
-  ...projects,
-];
+import { Hrefs } from "../../types";
+import { dataArray  } from "../../global";
 
 const FerrisWheel: React.FC = () => {
   const [centerImageData, setCenterImageData] = useState<Hrefs>({
@@ -102,6 +73,7 @@ const FerrisWheel: React.FC = () => {
             text={data.text}
             firstBubble={idx === 0 ? true : false}
             key={data.text}
+            href={data.href}
           />
         ))}
         <Bubble
@@ -113,6 +85,7 @@ const FerrisWheel: React.FC = () => {
           imageAlt={dataArray[0].imageAlt}
           text={dataArray[0].text}
           key={dataArray[0].text}
+          href={dataArray[0].href}
         />
 
         <Bubble
@@ -128,6 +101,7 @@ const FerrisWheel: React.FC = () => {
           imageSrc={dataArray[1].imageSrc}
           imageAlt={dataArray[1].imageAlt}
           text={dataArray[1].text}
+          href={dataArray[1].href}
           key={dataArray[1].text}
         />
       </ul>
