@@ -8,6 +8,7 @@ export type Hrefs = {
 
 export interface WheelData extends Hrefs {
   text: string;
+  href: string;
   onClick?: () => void;
   skills?: string[];
 }
