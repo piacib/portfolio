@@ -24,7 +24,7 @@ const Toggle = () => {
     }
   };
   return (
-    <div className="container-toggle">
+    <div className="container_toggle">
       <input
         type="checkbox"
         id="toggle"

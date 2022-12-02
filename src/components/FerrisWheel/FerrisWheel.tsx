@@ -5,56 +5,11 @@ import CenterImage from "../CenterImage/CenterImage";
 import Me from "../../assets/me.jpg";
 import QuestionMark from "../../assets/question-mark-svgrepo-com.svg";
 import Resume from "../../assets/resume-svgrepo-com.svg";
-import Pokeball from "../../assets/pokeball-svgrepo-com.svg";
-import Fish from "../../assets/fish-svgrepo-com.svg";
-import Weather from "../../assets/weather-rain-svgrepo-com.svg";
-import Timer from "../../assets/timer-svgrepo-com.svg";
 import Linkedin from "../../assets/linkedin-svgrepo-com.svg";
-import { Passengers, Hrefs } from "./types";
-export const projects: Passengers[] = [
-  {
-    repoHref: "https://github.com/piacib/pokemon-showdown-extension",
-    demoHref: "https://github.com/piacib/pokemon-showdown-extension",
-    imageSrc: Pokeball,
-    imageAlt: "pokeball",
-    text: "Pokemon Extension",
-    backgroundColor: "blue",
-  },
-  {
-    repoHref: "https://github.com/piacib/weather_typescript_app",
-    demoHref: "https://github.com/piacib/weather_typescript_app",
-    imageSrc: Weather,
-    imageAlt: "storm cloud",
-    text: "Weather",
-    backgroundColor: "green",
-  },
-  {
-    repoHref: "https://github.com/piacib/hawaiian-fish",
-    demoHref: "https://github.com/piacib/hawaiian-fish",
-    imageSrc: Fish,
-    imageAlt: "World Map",
-    text: "World Map",
-    backgroundColor: "pink",
-  },
-  {
-    repoHref: "https://github.com/piacib/reddit-timer-piacib",
-    demoHref: "https://github.com/piacib/reddit-timer-piacib",
-    imageSrc: Timer,
-    imageAlt: "timer",
-    text: "Reddit Post Timer",
-    backgroundColor: "teal",
-  },
-  {
-    repoHref: "https://github.com/piacib/",
-    demoHref: "https://github.com/piacib/",
-    imageSrc: Pokeball,
-    imageAlt: "",
-    text: "this site!",
-    backgroundColor: "orange",
-  },
-];
+import { WheelData, Hrefs } from "../../types";
+import { projects } from "../../Projects";
 
-const dataArray: Passengers[] = [
+const dataArray: WheelData[] = [
   {
     repoHref: "",
     demoHref: "",
