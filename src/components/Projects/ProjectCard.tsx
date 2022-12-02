@@ -1,7 +1,7 @@
-import { Passengers } from "../FerrisWheel/types";
+import { ProjectType } from "../../types";
 import "./projectCard.css";
 interface props {
-  project: Passengers;
+  project: ProjectType;
 }
 const ProjectCard: React.FC<props> = ({ project }) => {
   return (
@@ -11,7 +11,7 @@ const ProjectCard: React.FC<props> = ({ project }) => {
         <a href={project.demoHref}>Demo</a>
         <a href={project.repoHref}>Repo</a>
       </div>
-      <img src={project.imageSrc} className="temp_img"></img>
+      <img src={project.imageSrc} alt={project.imageAlt} className="temp_img"></img>
     </li>
   );
 };
