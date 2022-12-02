@@ -1,18 +1,15 @@
 import React from "react";
 import "./AboutMe.css";
 import Me from "../../assets/me.jpg";
-import CssSvg from "../../assets/CssSvg";
-import PythonSvg from "../../assets/PythonSvg";
-import JsSvg from "../../assets/JsSvg";
-import ReactSvg from "../../assets/ReactSvg";
-import HtmlSvg from "../../assets/HtmlSvg";
+import { AboutMeSectionId } from "../../global";
+
 const svgScaleValue = 0.2;
 const AboutMe: React.FC = () => {
   let scale = (scaleVal = svgScaleValue) => ({
     style: { transform: `scale(${scaleVal})` },
   });
   return (
-    <section id="about_me">
+    <section id={AboutMeSectionId}>
       <h1 className="section_header">About Me</h1>
       <img className="self_portrait" src={Me} alt="self portrait" />
       <ul className="about_me_skills">
