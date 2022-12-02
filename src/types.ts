@@ -6,7 +6,11 @@ export type Hrefs = {
   backgroundColor?: string;
 };
 
-export interface Passengers extends Hrefs {
+export interface WheelData extends Hrefs {
   text: string;
   onClick?: () => void;
+  skills?: string[];
+}
+export interface ProjectType extends WheelData {
+  skills: string[];
 }
