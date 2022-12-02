@@ -1,7 +1,8 @@
 import React from "react";
 import "./Projects.css";
 import { ProjectType } from "../../types";
-import { projects } from "../../Projects";
+import { projects, ProjectSectionId } from "../../global";
+
 interface Props {
   project: ProjectType;
   children?: React.ReactNode;
@@ -34,7 +35,7 @@ const ProjectLi: React.FC<Props> = ({ project, children }) => {
 };
 const Projects = () => {
   return (
-    <section id="projects">
+    <section id={ProjectSectionId}>
       <h1>Projects</h1>
       <ul className="project_list" data-testid="project_list">
         {projects.map((project) => (
