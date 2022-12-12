@@ -87,8 +87,6 @@
   }
 }
 .orbit li:nth-child(1) {
-  /* --icon-bg: var(--blue-light); */
-  /* --text-bg: var(--blue-dark); */
   animation: ExtendArmAnimation var(--ExtendArmAnimation-length)
     var(--ExtendArmAnimation-type);
   transform: translate(var(--radius), 0rem);
@@ -103,8 +101,6 @@
   }
 }
 .orbit li:nth-child(2) {
-  /* --icon-bg: var(--green-light); */
-  /* --text-bg: var(--green-dark); */
   transform: translate(var(--arm-length), var(--arm-length));
   animation: ExtendArm2Animation var(--ExtendArmAnimation-length)
     var(--ExtendArmAnimation-type);
@@ -119,8 +115,6 @@
   }
 }
 .orbit li:nth-child(3) {
-  /* --icon-bg: var(--pink-light); */
-  /* --text-bg: var(--pink-dark); */
   animation: ExtendArm3Animation var(--ExtendArmAnimation-length)
     var(--ExtendArmAnimation-type);
   transform: translate(0, var(--radius));
@@ -135,8 +129,6 @@
   }
 }
 .orbit li:nth-child(4) {
-  /* --icon-bg: var(--teal-light); */
-  /* --text-bg: var(--teal-dark); */
   animation: ExtendArm4Animation var(--ExtendArmAnimation-length)
     var(--ExtendArmAnimation-type);
   transform: translate(calc(-1 * var(--arm-length)), var(--arm-length));
@@ -151,8 +143,6 @@
   }
 }
 .orbit li:nth-child(5) {
-  /* --icon-bg: var(--red-light); */
-  /* --text-bg: var(--red-dark); */
   animation: ExtendArm5Animation var(--ExtendArmAnimation-length)
     var(--ExtendArmAnimation-type);
   transform: translate(calc(var(--radius) * -1), 0rem);
@@ -170,8 +160,6 @@
   }
 }
 .orbit li:nth-child(6) {
-  /* --icon-bg: var(--linkedin-blue); */
-  /* --text-bg: var(--linkedin-blue-dark); */
   animation: ExtendArm6Animation var(--ExtendArmAnimation-length)
     var(--ExtendArmAnimation-type);
   transform: translate(
@@ -189,8 +177,6 @@
   }
 }
 .orbit li:nth-child(7) {
-  /* --icon-bg: var(--purple-light); */
-  /* --text-bg: var(--purple-dark); */
   animation: ExtendArm7Animation var(--ExtendArmAnimation-length)
     var(--ExtendArmAnimation-type);
   transform: translate(0, calc(var(--radius) * -1));
@@ -205,8 +191,6 @@
   }
 }
 .orbit li:nth-child(8) {
-  /* --icon-bg: var(--orange-light); */
-  /* --text-bg: var(--orange-dark); */
   animation: ExtendArm8Animation var(--ExtendArmAnimation-length)
     var(--ExtendArmAnimation-type);
   transform: translate(var(--arm-length), calc(-1 * var(--arm-length)));
