@@ -1,14 +1,14 @@
 .grass {
   --blade-height: 6rem;
   --max-blade-height: 20vh;
-  position: fixed;
+  position: absolute;
   bottom: -0.5rem;
   left: 0;
   width: 100vw;
   overflow: hidden;
-  display: flex;
   justify-content: space-between;
   height: var(--blade-height);
+  display: flex;
 }
 
 .blade {
