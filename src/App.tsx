@@ -72,7 +72,6 @@ function App() {
     <>
       <section id="home">
         <ThemeBackgroundToggle togClass={togClass} />
-        {/* <StarBackground /> */}
         <Toggle togClass={togClass} handleChange={handleChange} />
         <FerrisWheel />
       </section>
