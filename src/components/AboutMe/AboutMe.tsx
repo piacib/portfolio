@@ -21,7 +21,6 @@ const AboutMe: React.FC = () => {
         <li>HTML</li>
         <li>Python</li>
         <li>Linux</li>
-        <li></li>
         {/* <li>
           <CssSvg props={scale()} />
         </li>
