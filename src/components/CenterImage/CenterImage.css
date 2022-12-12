@@ -10,7 +10,6 @@
   width: var(--size);
   aspect-ratio: 1;
   border-radius: 50%;
-  background-color: var(--green-light);
   z-index: 10;
   transition: opacity 500ms;
   object-fit: cover;
@@ -21,7 +20,6 @@
   width: var(--size);
   aspect-ratio: 1;
   border-radius: 50%;
-  background-color: var(--green-light);
 }
 .center-image .options {
   display: flex;

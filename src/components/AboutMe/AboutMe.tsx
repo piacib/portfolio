@@ -3,11 +3,7 @@ import "./AboutMe.css";
 import Me from "../../assets/me.jpg";
 import { AboutMeSectionId } from "../../global";
 
-const svgScaleValue = 0.2;
 const AboutMe: React.FC = () => {
-  let scale = (scaleVal = svgScaleValue) => ({
-    style: { transform: `scale(${scaleVal})` },
-  });
   return (
     <section id={AboutMeSectionId}>
       <h1 className="section_header">About Me</h1>
@@ -21,22 +17,6 @@ const AboutMe: React.FC = () => {
         <li>HTML</li>
         <li>Python</li>
         <li>Linux</li>
-        <li></li>
-        {/* <li>
-          <CssSvg props={scale()} />
-        </li>
-        <li>
-          <HtmlSvg props={scale()} />
-        </li>
-        <li>
-          <PythonSvg props={scale()} />
-        </li>
-        <li>
-          <JsSvg props={scale()} />
-        </li>
-        <li>
-          <ReactSvg props={scale()} />
-        </li> */}
       </ul>
       <p className="about_me_text">
         I am an aspiring front end web developer currently searching for a job.

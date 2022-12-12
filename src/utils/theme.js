@@ -13,9 +13,13 @@ function keepTheme() {
   } else {
     setTheme("theme-dark");
   }
+  return localStorage.getItem("theme");
 }
-
+function getTheme() {
+  return localStorage.getItem("theme");
+}
 module.exports = {
   setTheme,
   keepTheme,
+  getTheme,
 };
