@@ -2,13 +2,13 @@
   /* --color-1: #000000;
   --color-2: #3fe0d4;
   --color-3: #ea6265; */
+  --li-width: 8rem;
 
-  --color-1: #19293e;
+  /* --color-1: #19293e;
   --color-2: #ed6444;
   --color-3: #92dec9;
   --color-4: #009687;
   --speed: 120s;
-  --li-width: 8rem;
   --pink-dark: rgb(209, 62, 148);
   --pink-light: rgb(248, 155, 170);
 
@@ -34,104 +34,25 @@
   --yellow-light: rgb(242, 234, 161);
 
   --purple-dark: rgb(128, 0, 128);
-  --purple-light: rgb(197, 161, 211);
+  --purple-light: rgb(197, 161, 211); */
 }
 
 .theme-dark {
-  --pink-dark: rgb(209, 62, 148);
-  --pink-light: rgb(248, 155, 170);
-
-  --linkedin-blue: rgb(0, 116, 179);
-  --linkedin-blue-dark: rgb(0, 116, 200);
-
-  --teal-dark: rgb(0, 167, 167);
-  --teal-light: rgb(0, 197, 197);
-
-  --green-dark: green;
-  --green-light: rgb(116, 192, 120);
-
-  --orange-dark: orange;
-  --orange-light: hsl(34, 93%, 77%);
-
-  --red-dark: rgb(255, 45, 45);
-  --red-light: rgb(240 106 106);
-
-  --blue-dark: rgb(0, 114, 177);
-  --blue-light: rgb(162, 192, 223);
-
-  --yellow-dark: rgb(255, 255, 0);
-  --yellow-light: rgb(242, 234, 161);
-
-  --purple-dark: rgb(128, 0, 128);
-  --purple-light: rgb(197, 161, 211);
-
-  --background: rgb(30, 30, 30);
-  --anti-background: #f9f8f8;
-  --beam-color: rgb(166 166 166);
+  --color-1: rgb(25, 41, 62);
+  --color-2: rgb(237, 100, 68);
+  --color-3: rgb(146, 222, 201);
+  --color-4: rgb(0, 150, 135);
+  --about-me-background: rgb(25, 41, 62);
+  --projects-background: rgb(52, 84, 126);
+  --font-color: white;
 }
 .theme-light {
-  --pink-light: rgb(209, 62, 148);
-  --pink-dark: rgb(248, 155, 170);
-
-  --linkedin-blue-dark: rgb(0, 116, 179);
-  --linkedin-blue: rgb(0, 116, 200);
-
-  --teal-light: rgb(0, 167, 167);
-  --teal-dark: rgb(0, 197, 197);
-
-  --green-light: green;
-  --green-dark: rgb(116, 192, 120);
-
-  --orange-light: orange;
-  --orange-dark: hsl(34, 93%, 77%);
-
-  --red-light: rgb(255, 45, 45);
-  --red-dark: rgb(240 106 106);
-
-  --blue-light: rgb(0, 114, 177);
-  --blue-dark: rgb(162, 192, 223);
-
-  --yellow-light: rgb(255, 255, 0);
-  --yellow-dark: rgb(242, 234, 161);
-
-  --purple-light: rgb(128, 0, 128);
-  --purple-dark: rgb(197, 161, 211);
-
-  --anti-background: rgb(30, 30, 30);
-  --background: #f9f8f8;
-  --beam-color: rgb(63, 62, 62);
-}
-.blue {
-  --icon-bg: var(--blue-light);
-  --text-bg: var(--blue-dark);
-}
-.green {
-  --icon-bg: var(--green-light);
-  --text-bg: var(--green-dark);
-}
-.pink {
-  --icon-bg: var(--pink-light);
-  --text-bg: var(--pink-dark);
-}
-.teal {
-  --icon-bg: var(--teal-light);
-  --text-bg: var(--teal-dark);
-}
-.red {
-  --icon-bg: var(--red-light);
-  --text-bg: var(--red-dark);
-}
-.linkedin {
-  --icon-bg: var(--linkedin-blue);
-  --text-bg: var(--linkedin-blue-dark);
-}
-.purple {
-  --icon-bg: var(--purple-light);
-  --text-bg: var(--purple-dark);
-}
-.orange {
-  --icon-bg: var(--orange-light);
-  --text-bg: var(--orange-dark);
+  --color-1: #dee0b1;
+  --color-2: rgb(237, 100, 68);
+  --color-3: rgb(0, 200, 83);
+  --color-4: rgb(0, 150, 135);
+  --about-me-background: white;
+  --font-color: black;
 }
 .opacity1 {
   opacity: 1;
@@ -178,13 +99,14 @@
 }
 section {
   min-height: 200px;
-  background-color: var(--color-4);
+  /* background-color: var(--color-4); */
   color: black;
 }
 section > h1 {
   text-align: center;
   text-decoration: underline;
   text-decoration-color: var(--color-2);
+  color: var(--color-3);
   width: 100%;
   margin: 0;
   padding: 0.67em 0;
@@ -192,6 +114,7 @@ section > h1 {
 }
 section > p {
   font-size: 1.8rem;
+  color: var(--font-color);
 }
 
 section > ul {
@@ -202,8 +125,8 @@ section > ul {
   justify-content: center;
 }
 #about_me {
-  background-color: white;
+  background-color: var(--about-me-background);
 }
 #projects {
-  background-color: whitesmoke;
+  background-color: var(--projects-background);
 }
