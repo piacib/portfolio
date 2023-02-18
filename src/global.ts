@@ -12,8 +12,8 @@ export const ProjectSectionId = "projects";
 export const AboutMeSectionId = "about_me";
 export const projects: ProjectType[] = [
   {
-    repoHref: "https://github.com/piacib/pokemon-showdown-extension",
-    demoHref: "https://github.com/piacib/pokemon-showdown-extension",
+    repoHref: "https://github.com/piacib/pokeinfo",
+    demoHref: "https://piacib.github.io/pokeinfo/",
     imageSrc: Pokeball,
     imageAlt: "pokeball",
     text: "Pokemon Extension",
