@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import "./normalize.css";
+import "./fonts.css";
 import { keepTheme, getTheme } from "./utils/theme";
 import FerrisWheel from "./components/FerrisWheel/FerrisWheel";
 import Toggle from "./components/Toggle/Toggle";
