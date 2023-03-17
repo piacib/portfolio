@@ -1,6 +1,7 @@
 :root {
   --radius: 15rem;
-  --arm-length: 10.6066rem;
+  --arm-length: calc(var(--radius) * sin(3.14159265358979 / 4));
+  /* --arm-length: 10.6066rem; */
   --ExtendArmAnimation-length: 1.5s;
   --ExtendArmAnimation-type: ease-out;
 }
