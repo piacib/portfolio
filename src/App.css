@@ -1,58 +1,27 @@
-:root {
-  /* --color-1: #000000;
-  --color-2: #3fe0d4;
-  --color-3: #ea6265; */
-  --li-width: 8rem;
-
-  /* --color-1: #19293e;
-  --color-2: #ed6444;
-  --color-3: #92dec9;
-  --color-4: #009687;
-  --speed: 120s;
-  --pink-dark: rgb(209, 62, 148);
-  --pink-light: rgb(248, 155, 170);
-
-  --linkedin-blue: rgb(0, 116, 179);
-  --linkedin-blue-dark: rgb(0, 116, 200);
-
-  --teal-dark: rgb(0, 167, 167);
-  --teal-light: rgb(0, 197, 197);
-
-  --green-dark: green;
-  --green-light: rgb(116, 192, 120);
-
-  --orange-dark: orange;
-  --orange-light: hsl(34, 93%, 77%);
-
-  --red-dark: rgb(255, 45, 45);
-  --red-light: rgb(240 106 106);
-
-  --blue-dark: rgb(0, 114, 177);
-  --blue-light: rgb(162, 192, 223);
-
-  --yellow-dark: rgb(255, 255, 0);
-  --yellow-light: rgb(242, 234, 161);
-
-  --purple-dark: rgb(128, 0, 128);
-  --purple-light: rgb(197, 161, 211); */
-}
-
 .theme-dark {
   --color-1: rgb(25, 41, 62);
   --color-2: rgb(237, 100, 68);
   --color-3: rgb(146, 222, 201);
   --color-4: rgb(0, 150, 135);
-  --about-me-background: rgb(25, 41, 62);
+  --section-background: rgb(25, 41, 62);
   --projects-background: rgb(52, 84, 126);
   --font-color: white;
+  --experience-card-border-color: rgb(25, 41, 62);
+  --about-me-accent: rgb(109, 8, 242);
+  --box-shadow: 0 5px 5px 0 rgb(38 81 99/ 50%),
+    0 0 0 1px var(--section-background);
 }
 .theme-light {
   --color-1: #dee0b1;
   --color-2: rgb(237, 100, 68);
   --color-3: rgb(0, 200, 83);
   --color-4: rgb(0, 150, 135);
-  --about-me-background: white;
+  --section-background: rgb(255, 255, 255);
+  --experience-card-border-color: rgb(230, 236, 248);
   --font-color: black;
+  --box-shadow: 0 5px 5px 0 rgb(233 240 243 / 50%),
+    0 0 0 1px var(--section-background);
+  --about-me-accent: rgb(109, 8, 242);
 }
 .opacity1 {
   opacity: 1;
@@ -84,7 +53,10 @@
 }
 .orbit {
   --speed: 120s;
-
+  --li-width: 8rem;
+  --size: 13rem;
+  --radius: 15rem;
+  --arm-length: calc(var(--radius) * sin(3.14159265358979 / 4));
   width: var(--size);
   display: grid;
   place-items: center;
@@ -99,7 +71,6 @@
 }
 section {
   min-height: 200px;
-  /* background-color: var(--color-4); */
   color: black;
 }
 section > h1 {
@@ -113,7 +84,7 @@ section > h1 {
   font-size: 4rem;
 }
 section > p {
-  font-size: 1.8rem;
+  font-size: 1.25rem;
   color: var(--font-color);
 }
 
@@ -125,8 +96,8 @@ section > ul {
   justify-content: center;
 }
 #about_me {
-  background-color: var(--about-me-background);
+  background-color: var(--section-background);
 }
 #projects {
-  background-color: var(--projects-background);
+  background-color: var(--section-background);
 }
