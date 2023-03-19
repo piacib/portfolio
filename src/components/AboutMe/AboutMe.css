@@ -1,6 +1,14 @@
 #about_me {
-  /* display: grid;
-  grid-template-columns: 1fr 1fr; */
+  --light-shades: #f1ebe4;
+  --light-accent: #7fa3d9;
+  --main-color: #6d08f2;
+  --dark-accent: #7575a5;
+  --dark-shades: #1f1b2f;
+
+  --header-color: var(--dark-shades);
+  --header-decoration-color: #68b4c0;
+  --about-me-background: var(--main-color);
+  --about-me-background: #00e676;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,12 +16,21 @@
   justify-items: flex-start;
   background-color: none;
 }
+.about-me-background-color {
+  background-color: var(--about-me-background);
+}
 #about_me * {
   z-index: 2;
 }
 .section_header {
   grid-column: 1/3;
   text-align: center;
+  color: var(--about-me-accent);
+  /* background-color: rgb(141, 242, 8); */
+  text-decoration-color: var(--about-me-accent);
+  width: 20rem;
+  margin: 1rem 0;
+  border-radius: 3rem;
 }
 .about_me_skills {
   /* display: none; */
@@ -25,8 +42,9 @@
 .about_me_skills > * {
   padding: 5px;
   margin: 5px;
-  background-color: var(--color-3);
-  color: var(--color-2);
+  font-size: 50px;
+  /* background-color: var(--color-3); */
+  color: var(--about-me-accent);
   border-radius: 10px;
 }
 .about_me_text {
@@ -35,7 +53,8 @@
   margin: 0 0.5rem;
   max-width: 60ch;
   height: 100%;
-  color: white;
+  color: #1f1b2f;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,7 +70,7 @@
   background-color: var(--section-background);
   color: var(--font-color);
   display: grid;
-  margin-top: 2rem;
+  margin: 2rem 2rem 0;
   grid-template-columns: 1fr 1fr 1fr;
   box-shadow: 0 5px 5px 0 rgb(233 240 243 / 50%),
     0 0 0 1px var(--section-background);
@@ -66,10 +85,18 @@
   min-height: 30rem;
 }
 #about_me_background {
-  background-color: var(--about-me-accent);
   width: 100%;
   height: 35rem;
   position: absolute;
+}
+#about-me-bottom-border {
+  width: 100%;
+  margin-top: 3rem;
+  height: 10rem;
+  /* position: absolute; */
+}
+.experience_card h2 {
+  color: var(--about-me-accent);
 }
 .experience_card:first-child {
   border-radius: var(--border-radius) 0 0 var(--border-radius);
