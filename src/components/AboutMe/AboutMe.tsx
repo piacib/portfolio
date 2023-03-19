@@ -6,19 +6,8 @@ import { AboutMeSectionId } from "../../global";
 const AboutMe: React.FC = () => {
   return (
     <section id={AboutMeSectionId}>
-      <div id='about_me_background'></div>
+      <div id="about_me_background" className="about-me-background-color"></div>
       <h1 className="section_header">About Me</h1>
-      {/* <img className="self_portrait" src={Me} alt="self portrait" />
-      <ul className="about_me_skills">
-        <li>Html</li>
-        <li>CSS</li>
-        <li>React</li>
-        <li>CSS</li>
-        <li>Javascript</li>
-        <li>HTML</li>
-        <li>Python</li>
-        <li>Linux</li>
-      </ul> */}
       <p className="about_me_text">
         I am an aspiring front end web developer currently searching for a job.
         I graduated for the University of Washington in 2019 with a degree in
@@ -69,7 +58,54 @@ const AboutMe: React.FC = () => {
           </ul>
         </div>
       </div>
+      <div
+        id="about-me-bottom-border"
+        className="about-me-background-color"
+      ></div>
+      <ul className="about_me_skills">
+        <li>
+          <i className="devicon-html5-plain-wordmark"></i>
+        </li>
+        <li>
+          <i className="devicon-css3-plain-wordmark"></i>
+        </li>
+        <li>
+          <i className="devicon-react-original"></i>
+        </li>
+        <li>
+          <i className="devicon-adonisjs-original"></i>
+        </li>
+        <li>
+          <i className="devicon-javascript-plain"></i>
+        </li>
+        <li>
+          <i className="devicon-typescript-plain"></i>
+        </li>
+        <li>
+          <i className="devicon-python-plain"></i>
+        </li>
+        <li>
+          <i className="devicon-linux-plain"></i>
+        </li>
+        <li>
+          <i className="devicon-github-original"></i>
+        </li>
+      </ul>
     </section>
   );
 };
 export default AboutMe;
+
+// {
+//   /* <img className="self_portrait" src={Me} alt="self portrait" />
+//       <ul className="about_me_skills">
+//         <li>Html</li>
+//         <li>CSS</li>
+//         <li>React</li>
+//         <li>CSS</li>
+//         <li>Javascript</li>
+//         <li>HTML</li>
+//         <li>Python</li>
+//         <li>Linux</li>
+//       </ul> */
+// }
