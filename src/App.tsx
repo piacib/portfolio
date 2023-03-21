@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <section id="home">
-        <Background togClass={togClass} />
+        {/* <Background togClass={togClass} /> */}
         <Toggle togClass={togClass} handleChange={handleChange} />
         <FerrisWheel />
       </section>
