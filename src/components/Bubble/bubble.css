@@ -238,34 +238,3 @@
     height: var(--radius);
   }
 }
-.connector-arm {
-  width: var(--arm-width);
-  height: var(--radius);
-}
-.orbit li:nth-child(1) .connector-arm {
-  transform: rotate(22.5deg);
-}
-.orbit li:nth-child(1) .connector-arm:nth-child(2) {
-  transform: rotate(157.5deg);
-}
-.orbit li:nth-child(2) .connector-arm {
-  transform: rotate(67.5deg);
-}
-.orbit li:nth-child(3) .connector-arm {
-  transform: rotate(112.5deg);
-}
-.orbit li:nth-child(4) .connector-arm {
-  transform: rotate(157.5deg);
-}
-.orbit li:nth-child(5) .connector-arm {
-  transform: rotate(202.5deg);
-}
-.orbit li:nth-child(6) .connector-arm {
-  transform: rotate(247.5deg);
-}
-.orbit li:nth-child(7) .connector-arm {
-  transform: rotate(292.5deg);
-}
-.orbit li:last-child .connector-arm {
-  display: none;
-}
