@@ -1,5 +1,7 @@
 import React from "react";
 import "./bubble.css";
+import "./bubbleTranslate.css";
+// import "./bubble-background.css";
 import "./bubble.mediaquery.css";
 
 interface BubbleProps {
@@ -22,7 +24,7 @@ const Bubble: React.FC<BubbleProps> = ({
     <li className="bubble" onClick={onClick}>
       <a href={href}>
         <div className="image-container">
-          <span className="dynamic-backgrnd"></span>
+          {/* <span className="dynamic-backgrnd"></span> */}
           <img className="bubble-image" src={imageSrc} alt={imageAlt} />
         </div>
       </a>
