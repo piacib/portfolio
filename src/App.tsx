@@ -24,7 +24,7 @@ function App() {
         </div>
         <FerrisWheel />
       </section>
-      {/* <AboutMe /> */}
+      <AboutMe />
       {/* <Projects /> */}
     </>
   );
