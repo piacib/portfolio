@@ -1,71 +1,90 @@
-:root {
-  --pi: 3.14159265359;
-  /* FROM HOME */
-  /* --left-color: #4831d4; */
-  /* --right-color: #ccf381; */
-}
 .dynamic-backgrnd {
-  --circumference: calc(var(--radius) * 2 * var(--pi));
-  --arc-length: calc(var(--circumference) / var(--size));
-  --animation-length: calc(var(--speed) / var(--arc-length) * 2);
-  --dynamic-backgrnd-play-state: running;
-  /* border-radius: 50%; */
+  position: absolute;
   width: 100%;
   height: 100%;
+  left: var(--initial-left);
   position: absolute;
-  right: 0;
-  background-color: var(--left-color);
-  /* background-color: transparent; */
-
-  /* animation: ChangeBackground 20.718327158s linear infinite; */
-  /* animation: ChangeBackground 14.805s linear infinite; */
-  /* animation: ChangeBackground calc(var(--speed) / 10.5) linear infinite; */
-  animation-play-state: var(--dynamic-backgrnd-play-state);
-}
-.orbit .image-container {
-  background-color: var(--right-color);
+  --dynamic-backgrnd-play-state: running;
+  animation: Transition var(--speed) var(--delay) linear infinite;
 }
 .bubble-image {
   z-index: 2;
 }
-@keyframes ChangeBackground {
-  0% {
-    width: 0%;
-  }
-  5% {
-    width: 100%;
-  }
-  45% {
-    width: 100%;
-  }
-  55% {
-    width: 0%;
-  }
-  100% {
-    width: 0%;
-  }
-}
-
-/* text: "About me", top position */
+.orbit li:nth-child(2) .dynamic-backgrnd,
+.orbit li:nth-child(1) .dynamic-backgrnd,
+.orbit li:nth-child(8) .dynamic-backgrnd,
 .orbit li:nth-child(7) .dynamic-backgrnd {
-  animation: ChangeBackground 120s linear infinite;
+  --initial-left: -100%;
+  background-color: var(--right-color);
+}
+.orbit li:nth-child(2) a,
+.orbit li:nth-child(1) a,
+.orbit li:nth-child(8) a,
+.orbit li:nth-child(7) a {
+  background-color: var(--left-color);
+}
+.orbit li:nth-child(2) .dynamic-backgrnd {
+  --delay: 10s;
+  background-color: var(--right-color);
+}
+.orbit li:nth-child(1) .dynamic-backgrnd {
+  --delay: 25s;
+  background-color: var(--right-color);
 }
 .orbit li:nth-child(8) .dynamic-backgrnd {
-  animation: ChangeBackground 120s linear infinite;
-  animation-delay: 45s;
-  animation-direction: reverse;
+  --delay: 40s;
+  background-color: var(--right-color);
 }
-/* linkedin */
-.orbit li:nth-child(1) .dynamic-backgrnd {
-  animation: ChangeBackground 120s linear infinite;
-
-  animation-delay: 30s;
-  animation-direction: reverse;
+.orbit li:nth-child(7) .dynamic-backgrnd {
+  --delay: 55s;
+  background-color: var(--right-color);
 }
-/* pokeball */
-.orbit li:nth-child(2) .dynamic-backgrnd {
-  animation: ChangeBackground 120s linear infinite;
 
-  animation-delay: 15s;
-  animation-direction: reverse;
+@keyframes Transition {
+  0% {
+    left: var(--initial-left);
+  }
+  8.3% {
+    left: 0%;
+  }
+  50% {
+    left: 0%;
+  }
+  58.3% {
+    left: var(--initial-left);
+  }
+  100% {
+    left: var(--initial-left);
+  }
+  100% {
+    left: var(--initial-left);
+  }
+}
+.orbit li:nth-child(3) .dynamic-backgrnd,
+.orbit li:nth-child(4) .dynamic-backgrnd,
+.orbit li:nth-child(5) .dynamic-backgrnd,
+.orbit li:nth-child(6) .dynamic-backgrnd {
+  --initial-left: 100%;
+  background-color: var(--left-color);
+}
+.orbit li:nth-child(3) a,
+.orbit li:nth-child(4) a,
+.orbit li:nth-child(5) a,
+.orbit li:nth-child(6) a {
+  background-color: var(--right-color);
+}
+.orbit li:nth-child(6) .dynamic-backgrnd {
+  --delay: 10s;
+}
+.orbit li:nth-child(5) .dynamic-backgrnd {
+  --delay: 25s;
+}
+.orbit li:nth-child(4) .dynamic-backgrnd {
+  --delay: 40s;
+}
+.orbit li:nth-child(3) .dynamic-backgrnd {
+  --delay: 55s;
+}
+.orbit li a svg {
+  z-index: 3;
 }
