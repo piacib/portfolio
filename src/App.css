@@ -1,27 +1,15 @@
 .theme-dark {
-  --color-1: rgb(25, 41, 62);
-  --color-2: rgb(237, 100, 68);
-  --color-3: rgb(146, 222, 201);
-  --color-4: rgb(0, 150, 135);
-  --section-background: rgb(25, 41, 62);
-  --projects-background: rgb(52, 84, 126);
-  --font-color: white;
-  --experience-card-border-color: rgb(25, 41, 62);
-  --about-me-accent: rgb(109, 8, 242);
-  --box-shadow: 0 5px 5px 0 rgb(38 81 99/ 50%),
-    0 0 0 1px var(--section-background);
+  --left-color: #121212;
+  --right-color: #6c34a3;
+  --svg-color: white;
 }
 .theme-light {
-  --color-1: #dee0b1;
-  --color-2: rgb(237, 100, 68);
-  --color-3: rgb(0, 200, 83);
-  --color-4: rgb(0, 150, 135);
-  --section-background: rgb(255, 255, 255);
-  --experience-card-border-color: rgb(230, 236, 248);
-  --font-color: black;
-  --box-shadow: 0 5px 5px 0 rgb(233 240 243 / 50%),
-    0 0 0 1px var(--section-background);
-  --about-me-accent: rgb(109, 8, 242);
+  --left-color: #4831d4;
+  --right-color: #ccf381;
+  --svg-color: black;
+}
+svg {
+  color: var(--svg-color);
 }
 .opacity1 {
   opacity: 1;
@@ -51,24 +39,7 @@
     width: 100%;
   }
 }
-.orbit {
-  --speed: 120s;
-  --li-width: 8rem;
-  --size: 13rem;
-  --radius: 15rem;
-  --arm-length: calc(var(--radius) * sin(3.14159265358979 / 4));
-  width: var(--size);
-  display: grid;
-  place-items: center;
-}
-#home {
-  overflow: hidden;
-  min-height: 100vh;
-  width: 100%;
-  display: grid;
-  place-items: center;
-  position: relative;
-}
+
 section {
   min-height: 200px;
   color: black;
@@ -76,8 +47,8 @@ section {
 section > h1 {
   text-align: center;
   text-decoration: underline;
-  text-decoration-color: var(--color-2);
-  color: var(--color-3);
+  /* text-decoration-color: var(--color-2); */
+  /* color: var(--color-3); */
   width: 100%;
   margin: 0;
   padding: 0.67em 0;
