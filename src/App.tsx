@@ -8,9 +8,7 @@ import Toggle from "./components/Toggle/Toggle";
 import AboutMe from "./components/AboutMe/AboutMe";
 import Projects from "./components/Projects/Projects";
 import { useMode } from "./utils/useMode";
-// import "./starParrallax.css";
-import "./star.css";
-import { Background } from "./components/Background/Background";
+import Grass from "./components/Grass/Grass";
 function App() {
   const { togClass, handleChange } = useMode();
   return (
@@ -19,7 +17,6 @@ function App() {
         <header>
           <Toggle togClass={togClass} handleChange={handleChange} />
         </header>
-        {/* <Background togClass={togClass} /> */}
         <div className="home_text_container">
           <h2>Hi my name is,</h2>
           <h1>Ben Piacitelli</h1>
@@ -32,5 +29,4 @@ function App() {
     </>
   );
 }
-
 export default App;
