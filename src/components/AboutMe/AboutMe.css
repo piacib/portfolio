@@ -1,14 +1,5 @@
 #about_me {
-  --light-shades: #f1ebe4;
-  --light-accent: #7fa3d9;
-  --main-color: #6d08f2;
-  --dark-accent: #7575a5;
-  --dark-shades: #1f1b2f;
-
-  --header-color: var(--dark-shades);
-  --header-decoration-color: #68b4c0;
-  --about-me-background: var(--main-color);
-  --about-me-background: #00e676;
+  --about-me-background: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +8,7 @@
   background-color: none;
 }
 .about-me-background-color {
-  background-color: var(--about-me-background);
+  background-color: var(--right-color);
 }
 #about_me * {
   z-index: 2;
@@ -25,12 +16,13 @@
 .section_header {
   grid-column: 1/3;
   text-align: center;
-  color: var(--about-me-accent);
+  color: var(--left-color);
   /* background-color: rgb(141, 242, 8); */
-  text-decoration-color: var(--about-me-accent);
+  text-decoration-color: var(--left-color);
   width: 20rem;
   margin: 1rem 0;
   border-radius: 3rem;
+  font-size: 5rem;
 }
 .about_me_skills {
   /* display: none; */
@@ -53,7 +45,7 @@
   margin: 0 0.5rem;
   max-width: 60ch;
   height: 100%;
-  color: #1f1b2f;
+  color: black;
 
   display: flex;
   align-items: center;
@@ -67,7 +59,7 @@
 }
 #experience_container {
   --border-radius: 20px;
-  background-color: var(--section-background);
+  background-color: var(--left-color);
   color: var(--font-color);
   display: grid;
   margin: 2rem 2rem 0;
@@ -80,14 +72,41 @@
 .experience_card {
   max-width: 25rem;
   text-align: center;
-  border: 1px solid var(--experience-card-border-color);
+  border: 1px solid var(--right-color);
+  color: #f6f8ff;
   padding: 0 5px;
   min-height: 30rem;
 }
+
+#about_me_background:after {
+  content: " ";
+  border-top: var(--height) solid var(--right-color);
+  border-right: var(--width) solid transparent;
+  width: 0;
+  position: absolute;
+}
 #about_me_background {
+  --transition-pt: 50%;
+  --secondary-transition-pt: calc(100% - var(--transition-pt));
   width: 100%;
   height: 35rem;
   position: absolute;
+  left: 0;
+  background: linear-gradient(
+    to top left,
+    transparent var(--transition-pt),
+    var(--right-color) var(--secondary-transition-pt)
+  );
+}
+@media (max-width: 57rem) {
+  #about_me_background {
+    height: 20rem;
+  }
+}
+@media (max-width: 32rem) {
+  #about_me_background {
+    height: 15rem;
+  }
 }
 #about-me-bottom-border {
   width: 100%;
@@ -96,7 +115,9 @@
   /* position: absolute; */
 }
 .experience_card h2 {
-  color: var(--about-me-accent);
+  color: var(--right-color);
+  text-decoration: underline;
+  text-decoration-color: var(--right-color);
 }
 .experience_card:first-child {
   border-radius: var(--border-radius) 0 0 var(--border-radius);
