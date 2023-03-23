@@ -2,20 +2,11 @@
   --left-color: #121212;
   --right-color: #6c34a3;
   --svg-color: white;
-
-  --box-shadow: 0 5px 5px 0 rgb(38 81 99/ 50%),
-    0 0 0 1px var(--section-background);
 }
 .theme-light {
   --left-color: #4831d4;
   --right-color: #ccf381;
   --svg-color: black;
-  /* --section-background: rgb(255, 255, 255);
-  --experience-card-border-color: rgb(230, 236, 248);
-  --font-color: black;
-  --box-shadow: 0 5px 5px 0 rgb(233 240 243 / 50%),
-    0 0 0 1px var(--section-background);
-  --about-me-accent: rgb(109, 8, 242); */
 }
 svg {
   color: var(--svg-color);
