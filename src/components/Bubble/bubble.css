@@ -5,9 +5,6 @@
 .bubble {
   position: absolute;
 }
-.image-container {
-  background-color: whitesmoke;
-}
 .orbit ul {
   --icon-bg: var(--green-light);
   --text-bg: var(--green-dark);
@@ -25,9 +22,9 @@
   animation: orbit var(--speed) linear infinite;
 }
 .orbit ul:hover {
-  animation-play-state: paused;
-  --orbit-play-state: paused;
-  --dynamic-backgrnd-play-state: paused;
+  /* animation-play-state: paused; */
+  /* --orbit-play-state: paused; */
+  /* --dynamic-backgrnd-play-state: paused; */
 }
 .orbit li {
   position: absolute;
@@ -42,12 +39,13 @@
   place-items: center;
   list-style: none;
   z-index: 2;
+  box-shadow: var(--box-shadow);
 }
 .orbit li > a {
   display: grid;
   place-items: center;
 }
-.orbit li .image-container,
+.orbit li a,
 .orbit li p {
   width: 100%;
   height: 100%;
@@ -58,7 +56,7 @@
   animation: orbit var(--speed) linear reverse infinite;
   animation-play-state: var(--orbit-play-state, running);
 }
-.orbit .image-container {
+.orbit a {
   border: none;
 
   border-radius: 50%;
