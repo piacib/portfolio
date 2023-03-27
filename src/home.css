@@ -31,6 +31,7 @@
   position: absolute;
 }
 #home {
+  --side-padding: 1rem;
   /* --left-color: #4831d4;
   --right-color: #ccf381; */
   /* must be <=50 */
@@ -40,7 +41,7 @@
   min-height: 60rem;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  padding: 0 1rem;
+  padding: 0 var(--side-padding);
   place-items: center;
   position: relative;
   background: linear-gradient(
@@ -50,16 +51,28 @@
   );
 }
 .home_text_container {
-  grid-column: 2/6;
+  grid-column: 1/6;
+  position: relative;
   color: var(--right-color);
+  width: fit-content;
+
+  width: 100%;
 }
 .home_text_container * {
   margin: 0;
 }
 .home_text_container h1 {
   font-size: 5rem;
+
+  /* background-clip: text;
+  -webkit-background-clip: text;
+  /* add this line, for browsers compatibility */
+  /* -webkit-text-fill-color: transparent; */
+  /* background: linear-gradient(to right, var(--left-color), var(--right-color)); */
 }
 header {
+  position: absolute;
+  top: 0;
   height: 5rem;
   width: 100%;
 }
@@ -78,15 +91,30 @@ header {
     --transition-pt: 50%;
     display: flex;
     flex-direction: column;
-    /* min-height: 40rem; */
   }
   .orbit {
     left: auto;
     top: 15rem;
   }
-
+  .home_text_container * {
+    --trans: calc(var(--transition-pt) - var(--side-padding));
+    background: linear-gradient(
+      90deg,
+      var(--right-color) var(--trans),
+      var(--left-color) var(--trans)
+    );
+    /* you can change the colors based on your preference */
+    background-clip: text;
+    /*add this line, it defines how far the background should extend within an element, here we set it to text */
+    -webkit-background-clip: text;
+    /* add this line, for browsers compatibility */
+    -webkit-text-fill-color: transparent;
+  }
   .home_text_container {
     align-self: flex-start;
+    position: absolute;
+    /* max-width: calc(50% - 1rem); */
+    top: 25px;
   }
 }
 
@@ -101,15 +129,18 @@ header {
     top: 5rem;
   }
 }
-@media (max-width: 23.75rem) {
+
+@media (max-width: 47rem) {
   .home_text_container h1 {
     font-size: 3rem;
-    color: black;
-    /* scale: 0.7; */
-    /* width: 100%; */
+  }
+}
+@media (max-width: 23.75rem) {
+  .home_text_container h1 {
+    font-size: 2.5rem;
   }
   .home_text_container h2 {
-    color: black;
+    font-size: 1.5rem;
   }
   .orbit {
     scale: 0.5;
