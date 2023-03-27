@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* padding-bottom: 1rem; */
   justify-items: flex-start;
   background-color: none;
   position: relative;
@@ -44,7 +43,7 @@
   height: 35rem;
   position: absolute;
 }
-#about_me_background {
+#about_me_top_background {
   left: 0;
   background: linear-gradient(
     to top left,
@@ -52,38 +51,23 @@
     var(--right-color) var(--secondary-transition-pt)
   );
 }
-@media (max-width: 57rem) {
-  #about_me_background {
-    height: 20rem;
-  }
-}
-@media (max-width: 32rem) {
-  #about_me_background {
-    height: 15rem;
-  }
-}
 #about_me_bottom_background {
-  z-index: 0;
   bottom: 0;
+  z-index: 0;
   background: linear-gradient(
     to bottom right,
     transparent var(--transition-pt),
     var(--left-color) var(--secondary-transition-pt)
   );
 }
-
 .about_me_skills {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
 }
 .about_me_skills > * {
-  padding: 5px;
-  margin: 5px;
+  margin: 10px;
   font-size: 50px;
-  /* background-color: var(--color-3); */
-  color: var(--about-me-accent);
-  border-radius: 10px;
 }
 .skills_icon {
   color: black;
