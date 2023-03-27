@@ -20,8 +20,11 @@ const AboutMe: React.FC = () => {
         <div className="experience_card">
           <h2>Physics Tutor</h2>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
-            voluptas ab placeat fugit, perspiciatis consectetur, id quia
+            As a physics tutor I developed a deep understanding of the subject
+            and an ability to break down complex concepts into
+            easy-to-understand explanations. I learned to identify individual's
+            learning needs and tailor my approach to maximize student
+            understanding and engagement.
           </p>
           <h3>Skills</h3>
           <ul>
@@ -33,8 +36,10 @@ const AboutMe: React.FC = () => {
         <div className="experience_card">
           <h2>Safety diver</h2>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
-            voluptas ab placeat fugit, perspiciatis consectetur, id quia
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+            iste architecto qui. Voluptates, inventore ducimus consectetur
+            veniam illo perferendis iste, quia deserunt corporis quasi,
+            recusandae totam adipisci ipsa hic odit?{" "}
           </p>
           <h3>Skills</h3>
 
