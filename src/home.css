@@ -50,6 +50,12 @@
     var(--right-color) var(--secondary-transition-pt)
   );
 }
+header {
+  position: absolute;
+  top: 0;
+  height: 5rem;
+  width: 100%;
+}
 .home_text_container {
   grid-column: 1/6;
   position: relative;
@@ -63,19 +69,8 @@
 }
 .home_text_container h1 {
   font-size: 5rem;
+}
 
-  /* background-clip: text;
-  -webkit-background-clip: text;
-  /* add this line, for browsers compatibility */
-  /* -webkit-text-fill-color: transparent; */
-  /* background: linear-gradient(to right, var(--left-color), var(--right-color)); */
-}
-header {
-  position: absolute;
-  top: 0;
-  height: 5rem;
-  width: 100%;
-}
 @media (max-width: 81.25rem) {
   .orbit {
     scale: 0.8;
@@ -103,17 +98,13 @@ header {
       var(--right-color) var(--trans),
       var(--left-color) var(--trans)
     );
-    /* you can change the colors based on your preference */
     background-clip: text;
-    /*add this line, it defines how far the background should extend within an element, here we set it to text */
     -webkit-background-clip: text;
-    /* add this line, for browsers compatibility */
     -webkit-text-fill-color: transparent;
   }
   .home_text_container {
     align-self: flex-start;
     position: absolute;
-    /* max-width: calc(50% - 1rem); */
     top: 25px;
   }
 }
