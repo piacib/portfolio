@@ -24,6 +24,44 @@
   align-items: center;
   justify-content: center;
 }
+.support {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+}
+.support .support-beam {
+  transform-origin: top;
+  width: var(--arm-width);
+  height: calc(2 * var(--radius));
+  flex-direction: column;
+}
+.support-beam,
+.base {
+  position: absolute;
+  background-color: var(--beam-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.support-left {
+  transform: translateY(50%) rotate(20deg);
+}
+.support-right {
+  transform: translateY(50%) rotate(-20deg);
+}
+.bolt {
+  width: 5px;
+  height: 5px;
+  background-color: var(--background);
+  border-radius: 50%;
+}
+
+.base {
+  height: calc(2 * var(--arm-width));
+  width: calc(2 * var(--radius));
+  top: calc(2.3 * var(--radius));
+}
 .background {
   z-index: -1;
 }

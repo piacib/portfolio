@@ -16,11 +16,11 @@ const ProjectLi: React.FC<Props> = ({ project, children }) => {
         <a href={project.repoHref}>Repo</a>
       </div>
       <div className="bottom_container">
-        {/* <img
+        <img
           className="project_image"
           src={project.imageSrc}
           alt={project.imageAlt}
-        /> */}
+        />
         <div className="project_hover">
           <h3>Skills</h3>
           <ul className="project_skills">

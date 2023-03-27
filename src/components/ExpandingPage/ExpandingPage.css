@@ -1,0 +1,48 @@
+@keyframes Expand {
+  0% {
+    height: 0px;
+    width: 0;
+  }
+  100% {
+    height: 40rem;
+    width: 40rem;
+    max-width: 100vw;
+  }
+}
+@keyframes Appear {
+  0% {
+    display: none;
+  }
+  100% {
+    display: block;
+  }
+}
+.expand > * {
+  animation: Appear 2s ease-out;
+}
+.display-none {
+  display: none;
+}
+.expand {
+  place-items: center;
+  position: absolute;
+  text-align: center;
+  background: rgb(219 219 219);
+  z-index: 100;
+  animation: Expand 2s ease-out;
+  animation-fill-mode: forwards;
+  transform-origin: top;
+}
+.exit-button {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  right: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  line-height: 10px;
+  border-radius: 50%;
+  padding: 0;
+  border: none;
+  margin: 1px;
+}

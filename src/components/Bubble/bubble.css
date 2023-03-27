@@ -1,3 +1,9 @@
+:root {
+  --radius: 15rem;
+  --arm-length: 10.6066rem;
+  --ExtendArmAnimation-length: 1.5s;
+  --ExtendArmAnimation-type: ease-out;
+}
 .bubble-image {
   height: 60%;
   width: 60%;
@@ -6,10 +12,6 @@
   position: absolute;
 }
 .orbit ul {
-  --icon-bg: var(--green-light);
-  --text-bg: var(--green-dark);
-  --icon-bg: var(--color-2);
-  --text-bg: #186abd;
   display: grid;
   place-items: center;
   width: var(--size);
@@ -18,13 +20,17 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  --icon-bg: var(--green-light);
+  --text-bg: var(--green-dark);
+
+  --icon-bg: var(--color-2);
+  --text-bg: #186abd;
   transform-origin: center;
   animation: orbit var(--speed) linear infinite;
 }
 .orbit ul:hover {
-  /* animation-play-state: paused; */
-  /* --orbit-play-state: paused; */
-  /* --dynamic-backgrnd-play-state: paused; */
+  animation-play-state: paused;
+  --orbit-play-state: paused;
 }
 .orbit li {
   position: absolute;
@@ -39,26 +45,24 @@
   place-items: center;
   list-style: none;
   z-index: 2;
-  box-shadow: var(--box-shadow);
 }
 .orbit li > a {
   display: grid;
   place-items: center;
 }
-.orbit li a,
+.orbit li .image-container,
 .orbit li p {
   width: 100%;
   height: 100%;
   display: grid;
   place-items: center;
   position: absolute;
-  overflow: hidden;
   animation: orbit var(--speed) linear reverse infinite;
   animation-play-state: var(--orbit-play-state, running);
 }
-.orbit a {
+.orbit .image-container {
   border: none;
-
+  background-color: var(--icon-bg);
   border-radius: 50%;
 }
 .orbit li p {
@@ -70,4 +74,200 @@
 }
 .orbit li:hover > p {
   opacity: 1;
+}
+/* text: "About Me",*/
+@keyframes ExtendArmAnimation {
+  0% {
+    transform: translate(0rem, 0rem);
+  }
+  100% {
+    transform: translate(var(--radius), 0rem);
+  }
+}
+.orbit li:nth-child(1) {
+  animation: ExtendArmAnimation var(--ExtendArmAnimation-length)
+    var(--ExtendArmAnimation-type);
+  transform: translate(var(--radius), 0rem);
+}
+/* text: "Pokemon Extension", */
+@keyframes ExtendArm2Animation {
+  0% {
+    transform: translate(0rem, 0rem);
+  }
+  100% {
+    transform: translate(var(--arm-length), var(--arm-length));
+  }
+}
+.orbit li:nth-child(2) {
+  transform: translate(var(--arm-length), var(--arm-length));
+  animation: ExtendArm2Animation var(--ExtendArmAnimation-length)
+    var(--ExtendArmAnimation-type);
+}
+/* text: "Weather", */
+@keyframes ExtendArm3Animation {
+  0% {
+    transform: translate(0rem, 0rem);
+  }
+  100% {
+    transform: translate(0, var(--radius));
+  }
+}
+.orbit li:nth-child(3) {
+  animation: ExtendArm3Animation var(--ExtendArmAnimation-length)
+    var(--ExtendArmAnimation-type);
+  transform: translate(0, var(--radius));
+}
+/* text: "Fish", */
+@keyframes ExtendArm4Animation {
+  0% {
+    transform: translate(0rem, 0rem);
+  }
+  100% {
+    transform: translate(calc(-1 * var(--arm-length)), var(--arm-length));
+  }
+}
+.orbit li:nth-child(4) {
+  animation: ExtendArm4Animation var(--ExtendArmAnimation-length)
+    var(--ExtendArmAnimation-type);
+  transform: translate(calc(-1 * var(--arm-length)), var(--arm-length));
+}
+/* text: "Reddit Post Timer", */
+@keyframes ExtendArm5Animation {
+  0% {
+    transform: translate(0rem, 0rem);
+  }
+  100% {
+    transform: translate(calc(var(--radius) * -1), 0rem);
+  }
+}
+.orbit li:nth-child(5) {
+  animation: ExtendArm5Animation var(--ExtendArmAnimation-length)
+    var(--ExtendArmAnimation-type);
+  transform: translate(calc(var(--radius) * -1), 0rem);
+}
+/* text: "Linkedin", */
+@keyframes ExtendArm6Animation {
+  0% {
+    transform: translate(0rem, 0rem);
+  }
+  100% {
+    transform: translate(
+      calc(-1 * var(--arm-length)),
+      calc(-1 * var(--arm-length))
+    );
+  }
+}
+.orbit li:nth-child(6) {
+  animation: ExtendArm6Animation var(--ExtendArmAnimation-length)
+    var(--ExtendArmAnimation-type);
+  transform: translate(
+    calc(-1 * var(--arm-length)),
+    calc(-1 * var(--arm-length))
+  );
+}
+/* text: "Resume", */
+@keyframes ExtendArm7Animation {
+  0% {
+    transform: translate(0rem, 0rem);
+  }
+  100% {
+    transform: translate(0, calc(var(--radius) * -1));
+  }
+}
+.orbit li:nth-child(7) {
+  animation: ExtendArm7Animation var(--ExtendArmAnimation-length)
+    var(--ExtendArmAnimation-type);
+  transform: translate(0, calc(var(--radius) * -1));
+}
+/* text: "this site!", */
+@keyframes ExtendArm8Animation {
+  0% {
+    transform: translate(0rem, 0rem);
+  }
+  100% {
+    transform: translate(var(--arm-length), calc(-1 * var(--arm-length)));
+  }
+}
+.orbit li:nth-child(8) {
+  animation: ExtendArm8Animation var(--ExtendArmAnimation-length)
+    var(--ExtendArmAnimation-type);
+  transform: translate(var(--arm-length), calc(-1 * var(--arm-length)));
+}
+
+.arm {
+  position: absolute;
+  top: calc(var(--li-width) / 2);
+  z-index: 0;
+  transform-origin: top;
+  background-color: var(--beam-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  animation: Extend1Support var(--ExtendArmAnimation-length)
+    var(--ExtendArmAnimation-type);
+}
+.support-arm {
+  width: var(--arm-width);
+  height: var(--radius);
+}
+.orbit li:nth-child(1) .support-arm {
+  transform: rotate(90deg);
+}
+.orbit li:nth-child(2) .support-arm {
+  transform: rotate(135deg);
+}
+.orbit li:nth-child(3) .support-arm {
+  transform: rotate(180deg);
+}
+.orbit li:nth-child(4) .support-arm {
+  transform: rotate(225deg);
+}
+.orbit li:nth-child(5) .support-arm {
+  transform: rotate(270deg);
+}
+.orbit li:nth-child(6) .support-arm {
+  transform: rotate(315deg);
+}
+.orbit li:nth-child(8) .support-arm {
+  transform: rotate(45deg);
+}
+@keyframes Extend1Support {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: var(--radius);
+  }
+}
+.connector-arm {
+  width: var(--arm-width);
+  height: var(--radius);
+}
+.orbit li:nth-child(1) .connector-arm {
+  transform: rotate(22.5deg);
+}
+.orbit li:nth-child(1) .connector-arm:nth-child(2) {
+  transform: rotate(157.5deg);
+}
+.orbit li:nth-child(2) .connector-arm {
+  transform: rotate(67.5deg);
+}
+.orbit li:nth-child(3) .connector-arm {
+  transform: rotate(112.5deg);
+}
+.orbit li:nth-child(4) .connector-arm {
+  transform: rotate(157.5deg);
+}
+.orbit li:nth-child(5) .connector-arm {
+  transform: rotate(202.5deg);
+}
+.orbit li:nth-child(6) .connector-arm {
+  transform: rotate(247.5deg);
+}
+.orbit li:nth-child(7) .connector-arm {
+  transform: rotate(292.5deg);
+}
+.orbit li:last-child .connector-arm {
+  display: none;
 }

@@ -62,5 +62,4 @@
 .orbit .center-image .center-image-slides {
   position: absolute;
   transition: opacity 500ms;
-  box-shadow: var(--box-shadow);
 }
