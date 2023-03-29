@@ -1,4 +1,4 @@
-#experience_container {
+.experience_container {
   --border-radius: 20px;
   color: black;
   display: flex;

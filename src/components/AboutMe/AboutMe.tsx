@@ -16,7 +16,7 @@ const AboutMe: React.FC = () => {
         Javascript and react. Currently I am living in Hawaii working on Tour
         boats as a deckhand and swim guide.
       </p>
-      <div id="experience_container">
+      <div className="experience_container">
         <div className="experience_card">
           <h2>Physics Tutor</h2>
           <p>
