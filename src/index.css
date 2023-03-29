@@ -7,3 +7,6 @@ body {
   font-family: system-ui;
   min-height: 100vh;
 }
+section:last-child {
+  margin-bottom: 1rem;
+}
