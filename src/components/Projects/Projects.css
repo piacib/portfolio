@@ -1,5 +1,7 @@
 #projects {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .project_list {
   list-style: none;
@@ -82,4 +84,51 @@
 }
 .project_skills {
   background-color: none;
+}
+
+/* CSS */
+.current_projects_btn {
+  align-items: center;
+  font-weight: 400;
+  background-color: var(--right-color);
+  border: 3px solid var(--left-color);
+  box-sizing: border-box;
+  color: var(--left-color);
+  cursor: pointer;
+  display: inline-flex;
+  height: 3rem;
+  justify-content: center;
+  line-height: 1.5rem;
+  min-width: 140px;
+  width: fit-content;
+  outline: 0;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.current_projects_btn:focus {
+  color: #171e29;
+}
+
+.current_projects_btn:hover {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+
+.current_projects_btn:active {
+  border-color: #06f;
+  color: #06f;
+  fill: #06f;
+}
+
+@media (min-width: 768px) {
+  .current_projects_btn {
+    min-width: 170px;
+  }
 }
