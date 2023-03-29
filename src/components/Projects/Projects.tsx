@@ -37,11 +37,75 @@ const Projects = () => {
   return (
     <section id={ProjectSectionId}>
       <h1>Projects</h1>
-      <ul className="project_list" data-testid="project_list">
-        {projects.map((project) => (
-          <ProjectLi project={project} key={project.text} />
-        ))}
-      </ul>
+      <div className="experience_container">
+        <div id="Pokemon_Showdown_Extension" className="experience_card">
+          <h2>Pokemon Showdown Extension</h2>
+          <p>
+            A chrome Extension that adds an iframe when a new battle starts and
+            sends data from the battle to my pokeinfo site to be displayed
+          </p>
+          <h3>Skills</h3>
+          <ul>
+            <li>Extension Development</li>
+            <li>Web Scraping</li>
+            <li>Sending data over http</li>
+          </ul>
+        </div>
+        <div id="PokeInfo" className="experience_card">
+          <h2>PokeInfo</h2>
+          <p>
+            A project that connects to an active pokemon showdown battle via a
+            websocket connection and displays real time information about the
+            battle
+          </p>
+          <h3>Skills</h3>
+          <ul>
+            <li>web sockets</li>
+            <li>api fetching</li>
+            <li>Error handling</li>
+          </ul>
+        </div>
+        <div id="Reddit_Timer_App" className="experience_card">
+          <h2>Reddit Timer App</h2>
+          <p></p>
+          <h3>Skills</h3>
+          <ul>
+            <li>Developing a site from a figma design</li>
+            <li>api fetching</li>
+            <li></li>
+          </ul>
+        </div>
+        <div id="Portfolio" className="experience_card">
+          <h2>This Site</h2>
+          <p></p>
+          <h3>Skills</h3>
+          <ul>
+            <li>CSS Variables</li>
+            <li>CSS Animations</li>
+            <li></li>
+          </ul>
+        </div>
+        <div id="World_Map" className="experience_card">
+          <h2>World Map</h2>
+          <p>
+            World map quiz website that utilizes local storage to store data
+          </p>
+          <h3>Skills</h3>
+          <ul>
+            <li>SVG manipulation</li>
+            <li>Local storage</li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+
+      <a
+        className="current_projects_btn"
+        role="button"
+        href="https://github.com/piacib/EzraKleinBooks"
+      >
+        Checkout What I am Working On Now!
+      </a>
     </section>
   );
 };
