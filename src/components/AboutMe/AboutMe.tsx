@@ -7,7 +7,7 @@ import { AboutMeSectionId } from "../../global";
 const AboutMe: React.FC = () => {
   return (
     <section id={AboutMeSectionId}>
-      <div id="about_me_background" className="triangle_background"></div>
+      <div id="about_me_top_background" className="triangle_background"></div>
       <h1 className="section_header">About Me</h1>
       <p className="about_me_text">
         I am an aspiring front end web developer currently searching for a job.

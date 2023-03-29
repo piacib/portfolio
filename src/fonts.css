@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Old+Standard+TT&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
-h1 {
-  font-family: "Bebas Neue", cursive;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Trirong:wght@500&display=swap");
+h1,
+.experience_card h2 {
+  font-family: "Trirong", serif;
 }
 p,
 span,
+h3,
 a {
-  /* font-family: "Old Standard TT", serif; */
   font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }
