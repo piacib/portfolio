@@ -7,38 +7,34 @@ interface Props {
   project: ProjectType;
   children?: React.ReactNode;
 }
-const ProjectLi: React.FC<Props> = ({ project, children }) => {
-  return (
-    <li className="project_container">
-      <h2>{project.text}</h2>
-      <div className="project_links">
-        <a href={project.demoHref}>Demo</a>
-        <a href={project.repoHref}>Repo</a>
-      </div>
-      <div className="bottom_container">
-        {/* <img
-          className="project_image"
-          src={project.imageSrc}
-          alt={project.imageAlt}
-        /> */}
-        <div className="project_hover">
-          <h3>Skills</h3>
-          <ul className="project_skills">
-            {project.skills.map((skill, idx) => (
-              <li key={skill + idx}>{skill}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </li>
-  );
+const Showdown_Extension = {
+  repoHref: "https://github.com/piacib/pokeinfo_iframe_extension",
+  demoHref:
+    "https://chrome.google.com/webstore/detail/pokeinfo-extension/plolbicmjndjpglocmmgnbppgnadmlfb?hl=en&authuser=0",
 };
+const Pokeinfo = {
+  repoHref: "https://github.com/piacib/pokeinfo",
+  demoHref: "https://piacib.github.io/pokeinfo/",
+};
+const Portfolio = {
+  repoHref: "https://github.com/piacib/portfolio",
+  demoHref: "https://piacib.github.io/portfolio/",
+};
+
+const World_Map = {
+  repoHref: "https://github.com/piacib/world-map",
+  demoHref: "https://piacib.github.io/world-map/",
+};
+const Weather_App = {
+  repoHref: "https://github.com/piacib/weather_typescript_app",
+};
+
 const Projects = () => {
   return (
     <section id={ProjectSectionId}>
       <h1>Projects</h1>
-      <div className="experience_container">
-        <div id="Pokemon_Showdown_Extension" className="experience_card">
+      <div className="card_container">
+        <div id="Pokemon_Showdown_Extension" className="card">
           <h2>Pokemon Showdown Extension</h2>
           <p>
             A chrome Extension that adds an iframe when a new battle starts and
@@ -50,8 +46,22 @@ const Projects = () => {
             <li>Web Scraping</li>
             <li>Sending data over http</li>
           </ul>
+          <div className="project_links">
+            <a
+              className="current_projects_btn"
+              href={Showdown_Extension.repoHref}
+            >
+              Repo
+            </a>
+            <a
+              className="current_projects_btn"
+              href={Showdown_Extension.demoHref}
+            >
+              Site
+            </a>
+          </div>
         </div>
-        <div id="PokeInfo" className="experience_card">
+        <div id="PokeInfo" className="card">
           <h2>PokeInfo</h2>
           <p>
             A project that connects to an active pokemon showdown battle via a
@@ -64,8 +74,16 @@ const Projects = () => {
             <li>api fetching</li>
             <li>Error handling</li>
           </ul>
+          <div className="project_links">
+            <a className="current_projects_btn" href={Pokeinfo.repoHref}>
+              Repo
+            </a>
+            <a className="current_projects_btn" href={Pokeinfo.demoHref}>
+              Site
+            </a>
+          </div>
         </div>
-        <div id="Reddit_Timer_App" className="experience_card">
+        <div id="Reddit_Timer_App" className="card">
           <h2>Reddit Timer App</h2>
           <p></p>
           <h3>Skills</h3>
@@ -74,8 +92,22 @@ const Projects = () => {
             <li>api fetching</li>
             <li></li>
           </ul>
+          <div className="project_links">
+            <a
+              className="current_projects_btn"
+              href={Showdown_Extension.repoHref}
+            >
+              Repo
+            </a>
+            <a
+              className="current_projects_btn"
+              href={Showdown_Extension.demoHref}
+            >
+              Site
+            </a>
+          </div>
         </div>
-        <div id="Portfolio" className="experience_card">
+        <div id="Portfolio" className="card">
           <h2>This Site</h2>
           <p></p>
           <h3>Skills</h3>
@@ -84,8 +116,16 @@ const Projects = () => {
             <li>CSS Animations</li>
             <li></li>
           </ul>
+          <div className="project_links">
+            <a className="current_projects_btn" href={Portfolio.repoHref}>
+              Repo
+            </a>
+            <a className="current_projects_btn" href={Portfolio.demoHref}>
+              Site
+            </a>
+          </div>
         </div>
-        <div id="World_Map" className="experience_card">
+        <div id="World_Map" className="card">
           <h2>World Map</h2>
           <p>
             World map quiz website that utilizes local storage to store data
@@ -96,6 +136,14 @@ const Projects = () => {
             <li>Local storage</li>
             <li></li>
           </ul>
+          <div className="project_links">
+            <a className="current_projects_btn" href={World_Map.repoHref}>
+              Repo
+            </a>
+            <a className="current_projects_btn" href={World_Map.demoHref}>
+              Site
+            </a>
+          </div>
         </div>
       </div>
 
