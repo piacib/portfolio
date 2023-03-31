@@ -1,4 +1,4 @@
-.experience_container {
+.card_container {
   --border-radius: 20px;
   color: black;
   display: flex;
@@ -7,12 +7,14 @@
   margin: 2rem 0;
 }
 @media screen and (max-width: 44rem) {
-  #experience_container {
+  .card_container {
     display: flex;
     flex-direction: column;
   }
 }
-.experience_card {
+.card {
+  display: flex;
+  flex-direction: column;
   max-width: 25rem;
   text-align: center;
   border: 1px solid var(--right-color);
@@ -29,16 +31,16 @@
   z-index: 1;
   overflow: hidden;
 }
-.experience_card h2 {
+.card h2 {
   color: var(--left-color);
   text-decoration: underline;
   text-decoration-color: var(--right-color);
 }
-.experience_card:nth-child(even) {
+.card:nth-child(even) {
   margin-left: 1rem;
   margin-right: 1rem;
 }
-.experience_card ul {
+.card ul {
   list-style-type: disclosure-closed;
   text-align: justify;
 }
