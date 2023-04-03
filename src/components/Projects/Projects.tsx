@@ -85,7 +85,11 @@ const Projects = () => {
         </div>
         <div id="Reddit_Timer_App" className="card">
           <h2>Reddit Timer App</h2>
-          <p></p>
+          <p>
+            Reddit Timer App is an app that suggests the optimal time to make a
+            post on a specified subreddit. It fetches data from the reddit api and 
+            tracks top posts' submission times and displays the data.
+          </p>
           <h3>Skills</h3>
           <ul>
             <li>Developing a site from a figma design</li>
@@ -109,7 +113,9 @@ const Projects = () => {
         </div>
         <div id="Portfolio" className="card">
           <h2>This Site</h2>
-          <p></p>
+          <p>My portfolio site is designed to showcase my talents. 
+            It utilizes custom css for all its animations 
+             </p>
           <h3>Skills</h3>
           <ul>
             <li>CSS Variables</li>
@@ -128,13 +134,15 @@ const Projects = () => {
         <div id="World_Map" className="card">
           <h2>World Map</h2>
           <p>
-            World map quiz website that utilizes local storage to store data
+            World map is a quiz game to help learn all of the countries in the
+            world. It uses a large interactive world map svg to explore to globe
+            and test your knowledge.
           </p>
           <h3>Skills</h3>
           <ul>
             <li>SVG manipulation</li>
             <li>Local storage</li>
-            <li></li>
+            <li>Touch Screen capability</li>
           </ul>
           <div className="project_links">
             <a className="current_projects_btn" href={World_Map.repoHref}>
