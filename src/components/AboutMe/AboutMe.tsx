@@ -16,8 +16,8 @@ const AboutMe: React.FC = () => {
         Javascript and react. Currently I am living in Hawaii working on Tour
         boats as a deckhand and swim guide.
       </p>
-      <div id="experience_container">
-        <div className="experience_card">
+      <div className="card_container">
+        <div className="card">
           <h2>Physics Tutor</h2>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
@@ -30,7 +30,7 @@ const AboutMe: React.FC = () => {
             <li></li>
           </ul>
         </div>
-        <div className="experience_card">
+        <div className="card">
           <h2>Safety diver</h2>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
@@ -44,7 +44,7 @@ const AboutMe: React.FC = () => {
             <li>Managing multiple people</li>
           </ul>
         </div>
-        <div className="experience_card">
+        <div className="card">
           <h2>Plasma Physics Researcher</h2>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni

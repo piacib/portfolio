@@ -25,7 +25,7 @@ function App() {
         <FerrisWheel />
       </section>
       <AboutMe />
-      {/* <Projects /> */}
+      <Projects />
     </>
   );
 }
