@@ -1,0 +1,14 @@
+$radius: 19; //Hex-radius
+$width: 54px;
+$halfWidth: $width / 2;
+$hexColor: #77f6fd;
+$background-color: #1e1c29;
+$height: 47px;
+$halfHeight: $height / 2;
+$count: 0;
+$animation-duration: 3s;
+$totalAnimationTime: ($radius * 0.25) * 1s;
+:export {
+  radius: $radius;
+  totalAnimationTime: $totalAnimationTime;
+}

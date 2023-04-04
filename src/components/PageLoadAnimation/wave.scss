@@ -1,0 +1,153 @@
+@import "./style.module.scss";
+body {
+  animation: overflowHide 10s linear forwards;
+  //   background: #373940;
+}
+@keyframes overflowHide {
+  from {
+    overflow: hidden;
+  }
+
+  to {
+    overflow: auto;
+  }
+}
+
+.container {
+  position: fixed;
+  //   top: 45%;
+  //   left: 52%;
+  top: 0;
+  height: 100dvh;
+  width: 100dvw;
+  background: $background-color;
+  animation: opacity ($totalAnimationTime + 2s) linear;
+  animation-fill-mode: infinite;
+  z-index: 2;
+}
+@keyframes opacity {
+  0% {
+    visibility: visible;
+  }
+  99% {
+    visibility: visible;
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
+.hexagon {
+  position: absolute;
+  width: 49px;
+  height: 28.87px;
+  top: 0%;
+  left: 0%;
+  //   border-radius: 50%;
+  background-color: $hexColor;
+  //   -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+.hexagon:before,
+.hexagon:after {
+  //   display: none;
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+}
+
+.hexagon:before {
+  bottom: 100%;
+  border-bottom: 14.43px solid $hexColor;
+}
+
+.hexagon:after {
+  top: 100%;
+  width: 0;
+  border-top: 14.43px solid $hexColor;
+}
+
+@for $r from 0 through $radius {
+  @for $i from 0 through $r {
+    $count: $count + 1;
+    .hexagon:nth-child(#{$count}) {
+      margin-top: $height * $r;
+      margin-left: (($r * $halfWidth * -1)) + ($i * $width) - $halfWidth;
+    }
+  }
+  @for $i from 0 through $r {
+    $count: $count + 1;
+    .hexagon:nth-child(#{$count}) {
+      margin-top: ($r * $height) - ($i * $height);
+      margin-left: ($halfWidth + ($r * $halfWidth)) + ($i * $halfWidth);
+    }
+  }
+  @for $i from 0 through $r {
+    $count: $count + 1;
+    .hexagon:nth-child(#{$count}) {
+      margin-top: ($height * -1) - ($i * $height);
+      margin-left: ($r * $width) - ($i * $halfWidth);
+    }
+  }
+  @for $i from 0 through $r {
+    $count: $count + 1;
+    .hexagon:nth-child(#{$count}) {
+      margin-top: ($r + 1) * $height * -1;
+      margin-left: (($r * $halfWidth)) - ($i * $width) - $width;
+    }
+  }
+  @for $i from 0 through $r {
+    $count: $count + 1;
+    .hexagon:nth-child(#{$count}) {
+      margin-top: (($r) * $height * -1) + ($i * $height);
+      margin-left: (($r + 1) * $halfWidth * -1) - ($i * $halfWidth) - $width;
+    }
+  }
+  @for $i from 0 through $r {
+    $count: $count + 1;
+    @if $i != $r {
+      .hexagon:nth-child(#{$count}) {
+        margin-top: ($height * -1) + ($i * $height) + ($height * 2);
+        margin-left: ($r * $width * -1) + ($i * $halfWidth) - $width;
+      }
+    } @else {
+      $count: $count - 1;
+    }
+  }
+}
+
+@for $r from 0 through $radius {
+  .r#{$r} {
+    animation-name: pulse;
+    animation-duration: $animation-duration; //Pulse speed
+    animation-delay: #{$r * 0.25}s;
+    animation-iteration-count: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.01);
+    transform: scale(0.01);
+  }
+
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  100% {
+    -webkit-transform: scale(0.01);
+    transform: scale(0.01);
+  }
+}
+
+@keyframes rotateHue {
+  100% {
+    -webkit-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
