@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./AboutMe.css";
 import "./ExperienceCards.css";
 import Me from "../../assets/me.jpg";
 import { AboutMeSectionId } from "../../global";
+import useIntersectionObserver from "../../utils/useIntersectionObserver";
 
 const AboutMe: React.FC = () => {
+  const elementRef = useRef(null);
+  const isScreen = useIntersectionObserver(elementRef);
+  console.log("isOnScreen", isScreen);
+
   return (
-    <section id={AboutMeSectionId}>
+    <section id={AboutMeSectionId} ref={elementRef}>
       <div id="about_me_top_background" className="triangle_background"></div>
       <h1 className="section_header">About Me</h1>
       <p className="about_me_text">
