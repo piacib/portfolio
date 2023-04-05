@@ -14,8 +14,6 @@ function addHexes(r: number) {
 
 const LoadScreen = () => {
   const [classList, setClassList] = useState<string[]>([]);
-  const [animationDisplay, setAnimationDisplay] = useState<string>("auto");
-  console.log("radius", variables.radius);
   useEffect(() => {
     let totalList: string[] = [];
     const rad = Number(variables.radius);
@@ -25,47 +23,14 @@ const LoadScreen = () => {
     }
     setClassList(totalList);
   }, []);
-  useEffect(() => {
-    // const totalAnimationTime = variables.totalAnimationTime.match(/\d+/);
-    // if (totalAnimationTime) {
-    //   let time = Number(totalAnimationTime[0]);
-    //   setTimeout(() => {
-    //     setAnimationDisplay("none");
-    //   }, (time + 3) * 1000);
-    // } else {
-    //   setAnimationDisplay("none");
-    // }
-  }, []);
 
   return (
-    <section className="container" style={{ display: animationDisplay }}>
+    <section className="load-container">
       <div className="hexagon r0"></div>
       {classList.map((classL, idx) => (
         <div key={classL + idx} className={classL} />
       ))}
     </section>
-    // <section className="load_screen_container">
-    //   <div>
-    //     <div>
-    //       <span className="one side6"></span>
-    //       <span className="two side3"></span>
-    //     </div>
-    //   </div>
-
-    //   <div>
-    //     <div>
-    //       <span className="one side1"></span>
-    //       <span className="two side4"></span>
-    //     </div>
-    //   </div>
-
-    //   <div>
-    //     <div>
-    //       <span className="one side5"></span>
-    //       <span className="two side2"></span>
-    //     </div>
-    //   </div>
-    // </section>
   );
 };
 
