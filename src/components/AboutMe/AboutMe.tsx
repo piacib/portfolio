@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import "./AboutMe.css";
-import "./ExperienceCards.css";
+// import "./AboutMe.css";
+// import "./ExperienceCards.css";
 import Me from "../../assets/me.jpg";
 import { AboutMeSectionId } from "../../global";
 import useIntersectionObserver from "../../utils/useIntersectionObserver";
