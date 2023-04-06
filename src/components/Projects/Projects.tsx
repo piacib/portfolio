@@ -45,11 +45,12 @@ const Weather_App = {
 const Projects = () => {
   return (
     <section id={ProjectSectionId}>
-      <h1>Projects</h1>
+      <h1>What I have built</h1>
       <ul className="card_container">
-        <ProjectCard direction={Direction.Left} />
-        <ProjectCard direction={Direction.Left} />
-        <ProjectCard direction={Direction.Left} />
+        <ProjectCard />
+        <ProjectCard />
+        {/* <ProjectCard direction={Direction.Left} />
+        <ProjectCard direction={Direction.Left} /> */}
         {/* <li id="PokeInfo" className="card">
           <h2>PokeInfo</h2>
           <p>
@@ -157,10 +158,8 @@ const Projects = () => {
 };
 
 export default Projects;
-interface CardProps {
-  direction: Direction;
-}
-const ProjectCard = ({ direction }: CardProps) => {
+
+const ProjectCard = () => {
   return (
     <li id="Pokemon_Showdown_Extension" className="card">
       <div className="project_content">
@@ -205,7 +204,7 @@ const ProjectCard = ({ direction }: CardProps) => {
         </div>
       </div>
       <div className="image_link_container">
-        {/* <div className="triangle left" />
+        <div className="triangle left" />
         <div className="triangle right " />
         <a
           className="button-85 projects_btn repo"
@@ -215,7 +214,9 @@ const ProjectCard = ({ direction }: CardProps) => {
         </a>
         <a className="projects_btn demo" href={Showdown_Extension.demoHref}>
           Site
-        </a> */}
+        </a>
+        {/*
+         */}
       </div>
     </li>
   );

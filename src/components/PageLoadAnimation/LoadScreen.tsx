@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./hexagon.css";
-// import "./wave.scss";
+import "./wave.scss";
 import variables from "./style.module.scss";
 function addHexes(r: number) {
   let classList = [];

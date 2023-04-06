@@ -28,9 +28,6 @@ export default Home;
 const HomeBackground = () => {
   return (
     <>
-      {/* <div className="home_background">
-        <div className="background_hexagon"></div>
-      </div>
       <div className="home_background">
         <div className="background_hexagon"></div>
       </div>
@@ -45,7 +42,10 @@ const HomeBackground = () => {
       </div>
       <div className="home_background">
         <div className="background_hexagon"></div>
-      </div> */}
+      </div>
+      <div className="home_background">
+        <div className="background_hexagon"></div>
+      </div>
       {/* <div className="home_background">
         <div className="background_hexagon"></div>
       </div>

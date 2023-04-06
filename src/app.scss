@@ -1,5 +1,7 @@
-section {
-  background-color: #1e1c29;
+@import "./components/globalStyle.module.scss";
+
+body {
+  background-color: $background-color;
   color: white;
   padding: 0 3rem;
 }
