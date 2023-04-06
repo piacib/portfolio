@@ -1,5 +1,6 @@
 import React from "react";
-import "./App.css";
+// import "./App.css";
+import "./app.scss";
 import "./normalize.css";
 import "./fonts.css";
 import AboutMe from "./components/AboutMe/AboutMe";
@@ -15,8 +16,8 @@ function App() {
       <LoadScreen />
       <Home />
       {/* <AboutMe /> */}
-      {/*
-      <Projects /> */}
+
+      <Projects />
     </>
   );
 }
