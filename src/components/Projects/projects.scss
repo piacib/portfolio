@@ -1,0 +1,166 @@
+@use "sass:math";
+@import "../globalStyle.module.scss";
+$h2gridRow: 4;
+$pGridRow: $h2gridRow + 1;
+$pGridRowEnd: $pGridRow + 1;
+#projects {
+  height: 600px;
+}
+$cardWidth: 900px;
+$cardHeight: 400px;
+
+$imgWidth: math.div($cardWidth, 2);
+.card {
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: $cardWidth;
+  min-width: $imgWidth;
+  width: 100%;
+  height: $cardHeight;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.card_container,
+.card .skills_list {
+  list-style-type: none;
+}
+.card_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card h2 {
+  grid-column: 1;
+  grid-row: $h2gridRow;
+  white-space: nowrap;
+  margin-bottom: 0;
+  color: $accentColor;
+  text-decoration: underline;
+}
+.card p {
+  grid-row: #{$pGridRow} / #{$pGridRowEnd};
+  margin: 0;
+  //   max-width: 60ch;
+  padding: 1rem 0;
+  background: rgba(0, 0, 0, 0.776);
+
+  //   opacity: 0.4;
+}
+.project_description * {
+  width: fit-content;
+}
+
+.card .skills_list {
+  grid-row: #{$pGridRowEnd};
+  display: flex;
+  padding: 0;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 30ch;
+  width: 100%;
+}
+.project_content {
+  grid-column: 1/10;
+
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+.project_content .skills_icon {
+  font-size: 30px;
+}
+.projects_btn {
+  width: 4rem;
+  background: $accentColor;
+  margin: 1rem;
+  padding: 0.5rem 2rem;
+}
+.image_link_container {
+  //   right: 0;
+  position: relative;
+  border: 2px solid black;
+  width: $imgWidth;
+  height: 100%;
+  //   height: $cardHeight;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+
+  //   top: 0;
+  &:hover > .triangle.left {
+    clip-path: polygon(0 0, 0 100%, 0 100%);
+  }
+  &:hover > .triangle.right {
+    clip-path: polygon(101% 0, 100% 0, 100% 100%);
+  }
+}
+
+.triangle {
+  position: absolute;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 500px;
+  min-height: 200px;
+  aspect-ratio: 45/40;
+  background: linear-gradient(to top, #09203f 0%, #537895 100%);
+  background-image: url("../../assets/sample_pokeInfo.png");
+  background-repeat: no-repeat;
+  transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+  pointer-events: none;
+
+  &.left {
+    clip-path: polygon(0 0, 0% 100%, 110% 100%);
+  }
+
+  &.right {
+    clip-path: polygon(100% 0, 0 0, 100% 110%);
+  }
+}
+.small_screen_btn_container {
+  display: none;
+}
+
+@media (max-width: #{$imgWidth + 200px}) {
+  .small_screen_btn_container {
+    display: flex;
+  }
+  .image_link_container {
+    pointer-events: none;
+  }
+  .card {
+    border: 2px solid #77f6fd29;
+    border-radius: 10px;
+    height: auto;
+    background: #77f6fd29;
+    min-width: 200px;
+  }
+  .project_content {
+    grid-column: 1/12;
+    display: flex;
+    justify-content: space-between;
+    align-items: space-between;
+    width: 100%;
+    height: 100%;
+  }
+  .card h2 {
+    white-space: normal;
+  }
+  .card p {
+    width: 100%;
+  }
+}
+
+.card:nth-child(odd) {
+  border: 8px solid red;
+  & > .project_content {
+    grid-column: 3/13;
+    align-items: flex-end;
+  }
+  & > .image_link_container {
+    grid-column: 1/10;
+  }
+}
