@@ -1,12 +1,10 @@
 @import "../globalStyle.module.scss";
-$width: 54px;
-$halfWidth: $width / 2;
-$hexColor: $accentColor;
-$height: 47px;
-$halfHeight: $height / 2;
+
 $count: 0;
 $animation-duration: 3s;
+$totalAnimationTime: ($radius * 0.25) * $animation-duration;
+
 :export {
-  radius: $radius;
+  // radius: $radius;
   totalAnimationTime: $totalAnimationTime;
 }
