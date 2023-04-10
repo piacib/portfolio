@@ -1,6 +1,8 @@
+@use "sass:math";
 @import "./style.module.scss";
+@import "../HexagonSvg/style.module.scss";
 body {
-  animation: overflowHide 10s linear forwards;
+  animation: overflowHide $totalAnimationTime linear forwards;
   //   background: #373940;
 }
 @keyframes overflowHide {
@@ -13,18 +15,25 @@ body {
     overflow: auto;
   }
 }
-
+.scale_down {
+  scale: $scaleDown;
+}
+.scale_to_49 {
+  scale: math.div(49, 304);
+}
 .load-container {
   position: fixed;
-  // top: 48%;
-  // left: 52%;
-  // top: 0;
   height: 100dvh;
   width: 100dvw;
   background: $background-color;
   animation: opacity ($totalAnimationTime + 2s) linear;
   animation-fill-mode: forwards;
   z-index: 2;
+}
+.load-container .hexagon {
+  top: 0%;
+  left: 0%;
+  transform: scale(0);
 }
 @keyframes opacity {
   0% {
@@ -39,78 +48,79 @@ body {
   }
 }
 .hexagon {
-  width: 49px;
-  height: 28.87px;
-  background-color: $hexColor;
+  fill: $accentColor;
   position: absolute;
-}
-.load-container .hexagon {
-  top: 0%;
-  left: 0%;
-  transform: scale(0);
-}
-.hexagon:before,
-.hexagon:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-}
-
-.hexagon:before {
-  bottom: 100%;
-  border-bottom: 14.43px solid $hexColor;
-}
-
-.hexagon:after {
-  top: 100%;
-  width: 0;
-  border-top: 14.43px solid $hexColor;
 }
 
 @for $r from 0 through $radius {
   @for $i from 0 through $r {
     $count: $count + 1;
     .load-container .hexagon:nth-child(#{$count}) {
-      margin-top: $height * $r;
-      margin-left: (($r * $halfWidth * -1)) + ($i * $width) - $halfWidth;
+      margin-top: ($displayHeight * $r) - $halfSvgHeight;
+      margin-left: (
+          (($r * $halfDisplayWidth * -1)) +
+            ($i * $displayWidth) -
+            $halfDisplayWidth
+        ) -
+        $halfSvgWidth;
     }
   }
   @for $i from 0 through $r {
     $count: $count + 1;
     .load-container .hexagon:nth-child(#{$count}) {
-      margin-top: ($r * $height) - ($i * $height);
-      margin-left: ($halfWidth + ($r * $halfWidth)) + ($i * $halfWidth);
+      margin-top: (($r * $displayHeight) - ($i * $displayHeight)) -
+        $halfSvgHeight;
+      margin-left: (
+          ($halfDisplayWidth + ($r * $halfDisplayWidth)) +
+            ($i * $halfDisplayWidth)
+        ) -
+        $halfSvgWidth;
     }
   }
   @for $i from 0 through $r {
     $count: $count + 1;
     .load-container .hexagon:nth-child(#{$count}) {
-      margin-top: ($height * -1) - ($i * $height);
-      margin-left: ($r * $width) - ($i * $halfWidth);
+      margin-top: (($displayHeight * -1) - ($i * $displayHeight)) -
+        $halfSvgHeight;
+      margin-left: (($r * $displayWidth) - ($i * $halfDisplayWidth)) -
+        $halfSvgWidth;
     }
   }
   @for $i from 0 through $r {
     $count: $count + 1;
     .load-container .hexagon:nth-child(#{$count}) {
-      margin-top: ($r + 1) * $height * -1;
-      margin-left: (($r * $halfWidth)) - ($i * $width) - $width;
+      margin-top: (($r + 1) * $displayHeight * -1) - $halfSvgHeight;
+      margin-left: (
+          (($r * $halfDisplayWidth)) - ($i * $displayWidth) - $displayWidth
+        ) -
+        $halfSvgWidth;
     }
   }
   @for $i from 0 through $r {
     $count: $count + 1;
     .load-container .hexagon:nth-child(#{$count}) {
-      margin-top: (($r) * $height * -1) + ($i * $height);
-      margin-left: (($r + 1) * $halfWidth * -1) - ($i * $halfWidth) - $width;
+      margin-top: ((($r) * $displayHeight * -1) + ($i * $displayHeight)) -
+        $halfSvgHeight;
+      margin-left: (
+          (($r + 1) * $halfDisplayWidth * -1) -
+            ($i * $halfDisplayWidth) -
+            $displayWidth
+        ) -
+        $halfSvgWidth;
     }
   }
   @for $i from 0 through $r {
     $count: $count + 1;
     @if $i != $r {
       .load-container .hexagon:nth-child(#{$count}) {
-        margin-top: ($height * -1) + ($i * $height) + ($height * 2);
-        margin-left: ($r * $width * -1) + ($i * $halfWidth) - $width;
+        margin-top: (
+            ($displayHeight * -1) + ($i * $displayHeight) + ($displayHeight * 2)
+          ) -
+          $halfSvgHeight;
+        margin-left: (
+            ($r * $displayWidth * -1) + ($i * $halfDisplayWidth) - $displayWidth
+          ) -
+          $halfSvgWidth;
       }
     } @else {
       $count: $count - 1;
