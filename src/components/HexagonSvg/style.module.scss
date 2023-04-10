@@ -1,0 +1,21 @@
+@use "sass:math";
+$hexScale: 1;
+$hexWidth: 49 * $hexScale;
+$hexHeight: 47 * $hexScale;
+$svgPadding: 6 * $hexScale;
+
+$displayHeight: $hexHeight * 1px;
+$displayWidth: ($hexWidth + $svgPadding) * 1px;
+$halfDisplayWidth: ($displayWidth / 2);
+$halfHexHeight: $displayHeight / 2;
+
+$svgHeight: 352;
+$svgWidth: 304;
+$halfSvgHeight: math.div($svgHeight, 2) ;
+$halfSvgWidth: math.div($svgWidth, 2) ;
+$scaleDown: math.div($hexWidth, $svgWidth);
+:export {
+  svgHeight: $svgHeight;
+
+  svgWidth: $svgWidth;
+}
