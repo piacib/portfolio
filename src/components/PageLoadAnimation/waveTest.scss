@@ -1,0 +1,171 @@
+@use "sass:math";
+@import "./style.module.scss";
+@import "../HexagonSvg/style.module.scss";
+body {
+  animation: overflowHide 10s linear forwards;
+  //   background: #373940;
+}
+@keyframes overflowHide {
+  from {
+    overflow: hidden;
+    height: 100dvh;
+  }
+
+  to {
+    overflow: auto;
+  }
+}
+.scale_down {
+  scale: $scaleDown;
+}
+.scale_to_49 {
+  scale: math.div(49, 304);
+}
+.load-container {
+  position: fixed;
+  height: 100dvh;
+  width: 100dvw;
+  background: $background-color;
+  // animation: opacity ($totalAnimationTime + 2s) linear;
+  animation-fill-mode: forwards;
+  z-index: 2;
+  // top: -176px;
+  // left: -124px;
+}
+@keyframes opacity {
+  0% {
+    visibility: visible;
+  }
+  99% {
+    visibility: visible;
+  }
+
+  100% {
+    visibility: hidden;
+  }
+}
+.hexagon {
+  fill: $accentColor;
+  position: absolute;
+  // rotate: 90deg;
+}
+.load-container .hexagon {
+  // top: 0%;
+  // left: 0%;
+  // display: none;
+  // transform: scale(0);
+}
+
+// @for $r from 0 through $radius {
+//   @for $i from 0 through $r {
+//     $count: $count + 1;
+//     .load-container .hexagon:nth-child(#{$count}) {
+//       display: block;
+//       margin-top: $displayHeight * $r;
+//       margin-left: (($r * $halfDisplayWidth * -1)) +
+//         ($i * $displayWidth) -
+//         $halfDisplayWidth;
+//     }
+//   }
+//   @for $i from 0 through $r {
+//     $count: $count + 1;
+//     .load-container .hexagon:nth-child(#{$count}) {
+//       display: block;
+//       margin-top: ($r * $displayHeight) - ($i * $displayHeight);
+//       margin-left: ($halfDisplayWidth + ($r * $halfDisplayWidth)) +
+//         ($i * $halfDisplayWidth);
+//     }
+//   }
+//   @for $i from 0 through $r {
+//     $count: $count + 1;
+//     // .load-container .hexagon:nth-child(#{$count}) {
+//     //   margin-top: ($displayHeight * -1) - ($i * $displayHeight);
+//     //   margin-left: ($r * $displayWidth) - ($i * $halfDisplayWidth);
+//     // }
+//   }
+//   @for $i from 0 through $r {
+//     $count: $count + 1;
+//     // .load-container .hexagon:nth-child(#{$count}) {
+//     //   margin-top: ($r + 1) * $displayHeight * -1;
+//     //   margin-left: (($r * $halfDisplayWidth)) -
+//     //     ($i * $displayWidth) -
+//     //     $displayWidth;
+//     // }
+//   }
+//   @for $i from 0 through $r {
+//     $count: $count + 1;
+//     // .load-container .hexagon:nth-child(#{$count}) {
+//     //   margin-top: (($r) * $displayHeight * -1) + ($i * $displayHeight);
+//     //   margin-left: (($r + 1) * $halfDisplayWidth * -1) -
+//     //     ($i * $halfDisplayWidth) -
+//     //     $displayWidth;
+//     // }
+//   }
+//   @for $i from 0 through $r {
+//     $count: $count + 1;
+//     @if $i != $r {
+//       // .load-container .hexagon:nth-child(#{$count}) {
+//       //   margin-top: ($displayHeight * -1) +
+//       //     ($i * $displayHeight) +
+//       //     ($displayHeight * 2);
+//       //   margin-left: ($r * $displayWidth * -1) +
+//       //     ($i * $halfDisplayWidth) -
+//       //     $displayWidth;
+//       // }
+//     } @else {
+//       $count: $count - 1;
+//     }
+//   }
+// }
+.hexagon {
+  animation-name: pulse;
+  animation-duration: $animation-duration; //Pulse speed
+  // animation-delay: #{$r * 0.25}s;
+  animation-iteration-count: 1;
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.01);
+    transform: scale(0.01);
+  }
+
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}
+
+@keyframes rotateHue {
+  100% {
+    -webkit-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+$rowLength: $radius;
+@for $r from 0 through $radius {
+  @for $i from 0 through $rowLength {
+    $count: $count + 1;
+    .load-container .hexagon:nth-child(#{$count}) {
+      display: block;
+      margin-top: ($displayHeight) * $count;
+      margin-left: if($count % 2 == 0, -27.5px, 0px);
+    }
+  }
+  $rowLength: $rowLength - 1;
+}
+@for $r from 1 through $radius * 2 {
+  .load-container .c#{$r} {
+    position: absolute;
+    top: 0;
+    margin-left: -$svgPadding * 1px;
+    margin-left: $r * ($displayHeight + $svgPadding);
+    height: 100%;
+    width: $displayWidth;
+  }
+}
