@@ -2,174 +2,37 @@
 @use "sass:map";
 @import "../PageLoadAnimation/style.module.scss";
 @import "./style.module.scss";
-$width: 49px;
-$aspect-ratio: 1.69;
-$height: math.div($width, math.sqrt(3));
-
-$hex-count: 10;
-$hex-position: (
-  1: 1 * 10px,
-  //301.5012970326px,
-  2: 2 * 10px,
-  //37.5628738078px,
-  3: 3 * 10%,
-  //-480.087932px,
-  4: 4 * 10%,
-  //391.707433386px,
-  5: 5 * 10%,
-  //-100.8815403307px,
-  6: 6 * 10%,
-  //70.8815403307px,
-  7: 7 * 10%,
-  8: 8 * 10%,
-  9: 9 * 10%,
-  10: 10 * 10%,
-);
-$time: (
-  1: 100s,
-  //301.5012970326px,
-  2: 125s,
-  //37.5628738078px,
-  3: 60s,
-  //-480.087932px,
-  4: 90s,
-  //391.707433386px,
-  5: 200s,
-  //-100.8815403307px,
-  6: 300s,
-  //70.8815403307px,
-  7: 70s,
-  8: 80s,
-  9: 100s,
-  10: 50s,
-);
-$background-hexagon-count: 8;
-
-.home_background {
-  position: absolute;
-  //   toft: 50%;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  opacity: 0.7;
-  z-index: 3;
+#home {
+  position: relative;
+  padding: 0;
 }
-.background_hexagon {
-  position: absolute;
-  width: $width;
-  height: $height;
-  color: yellowgreen;
-  //   top: 0%;
-  //   left: 0%;
-
-  top: 50%;
-  left: 50%;
-
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
-  background-color: $hexColor;
-  //   animation: rotate 120s infinite;
-  //   animation-direction: reverse;
-  transform-origin: center;
-  z-index: 3;
-  //   scale: 0;
-}
-.background_hexagon:before,
-.background_hexagon:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  border-left: 24px solid transparent;
-  border-right: 25px solid transparent;
-}
-$bottomBorder: math.div($width, (math.sqrt(3)) * 2);
-.background_hexagon:before {
-  bottom: 100%;
-  border-bottom: $bottomBorder solid $hexColor;
-}
-
-.background_hexagon:after {
-  top: 100%;
-  width: 0;
-  border-top: $bottomBorder solid $hexColor;
-}
-$animation-delay: 8s;
-$animation-values: 2s forwards $animation-delay;
-
-@for $n from 0 through $hex-count {
-  @keyframes translate-#{$n} {
-    0% {
-      translate: 0;
-      opacity: 1;
-    }
-    100% {
-      opacity: 1;
-
-      translate: $n * 60px;
-    }
-  }
-  .home_background:nth-child(#{$n}) .background_hexagon {
-    //   top: -296.4309737846px;
-    // left: $horizontalOffset;
-    opacity: 0;
-    animation: translate-#{$n} 5s forwards $animation-delay;
-  }
-}
-@each $n, $t in $time {
-  .home_background:nth-of-type(#{$n}) {
-    animation: rotate $t infinite $animation-delay + 2s;
-  }
-}
-// .home_background:nth-child(2) .background_hexagon {
-//   //   top: 398.3121882483px;
-//   left: -285.6622239318px;
-//   animation: scale2 $animation-values;
-// }
-// .background_hexagon {
-//   //   top: -186.8311409905px;
-//   left: 301.5012970326px;
-//   animation: scale2 $animation-values;
-// }
-// .background_hexagon {
-//   //   top: -433.0250110151px;
-//   left: 37.5628738078px;
-//   animation: scale2 $animation-values;
-// }
-// .background_hexagon {
-//   //   top: 68.4652795294px;
-//   left: -480.087932px;
-//   animation: scale2 $animation-values;
-// }
-// .background_hexagon {
-//   //   top: 72.5614860336px;
-//   animation: scale2 $animation-values;
-//   left: 391.707433386px;
-// }
-// .background_hexagon {
-//   //   top: -34.6808641059px;
-//   animation: scale2 $animation-values;
-//   left: -100.8815403307px;
-// }
-// .background_hexagon {
-//   //   top: 200.6808641059px;
-//   animation: scale2 $animation-values;
-//   left: 70.8815403307px;
-// }
-
-@keyframes rotate {
-  0% {
-    rotate: 0deg;
-  }
-
-  100% {
-    rotate: 360deg;
-  }
-}
-@keyframes scale {
+@keyframes scaleUp {
   0% {
     scale: 0;
   }
-
-  100% {
-    scale: 1;
+  5% {
+    scale: math.div(49, 304);
   }
+  10% {
+    scale: 0;
+  }
+  100% {
+    scale: 0;
+  }
+}
+@for $n from 1 through 100 {
+  #home .background_hex:nth-child(#{$n}) {
+    top: math.random() * 100%;
+    left: math.random() * 100%;
+    animation: scaleUp 60s ((2s * $n)) infinite;
+  }
+}
+.background_hex {
+  position: absolute;
+  rotate: 90deg;
+  fill: $accentColor;
+  scale: 0;
+}
+#home {
+  position: relative;
 }
