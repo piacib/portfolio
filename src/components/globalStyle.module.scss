@@ -3,8 +3,9 @@ $width: 54px;
 $halfWidth: $width / 2;
 $accentColor: #77f6fd;
 $background-color: #1e1c29;
-$totalAnimationTime: ($radius * 0.25) * 1s;
+$pagePadding: 0 5rem;
+$backgroundHexCount: 100;
 :export {
   radius: $radius;
-  totalAnimationTime: $totalAnimationTime;
+  backgroundHexCount: $backgroundHexCount;
 }
