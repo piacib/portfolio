@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import "./hexagon.css";
 import "./wave.scss";
 import variables from "./style.module.scss";
+import HexagonSvg from "../HexagonSvg/HexagonSvg";
+const HEXCLASSES = "scale_down hexagon";
 function addHexes(r: number) {
   let classList = [];
   for (var i = 1; i <= 6 * r; i++) {
-    classList.push(`hexagon r${r}`);
+    classList.push(`${HEXCLASSES} r${r}`);
   }
   return classList;
 }
@@ -26,9 +28,9 @@ const LoadScreen = () => {
 
   return (
     <section className="load-container">
-      <div className="hexagon r0"></div>
+      <HexagonSvg className={`${HEXCLASSES} r0`} />
       {classList.map((classL, idx) => (
-        <div key={classL + idx} className={classL} />
+        <HexagonSvg key={classL + idx} className={classL} />
       ))}
     </section>
   );
