@@ -13,9 +13,10 @@ window.onbeforeunload = function () {
 function App() {
   return (
     <>
-      <LoadScreen />
-      <Home />
-      {/* <AboutMe /> */}
+      <Home>
+        <LoadScreen />
+      </Home>
+      <AboutMe />
 
       <Projects />
     </>

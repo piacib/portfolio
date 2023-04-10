@@ -6,6 +6,7 @@
   position: relative;
   padding: 0;
 }
+
 @keyframes scaleUp {
   0% {
     scale: 0;
@@ -30,7 +31,8 @@
 .background_hex {
   position: absolute;
   rotate: 90deg;
-  fill: $accentColor;
+  fill: #62d394;
+  z-index: 0;
   scale: 0;
 }
 #home {

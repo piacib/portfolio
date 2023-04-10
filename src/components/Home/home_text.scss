@@ -15,7 +15,7 @@
 }
 .home_text_container h2 {
   color: $accentColor;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 .home_text_container h1 {
   font-size: 4rem;
@@ -24,11 +24,10 @@
   margin: 0;
 }
 #home {
-  background-color: $background-color;
+  background-color: $backgroundColor;
   height: 100dvh;
   display: flex;
   align-items: center;
-  padding: 0 5rem;
 }
 @keyframes fadeIn {
   0% {

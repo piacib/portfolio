@@ -2,7 +2,7 @@
 
 $count: 0;
 $animation-duration: 3s;
-$totalAnimationTime: ($radius * 0.25) * $animation-duration;
+$totalAnimationTime: ($radius * 0.25) + $animation-duration + 0.5s;
 
 :export {
   // radius: $radius;
