@@ -1,5 +1,5 @@
 @import "../PageLoadAnimation/style.module.scss";
-
+@import "../globalStyle.module.scss";
 .home_text_container {
   animation-name: fadeIn;
   animation-duration: 1s; //Pulse speed
@@ -7,13 +7,14 @@
   animation-delay: 4.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  padding: $pagePadding;
   opacity: 0;
   color: white;
   position: relative;
   z-index: 3;
 }
 .home_text_container h2 {
-  color: $hexColor;
+  color: $accentColor;
   font-size: 2rem;
 }
 .home_text_container h1 {
