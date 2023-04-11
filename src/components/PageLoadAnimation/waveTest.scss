@@ -1,37 +1,32 @@
 @use "sass:math";
 @import "./style.module.scss";
 @import "../HexagonSvg/style.module.scss";
-body {
-  animation: overflowHide 10s linear forwards;
-  //   background: #373940;
+body,
+html {
+  animation: overflowHide 0.25s $totalAnimationTime linear forwards;
+  overflow: hidden;
 }
 @keyframes overflowHide {
-  from {
+  0% {
     overflow: hidden;
     height: 100dvh;
   }
-
-  to {
-    overflow: auto;
+  100% {
+    overflow-y: auto;
   }
 }
 .scale_down {
   scale: $scaleDown;
 }
-.scale_to_49 {
-  scale: math.div(49, 304);
-}
 .load-container {
-  position: relative;
-  // height: 100dvh;
-  // width: 100dvw;
+  position: absolute;
+  height: ($radius * 2 - 1) * $displayHeight;
+  width: 100%;
   background: $backgroundColor;
-  // animation: opacity ($totalAnimationTime + 2s) linear;
   animation-fill-mode: forwards;
-  z-index: 2;
-  // top: -176px;
-  // left: -124px;
+  // z-index: 0;
 }
+
 @keyframes opacity {
   0% {
     visibility: visible;
@@ -47,97 +42,73 @@ body {
 .hexagon {
   fill: $accentColor;
   position: absolute;
-  // rotate: 90deg;
-}
-.load-container .hexagon {
-  // top: 0%;
-  // left: 0%;
-  // display: none;
-  // transform: scale(0);
+  transform: scale(0);
+  z-index: 2;
+  fill: $hexBackgroundColor;
 }
 
-// @for $r from 0 through $radius {
-//   @for $i from 0 through $r {
-//     $count: $count + 1;
-//     .load-container .hexagon:nth-child(#{$count}) {
-//       display: block;
-//       margin-top: $displayHeight * $r;
-//       margin-left: (($r * $halfDisplayWidth * -1)) +
-//         ($i * $displayWidth) -
-//         $halfDisplayWidth;
-//     }
-//   }
-//   @for $i from 0 through $r {
-//     $count: $count + 1;
-//     .load-container .hexagon:nth-child(#{$count}) {
-//       display: block;
-//       margin-top: ($r * $displayHeight) - ($i * $displayHeight);
-//       margin-left: ($halfDisplayWidth + ($r * $halfDisplayWidth)) +
-//         ($i * $halfDisplayWidth);
-//     }
-//   }
-//   @for $i from 0 through $r {
-//     $count: $count + 1;
-//     // .load-container .hexagon:nth-child(#{$count}) {
-//     //   margin-top: ($displayHeight * -1) - ($i * $displayHeight);
-//     //   margin-left: ($r * $displayWidth) - ($i * $halfDisplayWidth);
-//     // }
-//   }
-//   @for $i from 0 through $r {
-//     $count: $count + 1;
-//     // .load-container .hexagon:nth-child(#{$count}) {
-//     //   margin-top: ($r + 1) * $displayHeight * -1;
-//     //   margin-left: (($r * $halfDisplayWidth)) -
-//     //     ($i * $displayWidth) -
-//     //     $displayWidth;
-//     // }
-//   }
-//   @for $i from 0 through $r {
-//     $count: $count + 1;
-//     // .load-container .hexagon:nth-child(#{$count}) {
-//     //   margin-top: (($r) * $displayHeight * -1) + ($i * $displayHeight);
-//     //   margin-left: (($r + 1) * $halfDisplayWidth * -1) -
-//     //     ($i * $halfDisplayWidth) -
-//     //     $displayWidth;
-//     // }
-//   }
-//   @for $i from 0 through $r {
-//     $count: $count + 1;
-//     @if $i != $r {
-//       // .load-container .hexagon:nth-child(#{$count}) {
-//       //   margin-top: ($displayHeight * -1) +
-//       //     ($i * $displayHeight) +
-//       //     ($displayHeight * 2);
-//       //   margin-left: ($r * $displayWidth * -1) +
-//       //     ($i * $halfDisplayWidth) -
-//       //     $displayWidth;
-//       // }
-//     } @else {
-//       $count: $count - 1;
-//     }
-//   }
-// }
-.hexagon {
-  animation-name: pulse;
-  animation-duration: $animation-duration; //Pulse speed
-  // animation-delay: #{$r * 0.25}s;
-  animation-iteration-count: 1;
+@for $row from 1 through $radius * 2 - 1 {
+  .load-container .row:nth-child(#{$row}) {
+    top: ($row - 1) * $displayHeight;
+    left: $row % 2 * $halfDisplayWidth - $displayWidth;
+    width: $displayWidth * $hexCount;
+    height: $displayHeight;
+  }
+  @for $hex from 1 through $hexCount {
+    .load-container .row:nth-child(#{$row}) .hexagon:nth-child(#{$hex}) {
+      margin-left: ($hex * $displayWidth) - $halfSvgWidth;
+      margin-top: $halfSvgHeight * -1px;
+    }
+    .load-container .row:nth-child(#{$row}) .hexagon:nth-last-child(#{$hex}) {
+      animation: pulse $animation-duration $startDelay forwards;
+      // scaleUp 2s $totalAnimationTime forwards;
+    }
+    $startDelay: $startDelay - 0.25s;
+  }
+  $startDelay: $lastAnimationStart;
+}
+.load-container .row:nth-child(1) .hexagon {
+  z-index: 3;
+}
+.load-container .row:nth-child(2) .hexagon {
+  z-index: 3;
+}
+.load-container .row:nth-child(3) .hexagon {
+  z-index: 3;
+}
+.load-container .row:nth-child(4) .hexagon {
+  z-index: 3;
+}
+
+.row {
+  position: absolute;
 }
 
 @keyframes pulse {
   0% {
-    -webkit-transform: scale(0.01);
-    transform: scale(0.01);
-  }
-
-  50% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-
-  100% {
     -webkit-transform: scale(0);
     transform: scale(0);
+    fill: $accentColor;
+  }
+  50% {
+    -webkit-transform: scale(math.div(49, 304));
+    transform: scale(math.div(49, 304));
+    fill: $accentColor;
+  }
+
+  75% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    fill: $accentColor;
+  }
+  76% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    fill: $hexBackgroundColor;
+  }
+  100% {
+    transform: scale($scaleDown);
+    fill: $hexBackgroundColor;
   }
 }
 
@@ -147,25 +118,14 @@ body {
     filter: hue-rotate(360deg);
   }
 }
-$rowLength: $radius;
-@for $r from 0 through $radius {
-  @for $i from 0 through $rowLength {
-    $count: $count + 1;
-    .load-container .hexagon:nth-child(#{$count}) {
-      display: block;
-      margin-top: ($displayHeight) * $count;
-      margin-left: if($count % 2 == 0, -27.5px, 0px);
-    }
+@keyframes scaleUp {
+  0% {
+    transform: scale(0);
+    fill: $hexBackgroundColor;
   }
-  $rowLength: $rowLength - 1;
-}
-@for $r from 1 through $radius * 2 {
-  .load-container .c#{$r} {
-    position: absolute;
-    top: 0;
-    margin-left: -$svgPadding * 1px;
-    margin-left: $r * ($displayHeight + $svgPadding);
-    height: 100%;
-    width: $displayWidth;
+  100% {
+    transform: scale($scaleDown);
+    fill: $hexBackgroundColor;
   }
 }
+
