@@ -1,0 +1,13 @@
+$width: 49px;
+$height: math.div($width, math.sqrt(3));
+$leftOffset1: 301.5012970326px;
+$leftOffset2: 37.5628738078px;
+$leftOffset3: -480.087932px;
+$leftOffset4: 391.707433386px;
+$leftOffset5: -100.8815403307px;
+$leftOffset6: 70.8815403307px;
+$background-hexagon-count: 8;
+
+:export {
+  background-hexagon-count: $background-hexagon-count;
+}

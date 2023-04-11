@@ -1,0 +1,40 @@
+@use "sass:math";
+@use "sass:map";
+@import "../PageLoadAnimation/style.module.scss";
+@import "./style.module.scss";
+#home {
+  position: relative;
+  padding: 0;
+}
+
+@keyframes scaleUp {
+  0% {
+    scale: 0;
+  }
+  5% {
+    scale: math.div(49, 304);
+  }
+  10% {
+    scale: 0;
+  }
+  100% {
+    scale: 0;
+  }
+}
+@for $n from 1 through 100 {
+  #home .background_hex:nth-child(#{$n}) {
+    top: math.random() * 100%;
+    left: math.random() * 100%;
+    animation: scaleUp 60s ((2s * $n)) infinite;
+  }
+}
+.background_hex {
+  position: absolute;
+  rotate: 90deg;
+  fill: #62d394;
+  z-index: 0;
+  scale: 0;
+}
+#home {
+  position: relative;
+}

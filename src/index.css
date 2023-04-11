@@ -2,8 +2,12 @@ html,
 #root {
   background-color: var(--background);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 body {
   font-family: system-ui;
   min-height: 100vh;
+}
+section:last-child {
+  margin-bottom: 4rem;
 }

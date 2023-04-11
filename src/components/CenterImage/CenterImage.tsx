@@ -7,7 +7,11 @@ interface Props {
 const CenterImage: React.FC<Props> = ({ src1 }) => {
   return (
     <div className="center-image">
-      <img src={src1} alt="profile" className={` center-image-slides`} />
+      <img
+        src={src1}
+        alt="profile"
+        className={` center-image-slides octagon`}
+      />
     </div>
   );
 };

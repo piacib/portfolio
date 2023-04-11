@@ -10,11 +10,14 @@ import { TiWeatherPartlySunny } from "react-icons/ti";
 import { BsGlobeCentralSouthAsia } from "react-icons/bs";
 import { RxLapTimer } from "react-icons/rx";
 import { RiBriefcase5Line } from "react-icons/ri";
+import Circle from "../Circle/Circle";
 const svgSize = 90;
 
 const FerrisWheel: React.FC = () => {
   return (
     <div className="orbit">
+      <Circle />
+
       <CenterImage src1={Me} />
       <ul>
         <Bubble

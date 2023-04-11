@@ -1,0 +1,9 @@
+@import "../globalStyle.module.scss";
+#about_me {
+  padding: $pagePadding;
+  min-height: 50rem;
+}
+#about_me img {
+  height: 26rem;
+  box-shadow: -16px -16px $accentColor;
+}
