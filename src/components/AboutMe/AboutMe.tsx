@@ -103,6 +103,4 @@ const AboutMe: React.FC = () => {
   );
 };
 export default AboutMe;
-const AboutMeCard = () => {
-
-}
+const AboutMeCard = () => {};
