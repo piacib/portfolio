@@ -46,7 +46,6 @@ $cursorSize: 8rem;
   animation: anim 2s linear infinite, jitter 2s linear infinite;
 }
 .cursor {
-  cursor: pointer;
   transition: top 0.4s, left 0.2s;
   transition-timing-function: cubic-bezier(0.05, 1, 0.68, 0.69);
   height: $cursorSize;
