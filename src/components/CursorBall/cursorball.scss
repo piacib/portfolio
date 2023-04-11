@@ -1,0 +1,58 @@
+$cursorSize: 8rem;
+
+@keyframes anim {
+  0% {
+    filter: hue-rotate(0deg);
+    scale: 1;
+  }
+  100% {
+    filter: hue-rotate(360deg);
+    scale: 1;
+  }
+}
+@keyframes jitter {
+  0% {
+    transform: skew(0deg) translate(0px, 0px);
+  }
+  17% {
+    transform: skew(0.5deg) translate(-5px, 2px);
+  }
+  32% {
+    transform: skew(3deg) translate(2px, 2px);
+  }
+  48% {
+    transform: skew(0deg) translate(0px, 2px);
+  }
+  63% {
+    transform: skew(-3deg) translate(5px, -2px);
+  }
+  79% {
+    transform: skew(-0.5deg) translate(-2px, -5px);
+  }
+  100% {
+    transform: skew(0deg) translate(0px, 0px);
+  }
+}
+.dot {
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 0, 1) 0%,
+    rgba(0, 255, 0, 0) 30%
+  );
+  height: $cursorSize;
+  width: $cursorSize;
+  border-radius: 50%;
+  position: absolute;
+  animation: anim 2s linear infinite, jitter 2s linear infinite;
+}
+.cursor {
+  cursor: pointer;
+  transition: top 0.4s, left 0.2s;
+  transition-timing-function: cubic-bezier(0.05, 1, 0.68, 0.69);
+  height: $cursorSize;
+  width: $cursorSize;
+  transform: translate(-50%, -50%);
+  padding: $cursorSize;
+  position: absolute;
+  z-index: 2;
+}
