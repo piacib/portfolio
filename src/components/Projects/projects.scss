@@ -30,7 +30,7 @@ $imgWidth: math.div($cardWidth, 2);
 .image_link_container {
   position: relative;
   grid-row: 1/1;
-  background: rgb(60, 145, 60);
+  background: none;
   width: $imgWidth;
   height: 100%;
   display: flex;
@@ -42,7 +42,7 @@ $imgWidth: math.div($cardWidth, 2);
     clip-path: polygon(0 0, 0 100%, 0 100%);
   }
   &:hover > .triangle.right {
-    clip-path: polygon(101% 0, 100% 0, 100% 100%);
+    clip-path: polygon(101% 0, 100% 0, 110% 100%);
   }
 }
 .card:nth-child(odd) {
@@ -52,6 +52,7 @@ $imgWidth: math.div($cardWidth, 2);
   }
   & > .image_link_container {
     grid-column: 1/7;
+    align-items: flex-start;
   }
 }
 .card:nth-child(even) {
@@ -61,6 +62,7 @@ $imgWidth: math.div($cardWidth, 2);
   }
   & > .image_link_container {
     grid-column: 7/-1;
+    align-items: flex-end;
   }
 }
 .card_container,

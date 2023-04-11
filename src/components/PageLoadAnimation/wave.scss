@@ -22,13 +22,14 @@ body {
   scale: math.div(49, 304);
 }
 .load-container {
-  position: fixed;
-  height: 100dvh;
-  width: 100dvw;
-  background: $background-color;
-  animation: opacity ($totalAnimationTime + 2s) linear;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: $backgroundColor;
+  // animation: opacity $totalAnimationTime linear;
   animation-fill-mode: forwards;
   z-index: 2;
+  overflow: hidden;
 }
 .load-container .hexagon {
   top: 0%;
@@ -130,13 +131,20 @@ body {
 
 @for $r from 0 through $radius {
   .r#{$r} {
-    animation-name: pulse;
-    animation-duration: $animation-duration; //Pulse speed
-    animation-delay: #{$r * 0.25}s;
-    animation-iteration-count: 1;
+    animation: pulse $animation-duration #{$r * 0.25}s forwards,
+      scaleUp 2s $totalAnimationTime forwards;
   }
 }
-
+@keyframes scaleUp {
+  to {
+    transform: scale(0);
+    fill: black;
+  }
+  to {
+    transform: scale(1);
+    fill: black;
+  }
+}
 @keyframes pulse {
   0% {
     -webkit-transform: scale(0.01);
@@ -157,6 +165,32 @@ body {
 @keyframes rotateHue {
   100% {
     -webkit-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+$cursorSize: 8rem;
+.cursor {
+  height: $cursorSize;
+  width: $cursorSize;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  position: absolute;
+  animation: anim 2s linear infinite;
+  visibility: hidden;
+}
+.load-container:hover .cursor {
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 0, 1) 0%,
+    rgba(0, 255, 0, 0) 70%
+  );
+  visibility: visible;
+}
+@keyframes anim {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
     filter: hue-rotate(360deg);
   }
 }

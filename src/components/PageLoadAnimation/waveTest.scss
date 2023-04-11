@@ -22,10 +22,10 @@ body {
   scale: math.div(49, 304);
 }
 .load-container {
-  position: fixed;
-  height: 100dvh;
-  width: 100dvw;
-  background: $background-color;
+  position: relative;
+  // height: 100dvh;
+  // width: 100dvw;
+  background: $backgroundColor;
   // animation: opacity ($totalAnimationTime + 2s) linear;
   animation-fill-mode: forwards;
   z-index: 2;

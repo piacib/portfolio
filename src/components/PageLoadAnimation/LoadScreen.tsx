@@ -3,6 +3,7 @@ import "./hexagon.css";
 import "./wave.scss";
 import variables from "./style.module.scss";
 import HexagonSvg from "../HexagonSvg/HexagonSvg";
+import useMousePosition from "../../utils/useMousePosition";
 const HEXCLASSES = "scale_down hexagon";
 function addHexes(r: number) {
   let classList = [];
@@ -16,6 +17,7 @@ function addHexes(r: number) {
 
 const LoadScreen = () => {
   const [classList, setClassList] = useState<string[]>([]);
+  // const mousePosition = useMousePosition();
   useEffect(() => {
     let totalList: string[] = [];
     const rad = Number(variables.radius);
@@ -27,12 +29,19 @@ const LoadScreen = () => {
   }, []);
 
   return (
-    <section className="load-container">
+    <div className="load-container">
+      {/* <div
+        className="cursor"
+        style={{
+          top: mousePosition.y + "px",
+          left: mousePosition.x + "px",
+        }}
+      ></div> */}
       <HexagonSvg className={`${HEXCLASSES} r0`} />
       {classList.map((classL, idx) => (
         <HexagonSvg key={classL + idx} className={classL} />
       ))}
-    </section>
+    </div>
   );
 };
 
