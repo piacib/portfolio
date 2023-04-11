@@ -7,7 +7,7 @@ import AboutMe from "./components/AboutMe/AboutMe";
 import Projects from "./components/Projects/Projects";
 import Home from "./components/Home/Home";
 import LoadScreen from "./components/PageLoadAnimation/LoadScreen";
-window.onbeforeunload = function () {
+window.onload = function () {
   window.scrollTo(0, 0);
 };
 function App() {
