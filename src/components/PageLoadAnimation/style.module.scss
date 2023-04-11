@@ -2,7 +2,13 @@
 
 $count: 0;
 $animation-duration: 3s;
-$totalAnimationTime: ($radius * 0.25) + $animation-duration + 0.5s;
+
+$hexBackgroundColor: rgb(32 30 43);
+$animationDelayIncrement: 0.25s;
+$lastAnimationStart: $animationDelayIncrement * $radius;
+$totalAnimationTime: $lastAnimationStart + $animation-duration;
+$hexCount: $radius + 1;
+$startDelay: $lastAnimationStart;
 
 :export {
   // radius: $radius;
