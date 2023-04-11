@@ -1,13 +1,8 @@
 import "./home_text.scss";
-import HexPopBackground from "./HexPopBackground";
-type Props = {
-  children: JSX.Element;
-};
-const Home = ({ children }: Props) => {
+const Home = () => {
   return (
     <>
       <section id="home">
-        {/* <HexPopBackground /> */}
         <header></header>
         <div className="home_text_container">
           <h2>Hi my name is,</h2>
@@ -15,7 +10,6 @@ const Home = ({ children }: Props) => {
           <h2>I am a front end web developer</h2>
           <p>I specialize in building accesible web applications </p>
         </div>
-        {children}
       </section>
     </>
   );
