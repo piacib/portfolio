@@ -1,0 +1,39 @@
+@import "../PageLoadAnimation/style.module.scss";
+@import "../globalStyle.module.scss";
+.home_text_container {
+  animation-name: fadeIn;
+  animation-duration: 1s; //Pulse speed
+  animation-delay: #{$radius * 0.25}s;
+  animation-delay: 4.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  padding: $pagePadding;
+  opacity: 0;
+  color: white;
+  position: relative;
+  z-index: 3;
+}
+.home_text_container h2 {
+  color: $accentColor;
+  font-size: 3rem;
+}
+.home_text_container h1 {
+  font-size: 4rem;
+}
+.home_text_container * {
+  margin: 0;
+}
+#home {
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    translate: -25%;
+  }
+  100% {
+    opacity: 1;
+  }
+}

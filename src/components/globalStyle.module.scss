@@ -1,0 +1,11 @@
+$radius: 25; //Hex-radius
+$width: 54px;
+$halfWidth: $width / 2;
+$accentColor: #77f6fd;
+$backgroundColor: #1e1c29;
+$pagePadding: 0 5rem;
+$backgroundHexCount: 100;
+:export {
+  radius: $radius;
+  backgroundHexCount: $backgroundHexCount;
+}

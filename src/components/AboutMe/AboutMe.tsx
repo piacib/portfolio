@@ -1,15 +1,23 @@
-import React from "react";
-import "./AboutMe.css";
-import "./ExperienceCards.css";
+import React, { useRef } from "react";
+import "./aboutMe.scss";
+// import "./ExperienceCards.css";
 import Me from "../../assets/me.jpg";
 import { AboutMeSectionId } from "../../global";
+import useIntersectionObserver from "../../utils/useIntersectionObserver";
 
 const AboutMe: React.FC = () => {
+  const elementRef = useRef(null);
+  const isScreen = useIntersectionObserver(elementRef);
+  console.log("isOnScreen", isScreen);
+
   return (
-    <section id={AboutMeSectionId}>
-      <div id="about_me_top_background" className="triangle_background"></div>
-      <h1 className="section_header">About Me</h1>
-      <p className="about_me_text">
+    <section id={AboutMeSectionId} ref={elementRef}>
+      {/* <div id="about_me_top_background" className="triangle_background"></div> */}
+      <h1 className="section_header">Who Am I?</h1>
+      {/* <div className="about_me_image_container">
+        <img src={Me} />
+      </div> */}
+      {/* <p className="about_me_text">
         I am an aspiring front end web developer currently searching for a job.
         I graduated for the University of Washington in 2019 with a degree in
         Physics and Astronomy. Since then I have been teaching myself Html css
@@ -90,8 +98,9 @@ const AboutMe: React.FC = () => {
         <li>
           <i className="skills_icon devicon-typescript-plain"></i>
         </li>
-      </ul>
+      </ul> */}
     </section>
   );
 };
 export default AboutMe;
+const AboutMeCard = () => {};

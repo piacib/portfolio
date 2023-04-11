@@ -2,6 +2,7 @@ html,
 #root {
   background-color: var(--background);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 body {
   font-family: system-ui;
