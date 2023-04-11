@@ -14,8 +14,8 @@ $svgWidth: 304;
 $halfSvgHeight: math.div($svgHeight, 2) ;
 $halfSvgWidth: math.div($svgWidth, 2) ;
 $scaleDown: math.div($hexWidth, $svgWidth);
+
 :export {
   svgHeight: $svgHeight;
-
   svgWidth: $svgWidth;
 }
