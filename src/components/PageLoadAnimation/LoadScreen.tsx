@@ -1,48 +1,50 @@
-import React, { useEffect, useState } from "react";
-import "./hexagon.css";
-import "./wave.scss";
+import "./waveTest.scss";
 import variables from "./style.module.scss";
 import HexagonSvg from "../HexagonSvg/HexagonSvg";
-import useMousePosition from "../../utils/useMousePosition";
-const HEXCLASSES = "scale_down hexagon";
-function addHexes(r: number) {
-  let classList = [];
-  for (var i = 1; i <= 6 * r; i++) {
-    classList.push(`${HEXCLASSES} r${r}`);
-  }
-  return classList;
-}
+import CursorBall from "../CursorBall/CursorBall";
 
-// var radius = 15; //Hex-radius
+const radius = Number(variables.radius);
+const hexRowGenerator = (radius: number) => {
+  let num = radius;
+  let arr = [];
+  while (num > 1) {
+    arr.push(num);
+    arr.push(num);
+    num--;
+  }
+  arr.push(1);
+  return arr;
+};
 
 const LoadScreen = () => {
-  const [classList, setClassList] = useState<string[]>([]);
-  // const mousePosition = useMousePosition();
-  useEffect(() => {
-    let totalList: string[] = [];
-    const rad = Number(variables.radius);
-    for (var r = 1; r < rad; ++r) {
-      const newList = addHexes(r);
-      totalList.push(...newList);
-    }
-    setClassList(totalList);
-  }, []);
-
   return (
-    <div className="load-container">
-      {/* <div
-        className="cursor"
-        style={{
-          top: mousePosition.y + "px",
-          left: mousePosition.x + "px",
-        }}
-      ></div> */}
-      <HexagonSvg className={`${HEXCLASSES} r0`} />
-      {classList.map((classL, idx) => (
-        <HexagonSvg key={classL + idx} className={classL} />
-      ))}
-    </div>
+    <>
+      <div className="load-container">
+        {hexRowGenerator(radius).map((x, idx) => (
+          <HexRow rowLength={x} rowNum={idx} />
+        ))}
+      </div>
+      <CursorBall />
+      <CursorBall />
+      <CursorBall />
+    </>
   );
 };
 
 export default LoadScreen;
+
+const HexRow = ({
+  rowLength,
+  rowNum,
+}: {
+  rowLength: number;
+  rowNum: number;
+}) => {
+  return (
+    <div className={`row r${rowNum}`}>
+      {Array.from({ length: rowLength }).map((x) => (
+        <HexagonSvg className={"hexagon"} />
+      ))}
+    </div>
+  );
+};
