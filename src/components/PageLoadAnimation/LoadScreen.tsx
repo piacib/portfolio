@@ -1,4 +1,4 @@
-import "./waveTest.scss";
+import "./wave.scss";
 import variables from "./style.module.scss";
 import HexagonSvg from "../HexagonSvg/HexagonSvg";
 import CursorBall from "../CursorBall/CursorBall";
