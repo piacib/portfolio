@@ -1,13 +1,16 @@
+@import "../PageLoadAnimation/style.module.scss";
 $cursorSize: 8rem;
 
 @keyframes anim {
   0% {
     filter: hue-rotate(0deg);
     scale: 1;
+    visibility: visible;
   }
   100% {
     filter: hue-rotate(360deg);
     scale: 1;
+     
   }
 }
 @keyframes jitter {
@@ -43,7 +46,9 @@ $cursorSize: 8rem;
   width: $cursorSize;
   border-radius: 50%;
   position: absolute;
+  visibility: hidden;
   animation: anim 2s linear infinite, jitter 2s linear infinite;
+  animation-delay: $totalAnimationTime;
 }
 .cursor {
   transition: top 0.4s, left 0.2s;
