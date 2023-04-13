@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 // import "./Projects.css";
 import { ProjectType } from "../../types";
 import { projects, ProjectSectionId } from "../../global";
 import "./projects.scss";
 import pokeInfo from "../../assets/sample_pokeInfo.png";
+import useIntersectionObserver from "../../utils/useIntersectionObserver";
+import useDualFadeIn from "../../utils/useDualFadeIn";
 interface Props {
   project: ProjectType;
   children?: React.ReactNode;
@@ -47,8 +49,8 @@ const Projects = () => {
     <section id={ProjectSectionId}>
       <h1>What I have built</h1>
       <ul className="card_container">
-        <ProjectCard />
-        <ProjectCard />
+        <ProjectCard idx={0} />
+        <ProjectCard idx={1} />
         {/* <ProjectCard direction={Direction.Left} />
         <ProjectCard direction={Direction.Left} /> */}
         {/* <li id="PokeInfo" className="card">
@@ -158,11 +160,29 @@ const Projects = () => {
 };
 
 export default Projects;
-
-const ProjectCard = () => {
+const isEven = (idx: number) => {
+  if (idx % 2) {
+    return true;
+  }
+  return false;
+};
+const leftOrRight = (
+  idx: number,
+  classes: {
+    left: string;
+    right: string;
+  }
+) => {
+  if (isEven(idx)) {
+    return [classes.left, classes.right];
+  }
+  return [classes.right, classes.left];
+};
+const ProjectCard = ({ idx }: { idx: number }) => {
+  const { classes, containerRef } = useDualFadeIn();
   return (
-    <li id="Pokemon_Showdown_Extension" className="card">
-      <div className="project_content">
+    <li id="Pokemon_Showdown_Extension" className="card" ref={containerRef}>
+      <div className={`project_content ${leftOrRight(idx, classes)[0]}`}>
         <h2>Pokemon Showdown Extension</h2>
         <p>
           A chrome Extension that adds an iframe when a new battle starts and
@@ -203,7 +223,7 @@ const ProjectCard = () => {
           </a>
         </div>
       </div>
-      <div className="image_link_container">
+      <div className={`image_link_container ${leftOrRight(idx, classes)[1]}`}>
         <div className="triangle left" />
         <div className="triangle right " />
         <a
