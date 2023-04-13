@@ -44,7 +44,7 @@ type DOT_POSITION = {
 export const useDot = () => {
   const [state, dispatch] = useReducer(reducer, {
     x: windowWidth / 2,
-    y: 500,
+    y: 800,
   });
   const onMouseOver = (e: React.MouseEvent) => {
     dispatch({
