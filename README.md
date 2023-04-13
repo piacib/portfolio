@@ -6,7 +6,7 @@ experience.
 ## Why I built this project the way I did
 
 I chose to use sass for this project because I had not used a preprocessor before and I felt it was a strong tool to
-add to my repertoire. Overall, it greatly improved my development experience and the maintainability of my code
+add to my repertoire. Overall, it greatly improved my development experience and the maintainability of my code.
 
 ## What to checkout
 
@@ -15,5 +15,6 @@ add to my repertoire. Overall, it greatly improved my development experience and
 - [custom hook using Intersection Observers](https://github.com/piacib/portfolio/blob/main/src/utils/useDualFadeIn.ts)
 
 ## Future Improvments
+In the future of this project I would like to experiment with complex CSS animations to further develop my undderstanding of them. Additionally, exploring various libraries such as three.js to implelement more intricate animations. 
 
-## What I learned
+
