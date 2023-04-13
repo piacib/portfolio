@@ -47,8 +47,8 @@ html {
   z-index: 2;
   fill: $hexBackgroundColor;
 }
-
-@for $row from 1 through $radius * 2 - 1 {
+$rows: $radius * 2 - 1;
+@for $row from 1 through $rows {
   .load-container .row:nth-child(#{$row}) {
     top: ($row - 1) * $displayHeight;
     left: $row % 2 * $halfDisplayWidth - $displayWidth;
@@ -62,23 +62,13 @@ html {
     }
     .load-container .row:nth-child(#{$row}) .hexagon:nth-last-child(#{$hex}) {
       animation: pulse $animation-duration $startDelay forwards;
-      // scaleUp 2s $totalAnimationTime forwards;
     }
     $startDelay: $startDelay - 0.25s;
   }
   $startDelay: $lastAnimationStart;
 }
-.load-container .row:nth-child(1) .hexagon {
-  z-index: 3;
-}
-.load-container .row:nth-child(2) .hexagon {
-  z-index: 3;
-}
-.load-container .row:nth-child(3) .hexagon {
-  z-index: 3;
-}
-.load-container .row:nth-child(4) .hexagon {
-  z-index: 3;
+.load-container .row:nth-child(-n + 4) .hexagon {
+  z-index: $cursorBallZ + 1;
 }
 
 .row {
@@ -104,23 +94,6 @@ html {
   }
   76% {
     -webkit-transform: scale(0);
-    transform: scale(0);
-    fill: $hexBackgroundColor;
-  }
-  100% {
-    transform: scale($scaleDown);
-    fill: $hexBackgroundColor;
-  }
-}
-
-@keyframes rotateHue {
-  100% {
-    -webkit-filter: hue-rotate(360deg);
-    filter: hue-rotate(360deg);
-  }
-}
-@keyframes scaleUp {
-  0% {
     transform: scale(0);
     fill: $hexBackgroundColor;
   }
