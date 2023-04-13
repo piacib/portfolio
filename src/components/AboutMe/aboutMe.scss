@@ -115,6 +115,9 @@
   h3 {
     text-transform: capitalize;
   }
+  h3 span {
+    color: $accentColor;
+  }
 }
 .active {
   color: $accentColor;
