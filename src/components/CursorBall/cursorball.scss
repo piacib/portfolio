@@ -1,5 +1,4 @@
 @import "../PageLoadAnimation/style.module.scss";
-$cursorSize: 8rem;
 
 @keyframes anim {
   0% {
@@ -10,7 +9,6 @@ $cursorSize: 8rem;
   100% {
     filter: hue-rotate(360deg);
     scale: 1;
-     
   }
 }
 @keyframes jitter {
@@ -42,8 +40,8 @@ $cursorSize: 8rem;
     rgba(0, 255, 0, 1) 0%,
     rgba(0, 255, 0, 0) 30%
   );
-  height: $cursorSize;
-  width: $cursorSize;
+  height: $cursorBallSize;
+  width: $cursorBallSize;
   border-radius: 50%;
   position: absolute;
   visibility: hidden;
@@ -53,10 +51,10 @@ $cursorSize: 8rem;
 .cursor {
   transition: top 0.4s, left 0.2s;
   transition-timing-function: cubic-bezier(0.05, 1, 0.68, 0.69);
-  height: $cursorSize;
-  width: $cursorSize;
+  height: $cursorBallSize;
+  width: $cursorBallSize;
   transform: translate(-50%, -50%);
-  padding: $cursorSize;
+  padding: $cursorBallSize;
   position: absolute;
-  z-index: 2;
+  z-index: $cursorBallZ;
 }

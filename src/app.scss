@@ -3,5 +3,12 @@
 body {
   background-color: $backgroundColor;
   color: white;
-  // padding: 0 3rem;
+  line-height: 1.5;
 }
+button {
+  color: white;
+}
+p {
+  max-width: 60ch;
+}
+

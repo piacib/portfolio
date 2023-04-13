@@ -1,9 +1,167 @@
+@use "sass:map";
 @import "../globalStyle.module.scss";
+@import "../fade.scss";
 #about_me {
-  padding: $pagePadding;
+  padding: 0 map.get($spacing, medium);
   min-height: 50rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  h1 {
+    align-self: flex-start;
+  }
+  > * {
+    z-index: 2;
+  }
 }
-#about_me img {
-  height: 26rem;
-  box-shadow: -16px -16px $accentColor;
+@media (max-width: map.get($breakpoints,"phone")) {
+  #about_me {
+    padding: 0 map.get($spacing, small);
+  }
+}
+
+.section_header {
+  // padding: $pagePadding;
+  opacity: 0;
+}
+.intersection_observer_prestate {
+  opacity: 0;
+}
+.about_me_text {
+  max-width: 45ch;
+}
+.work_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+@media (max-width: map.get($breakpoints,"phone")) {
+  h1 {
+    font-size: 1.7rem;
+  }
+}
+@media (min-width: map.get($breakpoints,"phone")) {
+  .work_container {
+    display: flex;
+    flex-direction: row;
+  }
+  .work_container ol {
+    height: fit-content;
+  }
+}
+.work_container ol {
+  list-style-type: disc;
+  width: 45ch;
+  width: fit-content;
+  margin: 0;
+  padding-left: 0;
+  border-left: 2px solid $accentColor;
+  margin-right: map.get($spacing, mini);
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  li button {
+    white-space: nowrap;
+    padding: map.get($spacing, mini);
+    padding-right: 40px;
+    overflow: visible;
+    border: none;
+    margin: map.get($spacing, mini) 0;
+    width: 100%;
+    text-align: start;
+    background: linear-gradient(45deg, $accentColor 50%, $backgroundColor 50%);
+    background-size: 200%;
+    transition: all 1s ease;
+    background-position: 120%;
+    background-repeat: no-repeat;
+  }
+  button:hover {
+    cursor: pointer;
+    background-position: 10%;
+    color: black;
+  }
+
+  li {
+    display: flex;
+  }
+}
+.work_button {
+  width: 100%;
+  height: 100%;
+}
+@keyframes buttonFill {
+  0% {
+    background: none;
+  }
+  50% {
+    background: linear-gradient(
+      to right,
+      $accentColor,
+      $accentColor 50%,
+      $backgroundColor
+    );
+  }
+  100% {
+    background: linear-gradient(
+      to right,
+      $accentColor,
+      $accentColor 50%,
+      $accentColor
+    );
+  }
+}
+.work_card {
+  h3 {
+    text-transform: capitalize;
+  }
+  h3 span {
+    color: $accentColor;
+  }
+}
+.active {
+  color: $accentColor;
+}
+.skills_list {
+  padding: 20px;
+}
+.about_me_card {
+  z-index: 2;
+}
+.about_me_card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  p {
+    padding: map.get($spacing, small);
+    margin-left: map.get($spacing, small);
+  }
+  img {
+    max-height: 26rem;
+    max-width: 40%;
+    box-shadow: -16px -16px $accentColor;
+  }
+}
+.learn_more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: map.get($breakpoints,"phone")) {
+  .learn_more {
+    flex-direction: row;
+  }
+}
+@media (max-width: map.get($breakpoints,"phone")) {
+  .about_me_card {
+    flex-direction: column;
+    img {
+      max-width: 60%;
+    }
+    p {
+      padding: 0;
+      margin-left: 0;
+    }
+  }
 }

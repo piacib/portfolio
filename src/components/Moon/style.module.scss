@@ -1,0 +1,13 @@
+@import "../globalStyle.module.scss";
+@import "../Planet/style.module.scss";
+
+$moonCount: 9;
+$moonSize: 75px;
+$orbitRadius: 150px;
+$orbitRadiusSmallScreen: 100px;
+$enterOrbitAnimationLength: 1s;
+$enterOrbitAnimationType: ease-out;
+$reverseOrbitAnimation: orbit $orbitTime reverse infinite;
+:export {
+  moonCount: $moonCount;
+}
