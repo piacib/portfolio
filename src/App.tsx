@@ -16,7 +16,6 @@ function App() {
       <LoadScreen />
       <Home />
       <AboutMe />
-
       <Projects />
     </>
   );
