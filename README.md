@@ -15,6 +15,6 @@ add to my repertoire. Overall, it greatly improved my development experience and
 - [custom hook using Intersection Observers](https://github.com/piacib/portfolio/blob/main/src/utils/useDualFadeIn.ts)
 
 ## Future Improvments
-In the future of this project I would like to experiment with complex CSS animations to further develop my undderstanding of them. Additionally, exploring various libraries such as three.js to implelement more intricate animations. 
+In the future of this project I would like to experiment with complex CSS animations to further develop my undderstanding of them. Additionally, exploring various libraries such as three.js to implelement more intricate animations. Lastly, this project was built on create react app and I would like to convert it to vite.
 
 
