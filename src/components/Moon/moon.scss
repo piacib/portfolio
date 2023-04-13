@@ -1,0 +1,102 @@
+@use "sass:math";
+@use "sass:map";
+
+@import "../Planet/style.module.scss";
+@import "./style.module.scss";
+
+.circle {
+  border-radius: 50%;
+}
+.moon {
+  //   background-color: $accentColor;
+  position: absolute;
+  width: $moonSize;
+  aspect-ratio: 1;
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  list-style: none;
+  z-index: 2;
+
+  //   box-shadow: var(--box-shadow);
+  * {
+    animation: orbit 120s linear reverse infinite;
+  }
+  i {
+    color: $accentColor;
+    font-size: 50px;
+  }
+}
+$angle: 0deg;
+$angleJump: math.div(360deg, $moonCount);
+@for $i from 1 through $moonCount {
+  $yTranslate: $orbitRadius * math.sin($angle);
+  $xTranslate: $orbitRadius * math.cos($angle);
+  $translateFinish: translate($xTranslate, $yTranslate);
+  @keyframes EnterOrbit#{$angle} {
+    0% {
+      transform: translate(0rem, 0rem);
+    }
+    100% {
+      transform: $translateFinish;
+    }
+  }
+  .orbit li:nth-child(#{$i}) {
+    animation: EnterOrbit#{$angle}
+      $enterOrbitAnimationLength
+      $enterOrbitAnimationType;
+    transform: $translateFinish;
+  }
+  @media (max-width: map.get($breakpoints,"phone")) {
+    $yTranslate: $orbitRadiusSmallScreen * math.sin($angle);
+    $xTranslate: $orbitRadiusSmallScreen * math.cos($angle);
+    $translateFinish: translate($xTranslate, $yTranslate);
+    @keyframes EnterOrbit#{$angle}small {
+      0% {
+        transform: translate(0rem, 0rem);
+      }
+      100% {
+        transform: $translateFinish;
+      }
+    }
+    .orbit li:nth-child(#{$i}) {
+      animation: EnterOrbit#{$angle}small $enterOrbitAnimationLength
+        $enterOrbitAnimationType;
+      transform: $translateFinish;
+    }
+  }
+  $angle: $angle + $angleJump;
+}
+
+.dynamic-backgrnd {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: var(--initial-left);
+  position: absolute;
+  --dynamic-backgrnd-play-state: running;
+  animation: Transition var(--speed) var(--delay) linear infinite;
+}
+@keyframes Transition {
+  0% {
+    left: var(--initial-left);
+  }
+  8.3% {
+    left: 0%;
+  }
+  50% {
+    left: 0%;
+  }
+  58.3% {
+    left: var(--initial-left);
+  }
+  100% {
+    left: var(--initial-left);
+  }
+  100% {
+    left: var(--initial-left);
+  }
+}
