@@ -67,6 +67,7 @@ $rows: $radius * 2 - 1;
   }
   $startDelay: $lastAnimationStart;
 }
+
 .load-container .row:nth-child(-n + 4) .hexagon {
   z-index: $cursorBallZ + 1;
 }
