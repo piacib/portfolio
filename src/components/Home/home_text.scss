@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "../PageLoadAnimation/style.module.scss";
 @import "../globalStyle.module.scss";
 .home_text_container {
@@ -13,6 +14,7 @@
   position: relative;
   z-index: 3;
 }
+
 .home_text_container h2 {
   color: $accentColor;
   font-size: 3rem;
@@ -35,5 +37,16 @@
   }
   100% {
     opacity: 1;
+  }
+}
+@media (max-width: map.get($breakpoints,"phone")) {
+  .home_text_container {
+    padding: map.get($spacing, medium);
+  }
+  .home_text_container h2 {
+    font-size: 2rem;
+  }
+  .home_text_container h1 {
+    font-size: 3rem;
   }
 }
