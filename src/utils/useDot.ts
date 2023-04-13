@@ -46,14 +46,20 @@ export const useDot = () => {
     x: windowWidth / 2,
     y: 800,
   });
+  const isReduced = window.matchMedia(
+    `(prefers-reduced-motion: reduce)`
+  ).matches;
+
   const onMouseOver = (e: React.MouseEvent) => {
-    dispatch({
-      type: "adjustPosition",
-      payload: {
-        clientY: e.clientY,
-        clientX: e.clientX,
-      },
-    });
+    if (!isReduced) {
+      dispatch({
+        type: "adjustPosition",
+        payload: {
+          clientY: e.clientY,
+          clientX: e.clientX,
+        },
+      });
+    }
   };
   const styleObj = {
     top: state.y + "px",

@@ -58,3 +58,8 @@
   position: absolute;
   z-index: $cursorBallZ;
 }
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    animation: none;
+  }
+}

@@ -2,6 +2,8 @@ import { useDot } from "../../utils/useDot";
 import "./cursorball.scss";
 const CursorBall = () => {
   const { styleObj, onMouseOver } = useDot();
+  console.log(styleObj);
+
   return (
     <div
       className="cursor"
