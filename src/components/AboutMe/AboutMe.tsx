@@ -4,42 +4,8 @@ import Me from "../../assets/me.jpg";
 import { AboutMeSectionId } from "../../global";
 import Planet from "../Planet/Planet";
 import useDualFadeIn from "../../utils/useDualFadeIn";
-type WorkData = {
-  jobTitle: string;
-  text: string;
-  workPlace: string;
-  skills: string[];
-};
-const TutorJob = {
-  jobTitle: "Physics Tutor",
-  text: "As a physics tutor I developed a deep understanding of the subject and an ability to break down complex concepts into easy-to-understand explanations. I learned to identify individual's learning needs and tailor my approach to maximize student understanding and engagement.",
-  workPlace: "The University of Washington",
-  skills: [
-    "Critical thinking",
-    "Problem solving",
-    "Explaining Complex Concepts",
-  ],
-};
-const diveJob = {
-  jobTitle: "Safety diver",
-  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis commodi fugit illum ipsa vitae, ducimus maiores quo officia iste voluptates cum fuga repellendus consequuntur magnam doloribus pariatur. Doloribus, repellat ipsum.",
-  workPlace: "The University of Washington",
-  skills: [
-    "Critical thinking",
-    "Problem solving",
-    "Explaining Complex Concepts",
-  ],
-};
-const researchJob = {
-  jobTitle: "Plasma Physics Researcher",
-  text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis commodi fugit illum ipsa vitae, ducimus maiores quo officia iste voluptates cum fuga repellendus consequuntur magnam doloribus pariatur. Doloribus, repellat ipsum.",
-  workPlace: "Justus liebig University",
-  skills: [
-    "Critical thinking",
-    "Problem solving",
-    "Explaining Complex Concepts",
-  ],
-};
+import { jobs, WorkData } from "./jobs";
+
 const hobbies = [
   "Rock climbing",
   "Scuba Diving",
@@ -48,7 +14,7 @@ const hobbies = [
   "Swimming",
   "helpingothers",
 ];
-const jobs = [TutorJob, diveJob, researchJob];
+
 const AboutMe: React.FC = () => {
   const [dataIndex, setDataIndex] = useState(0);
   const { classes, containerRef: imageTextContRef } = useDualFadeIn();
@@ -96,86 +62,6 @@ const AboutMe: React.FC = () => {
         </div>
         <Planet />
       </div>
-      {/* <div className="">
-          <h2></h2>
-          <p>
-            As a physics tutor I developed a deep understanding of the subject
-            and an ability to break down complex concepts into
-            easy-to-understand explanations. I learned to identify individual's
-            learning needs and tailor my approach to maximize student
-            understanding and engagement.
-          </p>
-          <h3>Skills</h3>
-          <ul>
-            <li>Critical thinking</li>
-            <li>Problem solving</li>
-            <li></li>
-          </ul>
-        </div>
-        <div className="">
-          <h2></h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            iste architecto qui. Voluptates, inventore ducimus consectetur
-            veniam illo perferendis iste, quia deserunt corporis quasi,
-            recusandae totam adipisci ipsa hic odit?{" "}
-          </p>
-          <h3>Skills</h3>
-
-          <ul>
-            <li>Working under pressure</li>
-            <li>Managing expectations</li>
-            <li>Managing multiple people</li>
-          </ul>
-        </div>
-        <div className="">
-          <h2>Plasma Physics Researcher</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
-            voluptas ab placeat fugit, perspiciatis consectetur, id quia
-          </p>
-          <h3>Skills</h3>
-
-          <ul>
-            <li>Working under deadlines</li>
-            <li>Tackling real life technical problems</li>
-            <li>Compiling results into a cohesive paper</li>
-          </ul>
-        </div>
-      </div> */}
-      {/* 
-      <div
-        id="about_me_bottom_background"
-        className="triangle_background"
-        ></div>
-      <ul className="about_me_skills">
-        <li>
-          <i className="skills_icon devicon-javascript-plain"></i>
-        </li>
-        <li>
-          <i className="skills_icon devicon-html5-plain-wordmark"></i>
-        </li>
-
-        <li>
-          <i className="skills_icon devicon-react-original"></i>
-        </li>
-
-        <li>
-          <i className="skills_icon devicon-python-plain"></i>
-        </li>
-        <li>
-          <i className="skills_icon devicon-linux-plain"></i>
-        </li>
-        <li>
-          <i className="skills_icon devicon-github-original"></i>
-        </li>
-        <li>
-          <i className="skills_icon devicon-css3-plain-wordmark"></i>
-        </li>
-        <li>
-          <i className="skills_icon devicon-typescript-plain"></i>
-        </li>
-      </ul> */}
     </section>
   );
 };
@@ -188,8 +74,9 @@ const WorkCard = ({ data, classes }: WorkCardProps) => {
   return (
     <div className={`work_card ${classes}`}>
       <h3>
-        {data.jobTitle}@{data.workPlace}
+        {data.jobTitle} <span>@</span> {data.workPlace}
       </h3>
+      <h4>{data.employmentPeriod}</h4>
       <p>{data.text}</p>
       <ul className="skills_list">
         {data.skills.map((x) => (
