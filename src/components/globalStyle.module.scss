@@ -1,9 +1,9 @@
+@use "sass:map";
 $radius: 25; //Hex-radius
 $width: 54px;
 $halfWidth: $width / 2;
 $accentColor: #77f6fd;
 $backgroundColor: #1e1c29;
-$pagePadding: 0 5rem;
 $backgroundHexCount: 100;
 $breakpoints: (
   phone: 640px,
@@ -15,7 +15,9 @@ $spacing: (
   small: 1rem,
   medium: 2rem,
   large: 3rem,
+  xlarge: 5rem,
 );
+$pagePadding: 0 map.get($spacing, xlarge);
 :export {
   radius: $radius;
   backgroundHexCount: $backgroundHexCount;
