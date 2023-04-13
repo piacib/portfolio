@@ -1,0 +1,72 @@
+@use "sass:map";
+@use "sass:math";
+@import "./style.module.scss";
+@import "../Moon/style.module.scss";
+
+$ulSize: $planetSize;
+.orbit {
+  position: relative;
+  width: $orbitRadiusSmallScreen * 2 + $moonSize;
+  height: $orbitRadiusSmallScreen * 2 + $moonSize;
+  padding: map.get($spacing, small);
+  display: grid;
+  place-items: center;
+
+  ul {
+    display: grid;
+    place-items: center;
+    height: $ulSize;
+    border-radius: 50%;
+    width: $ulSize;
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    position: absolute;
+    animation: orbit $orbitTime linear infinite;
+  }
+}
+@media screen {
+}
+.planet_face {
+  // height: $planetSize;
+  width: fit-content;
+  position: relative;
+  // z-index: 17;
+  // border-radius: 50%;
+  .techs_text {
+    // position: absolute;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    // line-height: $planetSize;
+    background-color: $accentColor;
+    color: black;
+    border: none;
+    margin: 0;
+    background-color: $accentColor;
+    // height: $planetSize;
+    // width: $planetSize;
+  }
+}
+@media (min-width: map.get($breakpoints,"phone")) {
+  .orbit {
+    width: $orbitRadius * 2 + $moonSize;
+    height: $orbitRadius * 2 + $moonSize;
+  }
+  .planet_face p {
+    font-size: 16px;
+  }
+  .techs_text {
+    font-size: 1.3rem;
+  }
+}
+@keyframes orbit {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+.move_to_center {
+  transition: all 1s;
+  place-items: center;
+}
