@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./aboutMe.scss";
 import Me from "../../assets/me.jpg";
-import { AboutMeSectionId } from "../../global";
 import Planet from "../Planet/Planet";
 import useDualFadeIn from "../../utils/useDualFadeIn";
 import { jobs, WorkData } from "./jobs";
@@ -22,15 +21,12 @@ const AboutMe: React.FC = () => {
   const { classes: whereIWorkedClasses, containerRef: whereIWorked } =
     useDualFadeIn();
   return (
-    <section id={AboutMeSectionId}>
-      {/* <div id="about_me_top_background" className="triangle_background"></div> */}
+    <section id="about_me">
       <h1 className={`section_header ${whereIWorkedClasses.left}`}>
         Who Am I?
       </h1>
       <div className="about_me_card" ref={imageTextContRef}>
-        {/* <div className="about_me_image_container"> */}
         <img src={Me} alt="headshot" className={`${classes.left}`} />
-        {/* </div> */}
         <p className={`about_me_text ${classes.right}`}>
           I am an aspiring front end web developer currently searching for a
           job. My passion for web development started a couple years back and I
