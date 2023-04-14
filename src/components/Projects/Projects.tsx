@@ -1,59 +1,98 @@
-import React, { useEffect, useRef } from "react";
-// import "./Projects.css";
-import { ProjectType } from "../../types";
-import { projects, ProjectSectionId } from "../../global";
+import React from "react";
 import "./projects.scss";
-import pokeInfo from "../../assets/sample_pokeInfo.png";
-import useIntersectionObserver from "../../utils/useIntersectionObserver";
 import useDualFadeIn from "../../utils/useDualFadeIn";
-interface Props {
-  project: ProjectType;
-  children?: React.ReactNode;
-}
-interface ProjectContent {
-  title: string;
-  text: string;
-  imgLink: string;
-  demoHref: string;
-  repoHref: string;
-  skillsClassNames: string[];
-}
-enum Direction {
-  Right,
-  Left,
-}
-const Showdown_Extension = {
-  repoHref: "https://github.com/piacib/pokeinfo_iframe_extension",
-  demoHref:
-    "https://chrome.google.com/webstore/detail/pokeinfo-extension/plolbicmjndjpglocmmgnbppgnadmlfb?hl=en&authuser=0",
-};
-const Pokeinfo = {
-  repoHref: "https://github.com/piacib/pokeinfo",
-  demoHref: "https://piacib.github.io/pokeinfo/",
-};
-const Portfolio = {
-  repoHref: "https://github.com/piacib/portfolio",
-  demoHref: "https://piacib.github.io/portfolio/",
-};
-
-const World_Map = {
-  repoHref: "https://github.com/piacib/world-map",
-  demoHref: "https://piacib.github.io/world-map/",
-};
-const Weather_App = {
-  repoHref: "https://github.com/piacib/weather_typescript_app",
-};
+import { ProjectContent, projects } from "./projectsInfo";
 
 const Projects = () => {
   return (
-    <section id={ProjectSectionId}>
+    <section id="projects">
       <h1>What I have built</h1>
-      <ul className="card_container">
-        <ProjectCard idx={0} />
-        <ProjectCard idx={1} />
-        {/* <ProjectCard direction={Direction.Left} />
-        <ProjectCard direction={Direction.Left} /> */}
-        {/* <li id="PokeInfo" className="card">
+      <ul className="project_card_container">
+        {projects.map((x, idx) => (
+          <ProjectCard idx={idx} data={x} />
+        ))}
+      </ul>
+
+      {/* <a
+        className="current_projects_btn"
+        role="button"
+        href="https://github.com/piacib/EzraKleinBooks"
+      >
+        Checkout What I am Working On Now!
+      </a> */}
+    </section>
+  );
+};
+
+export default Projects;
+const isEven = (idx: number) => {
+  if (idx % 2) {
+    return true;
+  }
+  return false;
+};
+const leftOrRight = (
+  idx: number,
+  classes: {
+    left: string;
+    right: string;
+  }
+) => {
+  if (isEven(idx)) {
+    return [classes.left, classes.right];
+  }
+  return [classes.right, classes.left];
+};
+interface ProjectCardProps {
+  idx: number;
+  data: ProjectContent;
+}
+const ProjectCard = ({ idx, data }: ProjectCardProps) => {
+  const { classes, containerRef } = useDualFadeIn();
+  return (
+    <li
+      id="Pokemon_Showdown_Extension"
+      className="project_card"
+      ref={containerRef}
+    >
+      <div className={`project_content ${leftOrRight(idx, classes)[0]}`}>
+        <h2>{data.title}</h2>
+        <p>{data.text}</p>
+        <ul className="skills_list">
+          {data.skillsClassNames.map((x) => (
+            <li>
+              <i className={`skills_icon ${x}`}></i>
+            </li>
+          ))}
+        </ul>
+        <div className="small_screen_btn_container">
+          <a className="button-85 projects_btn repo" href={data.repoHref}>
+            Repo
+          </a>
+          <a className="projects_btn demo" href={data.demoHref}>
+            Site
+          </a>
+        </div>
+      </div>
+      <div className={`image_link_container ${leftOrRight(idx, classes)[1]}`}>
+        <img alt="project demo" src={data.imgLink} className="triangle left" />
+        <img alt="project demo" src={data.imgLink} className="triangle right" />
+        <a className="button-85 projects_btn repo" href={data.repoHref}>
+          Repo
+        </a>
+        <a className="projects_btn demo" href={data.demoHref}>
+          Site
+        </a>
+      </div>
+    </li>
+  );
+};
+{
+  /* <ProjectCard direction={Direction.Left} />
+        <ProjectCard direction={Direction.Left} /> */
+}
+{
+  /* <li id="PokeInfo" className="card">
           <h2>PokeInfo</h2>
           <p>
             A project that connects to an active pokemon showdown battle via a
@@ -145,99 +184,5 @@ const Projects = () => {
               Site
             </a>
           </div>
-        </li> */}
-      </ul>
-
-      {/* <a
-        className="current_projects_btn"
-        role="button"
-        href="https://github.com/piacib/EzraKleinBooks"
-      >
-        Checkout What I am Working On Now!
-      </a> */}
-    </section>
-  );
-};
-
-export default Projects;
-const isEven = (idx: number) => {
-  if (idx % 2) {
-    return true;
-  }
-  return false;
-};
-const leftOrRight = (
-  idx: number,
-  classes: {
-    left: string;
-    right: string;
-  }
-) => {
-  if (isEven(idx)) {
-    return [classes.left, classes.right];
-  }
-  return [classes.right, classes.left];
-};
-const ProjectCard = ({ idx }: { idx: number }) => {
-  const { classes, containerRef } = useDualFadeIn();
-  return (
-    <li id="Pokemon_Showdown_Extension" className="card" ref={containerRef}>
-      <div className={`project_content ${leftOrRight(idx, classes)[0]}`}>
-        <h2>Pokemon Showdown Extension</h2>
-        <p>
-          A chrome Extension that adds an iframe when a new battle starts and
-          sends data from the battle to my pokeinfo site to be displayed A
-          chrome Extension that adds an iframe when a new battle starts and
-          sends data from the battle to my pokeinfo site to be displayed A
-          chrome Extension that adds an iframe when a new battle starts and
-          sends data from the battle to my pokeinfo site to be displayed
-        </p>
-        <ul className="skills_list">
-          <li>
-            <i className="skills_icon devicon-javascript-plain"></i>
-          </li>
-          <li>
-            <i className="skills_icon devicon-html5-plain-wordmark"></i>
-          </li>
-
-          <li>
-            <i className="skills_icon devicon-react-original"></i>
-          </li>
-
-          <li>
-            <i className="skills_icon devicon-sass-original"></i>
-          </li>
-          <li>
-            <i className="devicon-chrome-plain-wordmark"></i>
-          </li>
-        </ul>
-        <div className="small_screen_btn_container">
-          <a
-            className="button-85 projects_btn repo"
-            href={Showdown_Extension.repoHref}
-          >
-            Repo
-          </a>
-          <a className="projects_btn demo" href={Showdown_Extension.demoHref}>
-            Site
-          </a>
-        </div>
-      </div>
-      <div className={`image_link_container ${leftOrRight(idx, classes)[1]}`}>
-        <div className="triangle left" />
-        <div className="triangle right " />
-        <a
-          className="button-85 projects_btn repo"
-          href={Showdown_Extension.repoHref}
-        >
-          Repo
-        </a>
-        <a className="projects_btn demo" href={Showdown_Extension.demoHref}>
-          Site
-        </a>
-        {/*
-         */}
-      </div>
-    </li>
-  );
-};
+        </li> */
+}
