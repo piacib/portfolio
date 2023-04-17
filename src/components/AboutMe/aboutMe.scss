@@ -14,7 +14,6 @@
   }
 }
 
-
 .section_header {
   // padding: $pagePadding;
   opacity: 0;
@@ -109,9 +108,13 @@
 .work_card {
   h3 {
     text-transform: capitalize;
+    font-size: 1.4rem;
   }
   h3 span {
     color: $accentColor;
+  }
+  ul {
+    padding-top: 0;
   }
 }
 .active {
