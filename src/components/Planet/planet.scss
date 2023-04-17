@@ -8,7 +8,6 @@ $ulSize: $planetSize;
   position: relative;
   width: $orbitRadiusSmallScreen * 2 + $moonSize;
   height: $orbitRadiusSmallScreen * 2 + $moonSize;
-  padding: map.get($spacing, small);
   display: grid;
   place-items: center;
 
@@ -51,6 +50,7 @@ $ulSize: $planetSize;
   .orbit {
     width: $orbitRadius * 2 + $moonSize;
     height: $orbitRadius * 2 + $moonSize;
+    padding: map.get($spacing, small);
   }
   .planet_face p {
     font-size: 16px;
