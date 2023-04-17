@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "./components/globalStyle.module.scss";
 
 body {
@@ -12,3 +13,17 @@ p {
   max-width: 60ch;
 }
 
+section {
+  padding: 0 map.get($spacing, small);
+  margin-bottom: map.get($spacing, xlarge);
+}
+@media (min-width: map.get($breakpoints,"phone")) {
+  section {
+    padding: 0 map.get($spacing, medium);
+  }
+}
+@media (min-width: map.get($breakpoints,"tablet")) {
+  section {
+    padding: 0 map.get($spacing, large);
+  }
+}
