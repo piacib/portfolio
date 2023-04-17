@@ -2,7 +2,6 @@
 @import "../globalStyle.module.scss";
 @import "../fade.scss";
 #about_me {
-  padding: 0 map.get($spacing, medium);
   min-height: 50rem;
   display: flex;
   align-items: center;
@@ -14,11 +13,7 @@
     z-index: 2;
   }
 }
-@media (max-width: map.get($breakpoints,"phone")) {
-  #about_me {
-    padding: 0 map.get($spacing, small);
-  }
-}
+
 
 .section_header {
   // padding: $pagePadding;
