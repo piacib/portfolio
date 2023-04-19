@@ -1,8 +1,7 @@
-import bolt from "../../assets/bolt_icon.png";
 import portfolio from "../../assets/portfolio.png";
 import pokeinfo from "../../assets/pokeinfo.png";
 import pokeinfo_extension from "../../assets/pokeinfo_extension.png";
-
+import redditTimerApp from "../../assets/reddit_timer_app.png";
 export interface ProjectContent {
   title: string;
   text: string;
@@ -11,18 +10,6 @@ export interface ProjectContent {
   repoHref: string;
   skillsClassNames: string[];
 }
-const icons = [
-  "devicon-javascript-plain",
-  "devicon-html5-plain-wordmark",
-  "devicon-react-original",
-  "devicon-python-plain",
-  "devicon-linux-plain",
-  "devicon-github-original",
-  "devicon-css3-plain-wordmark",
-  "devicon-typescript-plain",
-  "devicon-sass-original",
-  "devicon-chrome-plain",
-];
 export const projects: ProjectContent[] = [
   {
     title: "PokeInfo",
@@ -34,7 +21,6 @@ export const projects: ProjectContent[] = [
     skillsClassNames: [
       "devicon-javascript-plain",
       "devicon-html5-plain-wordmark",
-      "devicon-python-plain",
       "devicon-css3-plain-wordmark",
       "devicon-typescript-plain",
     ],
@@ -75,7 +61,7 @@ export const projects: ProjectContent[] = [
   },
   {
     title: "Reddit Post Timer",
-    imgLink: "",
+    imgLink: redditTimerApp,
     repoHref: "https://github.com/piacib/reddit-timer-piacib",
     demoHref: "https://github.com/piacib/reddit-timer-piacib",
     text: `A website that connects to the reddit api and fetches top posts from a given subreddit and displays the best time to make a post in a heat map display. `,
