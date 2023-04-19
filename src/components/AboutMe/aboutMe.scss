@@ -2,7 +2,6 @@
 @import "../globalStyle.module.scss";
 @import "../fade.scss";
 #about_me {
-  
   min-height: 50rem;
   display: flex;
   align-items: center;
@@ -15,9 +14,7 @@
   }
 }
 
-
 .section_header {
-  // padding: $pagePadding;
   opacity: 0;
 }
 .intersection_observer_prestate {

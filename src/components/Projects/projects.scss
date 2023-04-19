@@ -22,7 +22,7 @@ $imgWidth: math.div($cardWidth, 2);
   max-width: $cardWidth;
   width: 100%;
   height: $cardHeight;
-  margin-bottom: 1rem;
+  margin-bottom: map.get($spacing, xlarge);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   &:hover .triangle.left {

@@ -1,7 +1,8 @@
 @use "sass:map";
+@use "sass:math";
 $radius: 25; //Hex-radius
 $width: 54px;
-$halfWidth: $width / 2;
+$halfWidth: math.div($width, 2);
 $accentColor: #77f6fd;
 $backgroundColor: #1e1c29;
 $backgroundHexCount: 100;
