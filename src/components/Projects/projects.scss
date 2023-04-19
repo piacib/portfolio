@@ -1,5 +1,6 @@
 @use "sass:map";
 @use "sass:math";
+@use "sass:map";
 @import "../globalStyle.module.scss";
 $h2gridRow: 4;
 $pGridRow: $h2gridRow + 1;
@@ -9,7 +10,6 @@ $cardWidth: 1200px;
 $cardHeight: 400px;
 $imgWidth: math.div($cardWidth, 2);
 #projects {
-  padding: $pagePadding;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,8 +37,14 @@ $imgWidth: math.div($cardWidth, 2);
   display: flex;
   flex-direction: column;
   z-index: 4;
+  background: rgba(0, 0, 0, 0.639);
   p {
     min-height: 8rem;
+  }
+}
+@media (min-width: map.get($breakpoints,"phone")) {
+  .project_content {
+    background: none;
   }
 }
 .image_link_container {
@@ -100,6 +106,7 @@ $imgWidth: math.div($cardWidth, 2);
   grid-row: $h2gridRow;
   white-space: nowrap;
   margin-bottom: 0;
+  font-size: 1.5rem;
   color: $accentColor;
   text-decoration: underline;
   text-align: center;

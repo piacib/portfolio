@@ -76,7 +76,9 @@ const WorkCard = ({ data, classes }: WorkCardProps) => {
       <p>{data.text}</p>
       <ul className="skills_list">
         {data.skills.map((x) => (
-          <li>{x}</li>
+          <li>
+            <p>{x}</p>
+          </li>
         ))}
       </ul>
     </div>

@@ -16,11 +16,25 @@ p {
 section h1 {
   align-self: flex-start;
 }
+
 section {
-  padding: 0 map.get($spacing, medium);
-  @media (max-width: map.get($breakpoints,"phone")) {
-    section {
-      padding: 0 map.get($spacing, small);
-    }
+  padding: 0 map.get($spacing, small);
+  margin-bottom: map.get($spacing, xlarge);
+}
+@media (min-width: map.get($breakpoints,"phone")) {
+  section {
+    padding: 0 map.get($spacing, medium);
+  }
+  p,
+  h4 {
+    font-size: 1.2rem;
+  }
+  h4 {
+    margin: 0;
+  }
+}
+@media (min-width: map.get($breakpoints,"tablet")) {
+  section {
+    padding: 0 map.get($spacing, large);
   }
 }
