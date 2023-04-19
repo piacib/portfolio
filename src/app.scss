@@ -1,3 +1,4 @@
+@use "sass:map";
 @import "./components/globalStyle.module.scss";
 
 body {
@@ -12,3 +13,14 @@ p {
   max-width: 60ch;
 }
 
+section h1 {
+  align-self: flex-start;
+}
+section {
+  padding: 0 map.get($spacing, medium);
+  @media (max-width: map.get($breakpoints,"phone")) {
+    section {
+      padding: 0 map.get($spacing, small);
+    }
+  }
+}
