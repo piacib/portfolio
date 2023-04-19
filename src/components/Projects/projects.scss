@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "sass:math";
 @use "sass:map";
 @import "../globalStyle.module.scss";
@@ -8,6 +9,11 @@ $pGridRowEnd: $pGridRow + 1;
 $cardWidth: 1200px;
 $cardHeight: 400px;
 $imgWidth: math.div($cardWidth, 2);
+#projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .project_card {
   display: flex;
@@ -16,7 +22,7 @@ $imgWidth: math.div($cardWidth, 2);
   max-width: $cardWidth;
   width: 100%;
   height: $cardHeight;
-  margin-bottom: 1rem;
+  margin-bottom: map.get($spacing, xlarge);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   &:hover .triangle.left {
@@ -130,10 +136,8 @@ $imgWidth: math.div($cardWidth, 2);
   font-size: 30px;
 }
 .projects_btn {
-  width: 4rem;
-  background: $accentColor;
   margin: 1rem;
-  padding: 0.5rem 2rem;
+  width: 7rem;
 }
 
 .triangle {
@@ -160,7 +164,7 @@ $imgWidth: math.div($cardWidth, 2);
   display: none;
 }
 
-@media (max-width: 700px) {
+@media (max-width: map.get($breakpoints, tablet)) {
   .small_screen_btn_container {
     display: flex;
     align-items: center;
@@ -172,6 +176,9 @@ $imgWidth: math.div($cardWidth, 2);
     position: absolute;
     opacity: 0.3;
     width: 100%;
+  }
+  .image_link_container .projects_btn {
+    display: none;
   }
   .project_card {
     border: 2px solid #77f6fd29;
@@ -206,5 +213,70 @@ $imgWidth: math.div($cardWidth, 2);
       grid-column: 1/10;
       align-items: center;
     }
+  }
+  .triangle {
+    display: none;
+  }
+}
+
+$speed: 0.5s;
+
+.button-flip {
+  opacity: 1;
+  outline: 0;
+  color: $backgroundColor;
+  max-width: 35rem;
+  color: transparent;
+
+  line-height: 0px;
+  position: relative;
+  text-align: center;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  &:hover {
+    &:after {
+      opacity: 1;
+      transform: translateY(0) rotateX(0);
+    }
+
+    &:before {
+      opacity: 0;
+      transform: translateY(50%) rotateX(90deg);
+    }
+  }
+
+  &:after {
+    top: 0;
+    left: 0;
+    opacity: 0;
+    line-height: 40px;
+    width: 100%;
+    display: block;
+    background: $backgroundColor;
+    color: $accentColor;
+    transition: $speed;
+    position: absolute;
+    content: attr(data-back);
+    transform: translateY(-50%) rotateX(90deg);
+  }
+
+  &:before {
+    top: 0;
+    left: 0;
+    opacity: 1;
+    color: $backgroundColor;
+    background: $accentColor;
+    line-height: 40px;
+
+    display: block;
+    padding: 0 30px;
+    line-height: 40px;
+    transition: $speed;
+    position: relative;
+    content: attr(data-front);
+    transform: translateY(0) rotateX(0);
   }
 }

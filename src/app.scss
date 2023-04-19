@@ -13,6 +13,10 @@ p {
   max-width: 60ch;
 }
 
+section h1 {
+  align-self: flex-start;
+}
+
 section {
   padding: 0 map.get($spacing, small);
   margin-bottom: map.get($spacing, xlarge);
