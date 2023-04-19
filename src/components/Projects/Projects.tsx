@@ -4,6 +4,7 @@ import useDualFadeIn from "../../utils/useDualFadeIn";
 import { ProjectContent, projects } from "./projectsInfo";
 
 const Projects = () => {
+  const { classes, containerRef } = useDualFadeIn();
   return (
     <section id="projects">
       <h1>What I have built</h1>
@@ -14,7 +15,8 @@ const Projects = () => {
       </ul>
 
       <a
-        className="button-flip"
+        ref={containerRef}
+        className={`button-flip ${classes.left}`}
         data-back="The Ezra Klein Podject"
         data-front="Checkout What I am Working On Now!"
         href="https://github.com/piacib/the_ezra_klein_podject"
