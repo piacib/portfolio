@@ -63,7 +63,7 @@ export const projects: ProjectContent[] = [
     title: "Reddit Post Timer",
     imgLink: redditTimerApp,
     repoHref: "https://github.com/piacib/reddit-timer-piacib",
-    demoHref: "https://github.com/piacib/reddit-timer-piacib",
+    demoHref: "https://piacib.github.io/reddit-timer-piacib/",
     text: `A website that connects to the reddit api and fetches top posts from a given subreddit and displays the best time to make a post in a heat map display. `,
     skillsClassNames: [
       "devicon-javascript-plain",
