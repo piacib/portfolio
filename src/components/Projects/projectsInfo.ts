@@ -78,12 +78,8 @@ export const projects: ProjectContent[] = [
     imgLink: portfolio,
     repoHref: "https://github.com/piacib/portfolio",
     demoHref: "https://piacib.github.io/portfolio/",
-    text: `A chrome Extension that adds an iframe when a new battle starts and
-    sends data from the battle to my pokeinfo site to be displayed A
-    chrome Extension that adds an iframe when a new battle starts and
-    sends data from the battle to my pokeinfo site to be displayed A
-    chrome Extension that adds an iframe when a new battle starts and
-    sends data from the battle to my pokeinfo site to be displayed`,
+    text: `I built my portfolio to practice css animations. I focused on building clean engaging
+    animations that help display my skills and work experience`,
     skillsClassNames: [
       "devicon-javascript-plain",
       "devicon-html5-plain-wordmark",
