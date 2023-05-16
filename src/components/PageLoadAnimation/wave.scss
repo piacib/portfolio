@@ -2,18 +2,11 @@
 @use "sass:map";
 @import "./style.module.scss";
 @import "../HexagonSvg/style.module.scss";
-body,
-html {
+.initial-animate-overflow {
   animation: overflowHide 0.25s math.div($totalAnimationTime, 2) linear forwards;
   overflow: hidden;
 }
-@media (min-width: map.get($breakpoints, phone)) {
-  body,
-  html {
-    animation: overflowHide 0.25s $totalAnimationTime linear forwards;
-    overflow: hidden;
-  }
-}
+
 @keyframes overflowHide {
   0% {
     overflow: hidden;
@@ -68,8 +61,16 @@ $rows: $radius * 2 - 1;
       margin-left: ($hex * $displayWidth) - $halfSvgWidth;
       margin-top: $halfSvgHeight * -1px;
     }
-    .load-container .row:nth-child(#{$row}) .hexagon:nth-last-child(#{$hex}) {
+    .load-container.initial-animate
+      .row:nth-child(#{$row})
+      .hexagon:nth-last-child(#{$hex}) {
       animation: pulse $animation-duration $startDelay forwards;
+    }
+    .load-container:not(.initial-animate)
+      .row:nth-child(#{$row})
+      .hexagon:nth-last-child(#{$hex}) {
+      transform: scale($scaleDown);
+      fill: $hexBackgroundColor;
     }
     $startDelay: $startDelay - 0.25s;
   }
