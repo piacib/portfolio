@@ -24,12 +24,12 @@ $imgWidth: math.div($cardWidth, 2);
   margin-bottom: map.get($spacing, xlarge);
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  &:hover .triangle.left {
-    clip-path: polygon(0 0, 0 100%, 0 100%);
-  }
-  &:hover .triangle.right {
-    clip-path: polygon(101% 0, 100% 0, 110% 100%);
-  }
+  // &:hover .triangle.left {
+  //   clip-path: polygon(0 0, 0 100%, 0 100%);
+  // }
+  // &:hover .triangle.right {
+  //   clip-path: polygon(101% 0, 100% 0, 110% 100%);
+  // }
 }
 .project_content {
   grid-row: 1/1;
@@ -212,9 +212,6 @@ $imgWidth: math.div($cardWidth, 2);
       grid-column: 1/10;
       align-items: center;
     }
-  }
-  .triangle {
-    display: none;
   }
 }
 
