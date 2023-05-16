@@ -2,6 +2,7 @@ import "./wave.scss";
 import variables from "./style.module.scss";
 import HexagonSvg from "../HexagonSvg/HexagonSvg";
 import CursorBall from "../CursorBall/CursorBall";
+import useInitialPageLoad from "../../utils/useInitialPageLoad";
 
 const radius = Number(variables.radius);
 const hexRowGenerator = (radius: number) => {
@@ -17,16 +18,19 @@ const hexRowGenerator = (radius: number) => {
 };
 
 const LoadScreen = () => {
+  const { loaded, initialLoadClassName } = useInitialPageLoad();
+
   return (
     <>
-      <div className="load-container">
+      <div className={`load-container ${loaded ? "" : initialLoadClassName}`}>
         {hexRowGenerator(radius).map((x, idx) => (
           <HexRow rowLength={x} rowNum={idx} />
         ))}
       </div>
+      {/* )} */}
+      {/* <CursorBall />
       <CursorBall />
-      <CursorBall />
-      <CursorBall />
+      <CursorBall /> */}
     </>
   );
 };
