@@ -28,21 +28,12 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-}
-@media (max-width: map.get($breakpoints,"phone")) {
-  h1 {
-    font-size: 1.7rem;
-  }
-}
-@media (min-width: map.get($breakpoints,"phone")) {
-  .work_container {
+  @media (min-width: map.get($breakpoints,phone)) {
     display: flex;
     flex-direction: row;
   }
-  .work_container ol {
-    height: fit-content;
-  }
 }
+
 .work_container ol {
   list-style-type: disc;
   width: 45ch;
@@ -54,6 +45,10 @@
   flex-direction: column;
   display: flex;
   justify-content: space-between;
+  @media (min-width: map.get($breakpoints,phone)) {
+    height: fit-content;
+  }
+
   li button {
     white-space: nowrap;
     padding: map.get($spacing, mini);
@@ -127,19 +122,29 @@
 }
 .about_me_card {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-around;
   width: 100%;
   max-width: 62.5rem;
+  flex-direction: column;
   p {
-    padding: map.get($spacing, small);
-    margin-left: map.get($spacing, small);
+    padding: 0;
+    margin-left: 0;
   }
   img {
     max-height: 26rem;
-    max-width: 40%;
+    max-width: 60%;
     box-shadow: -16px -16px $accentColor;
+  }
+  @media (min-width: map.get($breakpoints,phone)) {
+    flex-direction: row;
+    img {
+      max-width: 40%;
+    }
+    p {
+      padding: map.get($spacing, small);
+      margin-left: map.get($spacing, small);
+    }
   }
 }
 .learn_more {
@@ -148,18 +153,5 @@
   align-items: center;
   @media (min-width: map.get($breakpoints,"phone")) {
     flex-direction: row;
-  }
-}
-
-@media (max-width: map.get($breakpoints,"phone")) {
-  .about_me_card {
-    flex-direction: column;
-    img {
-      max-width: 60%;
-    }
-    p {
-      padding: 0;
-      margin-left: 0;
-    }
   }
 }
