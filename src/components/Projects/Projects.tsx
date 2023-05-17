@@ -4,9 +4,10 @@ import { ProjectContent, projects } from "./projectsInfo";
 
 const Projects = () => {
   const { classes, containerRef } = useFadeIn();
+  const { classes: h1Classes, containerRef: h1ContainerRef } = useFadeIn();
   return (
     <section id="projects">
-      <h1>What I have built</h1>
+      <h1 ref={h1ContainerRef} className={h1Classes.left}>What I have built</h1>
       <ul className="project_card_container">
         {projects.map((x, idx) => (
           <ProjectCard idx={idx} data={x} />
