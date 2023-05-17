@@ -128,8 +128,10 @@
 .about_me_card {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 62.5rem;
   p {
     padding: map.get($spacing, small);
     margin-left: map.get($spacing, small);
@@ -144,12 +146,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-@media (min-width: map.get($breakpoints,"phone")) {
-  .learn_more {
+  @media (min-width: map.get($breakpoints,"phone")) {
     flex-direction: row;
   }
 }
+
 @media (max-width: map.get($breakpoints,"phone")) {
   .about_me_card {
     flex-direction: column;
