@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./planet.scss";
 import variables from "../Moon/style.module.scss";
 import Moon from "../Moon/Moon";
-import useDualFadeIn from "../../utils/useDualFadeIn";
+import useFadeIn from "../../utils/useFadeIn";
 
 export const icons = [
   "devicon-javascript-plain",
@@ -16,7 +16,7 @@ export const icons = [
   "devicon-sass-original",
 ];
 const Planet = () => {
-  const { classes: techsClasses, containerRef: techsRef } = useDualFadeIn();
+  const { classes: techsClasses, containerRef: techsRef } = useFadeIn();
 
   if (icons.length !== Number(variables.moonCount)) {
     console.warn(

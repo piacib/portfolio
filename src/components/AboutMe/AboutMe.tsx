@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import "./aboutMe.scss";
 import Me from "../../assets/me.jpg";
 import Planet from "../Planet/Planet";
-import useDualFadeIn from "../../utils/useDualFadeIn";
+import useFadeIn from "../../utils/useFadeIn";
 import { jobs, WorkData } from "./jobs";
 
 const AboutMe: React.FC = () => {
   const [dataIndex, setDataIndex] = useState(0);
-  const { classes, containerRef: imageTextContRef } = useDualFadeIn();
-  const { classes: workExp, containerRef: workExpRef } = useDualFadeIn();
+  const { classes, containerRef: imageTextContRef } = useFadeIn();
+  const { classes: workExp, containerRef: workExpRef } = useFadeIn();
   const { classes: whereIWorkedClasses, containerRef: whereIWorked } =
-    useDualFadeIn();
-  const { classes: h1Classes, containerRef: h1Ref } = useDualFadeIn();
+    useFadeIn();
+  const { classes: h1Classes, containerRef: h1Ref } = useFadeIn();
   return (
     <section id="about_me">
       <h1 ref={h1Ref} className={`section_header ${h1Classes.left}`}>

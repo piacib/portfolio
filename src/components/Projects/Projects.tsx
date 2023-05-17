@@ -1,10 +1,9 @@
-import React from "react";
 import "./projects.scss";
-import useDualFadeIn from "../../utils/useDualFadeIn";
+import useFadeIn from "../../utils/useFadeIn";
 import { ProjectContent, projects } from "./projectsInfo";
 
 const Projects = () => {
-  const { classes, containerRef } = useDualFadeIn();
+  const { classes, containerRef } = useFadeIn();
   return (
     <section id="projects">
       <h1>What I have built</h1>
@@ -16,7 +15,7 @@ const Projects = () => {
 
       <a
         ref={containerRef}
-        className={`button-flip ${classes.left}`}
+        className={`button-flip ${classes.bottom}`}
         data-back="The Ezra Klein Podject"
         data-front="Checkout What I am Working On Now!"
         href="https://github.com/piacib/the_ezra_klein_podject"
@@ -51,7 +50,7 @@ interface ProjectCardProps {
   data: ProjectContent;
 }
 const ProjectCard = ({ idx, data }: ProjectCardProps) => {
-  const { classes, containerRef } = useDualFadeIn();
+  const { classes, containerRef } = useFadeIn();
   return (
     <li
       id="Pokemon_Showdown_Extension"
