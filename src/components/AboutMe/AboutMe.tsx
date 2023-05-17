@@ -5,24 +5,16 @@ import Planet from "../Planet/Planet";
 import useDualFadeIn from "../../utils/useDualFadeIn";
 import { jobs, WorkData } from "./jobs";
 
-const hobbies = [
-  "Rock climbing",
-  "Scuba Diving",
-  "Go",
-  "Reading",
-  "Swimming",
-  "helpingothers",
-];
-
 const AboutMe: React.FC = () => {
   const [dataIndex, setDataIndex] = useState(0);
   const { classes, containerRef: imageTextContRef } = useDualFadeIn();
   const { classes: workExp, containerRef: workExpRef } = useDualFadeIn();
   const { classes: whereIWorkedClasses, containerRef: whereIWorked } =
     useDualFadeIn();
+  const { classes: h1Classes, containerRef: h1Ref } = useDualFadeIn();
   return (
     <section id="about_me">
-      <h1 className={`section_header ${whereIWorkedClasses.left}`}>
+      <h1 ref={h1Ref} className={`section_header ${h1Classes.left}`}>
         Who Am I?
       </h1>
       <div className="about_me_card" ref={imageTextContRef}>
@@ -57,7 +49,7 @@ const AboutMe: React.FC = () => {
           <WorkCard data={jobs[dataIndex]} classes={`${workExp.right}`} />
         </div>
       </div>
-        <Planet />
+      <Planet />
     </section>
   );
 };
