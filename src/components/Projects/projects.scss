@@ -20,6 +20,7 @@ $cardBorderRadius: 10px;
   display: flex;
   margin: 0;
   padding: 0;
+  width: 100%;
   flex-direction: column;
   align-items: center;
 }
@@ -128,10 +129,15 @@ $cardBorderRadius: 10px;
 .project_card:nth-child(odd) {
   & > .project_content {
     align-items: center;
-    grid-column: 3/-1;
+    grid-column: 1/-1;
+
+    justify-self: end;
   }
   & > .image_link_container {
-    grid-column: 1/7;
+    grid-column: 1/-1;
+
+    justify-self: start;
+
     align-items: flex-start;
   }
   @media (min-width: map.get($breakpoints, tablet)) {
@@ -143,11 +149,13 @@ $cardBorderRadius: 10px;
 
 .project_card:nth-child(even) {
   & > .project_content {
-    grid-column: 1/10;
+    grid-column: 1/-1;
     align-items: center;
+    justify-self: start;
   }
   & > .image_link_container {
-    grid-column: 5/-1;
+    grid-column: 1/-1;
+    justify-self: end;
     align-items: flex-end;
   }
 
