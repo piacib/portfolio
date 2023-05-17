@@ -12,12 +12,13 @@ export interface ProjectContent {
 }
 export const projects: ProjectContent[] = [
   {
-    title: "PokeInfo",
+    title: "Pokeinfo",
     imgLink: pokeinfo,
     repoHref: "https://github.com/piacib/pokeinfo",
     demoHref: "https://piacib.github.io/pokeinfo/",
-    text: `This website accepts a battle id from an active pokemon showdown battle and displays the real time info for the battle
-    by connecting to the pokemon showdown websocket. It utilizes robust testing and typescript to help increase the maintainability and prevent future errors.`,
+    text: `This website accepts a battle ID from an active Pokémon Showdown battle and provides real-time information 
+    for the battle by establishing a connection to the Pokémon Showdown WebSocket.
+     It utilizes robust testing and typescript to help increase the maintainability and prevent future errors.`,
     skillsClassNames: [
       "devicon-javascript-plain",
       "devicon-html5-plain-wordmark",
@@ -26,14 +27,15 @@ export const projects: ProjectContent[] = [
     ],
   },
   {
-    title: "PokeInfo Extension",
+    title: "Pokeinfo Extension",
     imgLink: pokeinfo_extension,
     repoHref: "https://github.com/piacib/pokeinfo_iframe_extension",
     demoHref:
       "https://chrome.google.com/webstore/detail/pokeinfo-extension/plolbicmjndjpglocmmgnbppgnadmlfb",
-    text: `A chrome Extension that adds an iframe to the pokemonshowdown website when a new battle starts and
-    sends data from the battle to my pokeinfo site via a websocket to be displayed. This application utilizes URL Search paramaters to
-    efficiently send data to the pokeinfo site.`,
+    text: `
+    A Chrome extension that enhances the Pokémon Showdown website by adding an iframe when a new battle 
+    starts and transmitting the battle data to my Pokeinfo site via a WebSocket connection for display. 
+    This application leverages URL search parameters to optimize the data transfer to the Pokeinfo site.`,
     skillsClassNames: [
       "devicon-html5-plain-wordmark",
       "devicon-github-original",
@@ -64,7 +66,9 @@ export const projects: ProjectContent[] = [
     imgLink: redditTimerApp,
     repoHref: "https://github.com/piacib/reddit-timer-piacib",
     demoHref: "https://piacib.github.io/reddit-timer-piacib/",
-    text: `A website that connects to the reddit api and fetches top posts from a given subreddit and displays the best time to make a post in a heat map display. `,
+    text: `A website that utilizes the Reddit API to retrieve top posts from a
+     specified subreddit and presents the optimal time to 
+    create a post through a heat map display.`,
     skillsClassNames: [
       "devicon-javascript-plain",
       "devicon-html5-plain-wordmark",
@@ -78,8 +82,11 @@ export const projects: ProjectContent[] = [
     imgLink: portfolio,
     repoHref: "https://github.com/piacib/portfolio",
     demoHref: "https://piacib.github.io/portfolio/",
-    text: `I built my portfolio to practice css animations. I focused on building clean engaging
-    animations that help display my skills and work experience`,
+    text: `I have designed my portfolio with a primary focus on CSS animations to enhance
+     user experience and showcase my skills and web development experience. 
+    The animations are crafted to create a clean and engaging visual presentation. This project utilizes
+    SASS to create efficinet and maintainable CSS code.
+    `,
     skillsClassNames: [
       "devicon-javascript-plain",
       "devicon-html5-plain-wordmark",
