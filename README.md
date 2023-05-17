@@ -12,9 +12,8 @@ add to my repertoire. Overall, it greatly improved my development experience and
 
 - [efficient sass loops](https://github.com/piacib/portfolio/blob/fdfb9f63bb829e77304bb45a173abe8bef016672/src/components/PageLoadAnimation/wave.scss#L50-L69)
 - [maintainable and easily adjustable styling](https://github.com/piacib/portfolio/blob/fdfb9f63bb829e77304bb45a173abe8bef016672/src/components/Moon/moon.scss#L35-L72)
-- [custom hook using Intersection Observers](https://github.com/piacib/portfolio/blob/main/src/utils/useDualFadeIn.ts)
+- [custom hook using Intersection Observers](https://github.com/piacib/portfolio/blob/main/src/utils/useFadeIn.ts)
 
 ## Future Improvments
+
 In the future of this project I would like to experiment with complex CSS animations to further develop my undderstanding of them. Additionally, exploring various libraries such as three.js to implelement more intricate animations. Lastly, this project was built on create react app and I would like to convert it to vite.
-
-
