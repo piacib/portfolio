@@ -1,10 +1,14 @@
 @use "sass:map";
 @use "sass:math";
+@use "sass:color";
+
 $radius: 25; //Hex-radius
 $width: 54px;
 $halfWidth: math.div($width, 2);
 $accentColor: #77f6fd;
-$backgroundColor: #1e1c29;
+$accentColorWithBlur: opacify($accentColor, 0.161);
+$backgroundColor: rgb(30, 28, 41, 1);
+$backgroundColorWithBlur: color.scale($backgroundColor, $alpha: -25%);
 $backgroundHexCount: 100;
 $breakpoints: (
   phone: 640px,
