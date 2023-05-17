@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./planet.scss";
 import variables from "../Moon/style.module.scss";
 import Moon from "../Moon/Moon";
