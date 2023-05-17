@@ -43,22 +43,22 @@ export const projects: ProjectContent[] = [
       "devicon-chrome-plain",
     ],
   },
-  {
-    title: "Weather App",
-    imgLink: "",
-    repoHref: "https://github.com/piacib/weather_typescript_app",
-    demoHref: "https://github.com/piacib/weather_typescript_app",
-    text: `This site connects accepts a city in the us and then fetches its location from the national weather service. That data
-    is then sent to a second api request to get the current weather in that location and display it.`,
-    skillsClassNames: [
-      "devicon-javascript-plain",
-      "devicon-html5-plain-wordmark",
-      "devicon-react-original",
-      "devicon-github-original",
-      "devicon-css3-plain-wordmark",
-      "devicon-typescript-plain",
-    ],
-  },
+  // {
+  //   title: "Weather App",
+  //   imgLink: "",
+  //   repoHref: "https://github.com/piacib/weather_typescript_app",
+  //   demoHref: "https://github.com/piacib/weather_typescript_app",
+  //   text: `This site connects accepts a city in the us and then fetches its location from the national weather service. That data
+  //   is then sent to a second api request to get the current weather in that location and display it.`,
+  //   skillsClassNames: [
+  //     "devicon-javascript-plain",
+  //     "devicon-html5-plain-wordmark",
+  //     "devicon-react-original",
+  //     "devicon-github-original",
+  //     "devicon-css3-plain-wordmark",
+  //     "devicon-typescript-plain",
+  //   ],
+  // },
   {
     title: "Reddit Post Timer",
     imgLink: redditTimerApp,
