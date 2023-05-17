@@ -56,8 +56,8 @@ const AboutMe: React.FC = () => {
           </ol>
           <WorkCard data={jobs[dataIndex]} classes={`${workExp.right}`} />
         </div>
-        <Planet />
       </div>
+        <Planet />
     </section>
   );
 };
