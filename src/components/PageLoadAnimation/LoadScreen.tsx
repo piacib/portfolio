@@ -35,7 +35,6 @@ const LoadScreen = () => {
 };
 
 export default LoadScreen;
-let key = 1;
 const HexRow = ({
   rowLength,
   rowNum,
