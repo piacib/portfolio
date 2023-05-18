@@ -19,12 +19,11 @@ const hexRowGenerator = (radius: number) => {
 
 const LoadScreen = () => {
   const { loaded, initialLoadClassName } = useInitialPageLoad();
-
   return (
     <>
       <div className={`load-container ${loaded ? "" : initialLoadClassName}`}>
         {hexRowGenerator(radius).map((x, idx) => (
-          <HexRow rowLength={x} rowNum={idx} />
+          <HexRow rowLength={x} rowNum={idx} key={`${x}${idx}`} />
         ))}
       </div>
       {/* )} */}
@@ -36,7 +35,7 @@ const LoadScreen = () => {
 };
 
 export default LoadScreen;
-
+let key = 1;
 const HexRow = ({
   rowLength,
   rowNum,
@@ -46,8 +45,8 @@ const HexRow = ({
 }) => {
   return (
     <div className={`row r${rowNum}`}>
-      {Array.from({ length: rowLength }).map((x) => (
-        <HexagonSvg className={"hexagon"} />
+      {Array.from({ length: rowLength }).map((x, idx) => (
+        <HexagonSvg key={`${idx}`} className={"hexagon"} />
       ))}
     </div>
   );

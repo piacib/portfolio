@@ -36,7 +36,7 @@ const AboutMe: React.FC = () => {
         <div className="work_container" ref={workExpRef}>
           <ol className={`${workExp.left}`}>
             {jobs.map((x, idx) => (
-              <li>
+              <li key={x.jobTitle}>
                 <button
                   onClick={() => setDataIndex(idx)}
                   className={idx === dataIndex ? "active" : ""}
@@ -68,7 +68,7 @@ const WorkCard = ({ data, classes }: WorkCardProps) => {
       <p>{data.text}</p>
       <ul className="skills_list">
         {data.skills.map((x) => (
-          <li>
+          <li key={x}>
             <p>{x}</p>
           </li>
         ))}

@@ -28,8 +28,8 @@ const Planet = () => {
         <p className="techs_text">Technologies</p>
       </div>
       <ul>
-        {icons.map((icon) => (
-          <Moon>
+        {icons.map((icon, idx) => (
+          <Moon key={icon + idx}>
             <i className={`skills_icon ${icon}`}></i>
           </Moon>
         ))}
