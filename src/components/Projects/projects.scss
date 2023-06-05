@@ -10,7 +10,7 @@ $opacity: 0.776;
 $cardWidth: 1200px;
 $cardHeight: 400px;
 $imgWidth: math.div($cardWidth, 2);
-$cardBorderRadius: 10px;
+$cardBorderRadius: 0px;
 #projects {
   display: flex;
   flex-direction: column;
@@ -92,16 +92,17 @@ $cardBorderRadius: 10px;
   .skills_list {
     grid-row: #{$pGridRowEnd};
     display: flex;
-    padding: 0;
+
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     max-width: 30ch;
     width: 100%;
-    padding: 0 map.get($spacing, small);
-
+    margin: map.get($spacing, small);
+    padding: 0;
     background: none;
     @media (min-width: map.get($breakpoints, tablet)) {
+      padding: 0 map.get($spacing, small);
       background: $backgroundColorWithBlur;
     }
   }
@@ -110,17 +111,17 @@ $cardBorderRadius: 10px;
     grid-column: 1;
     padding: 0 map.get($spacing, small);
     grid-row: $h2gridRow;
-    margin-bottom: 0;
     font-size: 2rem;
     color: $accentColor;
     text-decoration: underline;
     text-align: center;
     white-space: normal;
     background: none;
+    margin-bottom: map.get($spacing, small);
     @media (min-width: map.get($breakpoints, tablet)) {
       background: $backgroundColorWithBlur;
-
       white-space: nowrap;
+      margin-bottom: 0;
     }
   }
 }
@@ -223,4 +224,7 @@ $cardBorderRadius: 10px;
   @media (min-width: map.get($breakpoints, tablet)) {
     display: none;
   }
+}
+.coming-soon-a {
+  width: fit-content;
 }
