@@ -71,44 +71,49 @@ const ProjectCard = ({ idx, data }: ProjectCardProps) => {
           ))}
         </ul>
         <div className="small_screen_btn_container">
-          <a
-            className="projects_btn button-flip"
-            data-back="Repo"
-            data-front="Repo"
-            href={data.repoHref}
-          >
-            Repo
-          </a>
-          <a
-            className="projects_btn button-flip"
-            data-back="Demo"
-            data-front="Demo"
-            href={data.demoHref}
-          >
-            Demo
-          </a>
+          <ProjectButtons repoHref={data.repoHref} demoHref={data.demoHref} />
         </div>
       </div>
       <div className={`image_link_container ${leftOrRight(idx, classes)[1]}`}>
         <img alt="project demo" src={data.imgLink} className="triangle left" />
         <img alt="project demo" src={data.imgLink} className="triangle right" />
-        <a
-          className="projects_btn button-flip"
-          data-back="Repo"
-          data-front="Repo"
-          href={data.repoHref}
-        >
-          Repo
-        </a>
-        <a
-          className="projects_btn button-flip"
-          data-back="Demo"
-          data-front="Demo"
-          href={data.demoHref}
-        >
-          Demo
-        </a>
+        <ProjectButtons repoHref={data.repoHref} demoHref={data.demoHref} />
       </div>
     </li>
   );
 };
+interface Props {
+  demoHref: string;
+  repoHref: string;
+}
+const ProjectButtons = ({ demoHref, repoHref }: Props) => (
+  <>
+    <a
+      className="projects_btn button-flip"
+      data-back="Repo"
+      data-front="Repo"
+      href={repoHref}
+    >
+      Repo
+    </a>
+    {demoHref ? (
+      <a
+        className="projects_btn button-flip"
+        data-back="Demo"
+        data-front="Demo"
+        href={demoHref}
+      >
+        Demo
+      </a>
+    ) : (
+      <a
+        className="coming-soon-a projects_btn button-flip "
+        data-back="Coming Soon!"
+        data-front="Coming Soon!"
+        href="/"
+      >
+        Coming Soon!
+      </a>
+    )}
+  </>
+);
