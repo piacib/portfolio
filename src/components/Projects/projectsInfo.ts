@@ -30,8 +30,8 @@ export const projects: ProjectContent[] = [
     title: "Pokeinfo Extension",
     imgLink: pokeinfo_extension,
     repoHref: "https://github.com/piacib/pokeinfo_iframe_extension",
-    demoHref: "",
-    // "https://chrome.google.com/webstore/detail/pokeinfo-extension/plolbicmjndjpglocmmgnbppgnadmlfb",
+    demoHref:
+      "https://chrome.google.com/webstore/detail/pokeinfo-showdown/bkfbliefifmflhjcggbgfimmodpiclgk?hl=en",
     text: `
     A chrome extension that enhances the Pokémon Showdown website by adding an iframe when a new battle 
     starts and transmitting the battle data to my Pokeinfo site via a WebSocket connection for display. 
