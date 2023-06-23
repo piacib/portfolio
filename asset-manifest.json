@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.602966a2.css",
-    "main.js": "/portfolio/static/js/main.9b373f12.js",
+    "main.js": "/portfolio/static/js/main.d71e8cb6.js",
     "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/me.jpg": "/portfolio/static/media/me.4ccac283ebd179596650.jpg",
     "static/media/pokeinfo_extension.png": "/portfolio/static/media/pokeinfo_extension.00905e41c82334c294cf.png",
@@ -10,11 +10,11 @@
     "static/media/reddit_timer_app.png": "/portfolio/static/media/reddit_timer_app.9c88db631febb346123e.png",
     "index.html": "/portfolio/index.html",
     "main.602966a2.css.map": "/portfolio/static/css/main.602966a2.css.map",
-    "main.9b373f12.js.map": "/portfolio/static/js/main.9b373f12.js.map",
+    "main.d71e8cb6.js.map": "/portfolio/static/js/main.d71e8cb6.js.map",
     "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.602966a2.css",
-    "static/js/main.9b373f12.js"
+    "static/js/main.d71e8cb6.js"
   ]
 }
