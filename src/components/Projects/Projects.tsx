@@ -21,7 +21,7 @@ const Projects = () => {
         className={`button-flip ${classes.bottom}`}
         data-back="The Ezra Klein Podject"
         data-front="Checkout What I am Working On Now!"
-        href="https://github.com/piacib/the_ezra_klein_podject"
+        href="https://github.com/piacib/next_ezra_klein_app"
       >
         Checkout What I am Working On Now!
       </a>
