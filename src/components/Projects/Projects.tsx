@@ -56,7 +56,7 @@ const ProjectCard = ({ idx, data }: ProjectCardProps) => {
   const { classes, containerRef } = useFadeIn();
   return (
     <li
-      id="Pokemon_Showdown_Extension"
+      id={data.title.replaceAll(" ", "_")}
       className="project_card"
       ref={containerRef}
     >
